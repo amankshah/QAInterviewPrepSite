@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="QA Automation Interview Questions and Answers - Complete preparation guide">
+    <meta name="theme-color" content="#2563eb">
+    <title>QA Automation Interview Questions | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #f59e0b;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #d97706;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav { margin-top: 0; }
+        .question-count {
+            background: #f59e0b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .category-header { scroll-margin-top: 130px; }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>⚙️ QA Automation Interview Questions</h1>
+            <p class="subtitle">Comprehensive questions covering automation frameworks, tools, CI/CD, best practices, and modern QA automation concepts.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#fundamentals">🎯 Fundamentals</a>
+                <a class="chip" href="#tools">🛠️ Tools</a>
+                <a class="chip" href="#frameworks">🏗️ Frameworks</a>
+                <a class="chip" href="#cicd">🔄 CI/CD</a>
+                <a class="chip" href="#practices">✨ Best Practices</a>
+                <a class="chip" href="#advanced">⚡ Advanced</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Fundamentals -->
+                <div class="category-header" id="fundamentals">
+                    <span class="category-icon">🎯</span>
+                    <h2 class="category-title">Automation Fundamentals</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Test Automation?</span>
+                        </div>
+                        <div class="qa-answer">The use of software tools and scripts to execute test cases automatically, reducing manual effort and increasing testing efficiency.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What are the benefits of automation testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Faster execution<br>
+                            - Reusability of tests<br>
+                            - Better test coverage<br>
+                            - Early bug detection<br>
+                            - Cost-effective for regression<br>
+                            - Parallel execution<br>
+                            - Consistent results
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">When should you automate tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Repetitive test cases<br>
+                            - Regression test suites<br>
+                            - Smoke/sanity tests<br>
+                            - Data-driven scenarios<br>
+                            - Performance testing<br>
+                            - Cross-browser testing<br>
+                            - Stable features
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">When NOT to automate?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - One-time tests<br>
+                            - Unstable features<br>
+                            - Complex UI tests<br>
+                            - Usability testing<br>
+                            - Ad-hoc/exploratory testing<br>
+                            - When ROI is low
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What is an Automation Framework?</span>
+                        </div>
+                        <div class="qa-answer">A structured set of guidelines, coding standards, concepts, processes, and tools that support test automation. Provides reusability, maintainability, and scalability.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">What are types of automation frameworks?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. <strong>Linear/Record & Playback:</strong> Basic, no reusability<br>
+                            2. <strong>Modular:</strong> Divided into modules<br>
+                            3. <strong>Data-Driven:</strong> Test data separated<br>
+                            4. <strong>Keyword-Driven:</strong> Actions as keywords<br>
+                            5. <strong>Hybrid:</strong> Combination of above<br>
+                            6. <strong>BDD:</strong> Behavior-driven (Cucumber)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">What is Data-Driven Framework?</span>
+                        </div>
+                        <div class="qa-answer">Framework where test data is separated from test scripts and stored externally (Excel, CSV, JSON, DB). Same test runs with different data sets.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">What is Keyword-Driven Framework?</span>
+                        </div>
+                        <div class="qa-answer">Framework where test cases are written using keywords that represent actions. Non-technical users can create tests.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">What is Page Object Model (POM)?</span>
+                        </div>
+                        <div class="qa-answer">Design pattern where each page is a class with page elements and methods. Separates page logic from test logic, improving maintainability.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">What is Test Pyramid?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Testing strategy visualization:<br>
+                            - <strong>Bottom (Most):</strong> Unit Tests<br>
+                            - <strong>Middle:</strong> Integration/API Tests<br>
+                            - <strong>Top (Least):</strong> UI Tests<br>
+                            More lower-level tests, fewer UI tests (faster, cheaper)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">What is ROI in test automation?</span>
+                        </div>
+                        <div class="qa-answer">Return on Investment - measuring benefits vs costs of automation. Consider: development time, maintenance, execution time savings, bug detection.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What is flaky test?</span>
+                        </div>
+                        <div class="qa-answer">Test that sometimes passes and sometimes fails without code changes. Causes: timing issues, environment dependencies, race conditions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">How do you handle flaky tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Add proper waits<br>
+                            - Make tests independent<br>
+                            - Handle asynchronous operations<br>
+                            - Use stable locators<br>
+                            - Implement retry mechanism<br>
+                            - Fix root cause, not symptoms
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">What is test maintainability?</span>
+                        </div>
+                        <div class="qa-answer">Ease of updating tests when application changes. Good practices: POM, reusable functions, clear naming, minimal duplication.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">What is test coverage in automation?</span>
+                        </div>
+                        <div class="qa-answer">Percentage of application features/code covered by automated tests. Aim for critical paths, not 100% automation.</div>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="category-header" id="tools">
+                    <span class="category-icon">🛠️</span>
+                    <h2 class="category-title">Automation Tools & Technologies</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">Compare Selenium, Playwright, and Cypress</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Selenium:</strong> Mature, multi-language, all browsers, slower<br>
+                            <strong>Playwright:</strong> Modern, fast, auto-waits, multi-browser<br>
+                            <strong>Cypress:</strong> JavaScript only, fast, Chrome-focused, great DX
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">What is Appium?</span>
+                        </div>
+                        <div class="qa-answer">Open-source tool for mobile app automation (iOS, Android). Uses WebDriver protocol, supports native, hybrid, and mobile web apps.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What is RestAssured?</span>
+                        </div>
+                        <div class="qa-answer">Java library for REST API automation. Provides DSL for HTTP requests, response validation, authentication, and JSON/XML parsing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">What is Postman?</span>
+                        </div>
+                        <div class="qa-answer">API testing tool with GUI for sending requests, collections, environments, automated testing with Newman.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">What is JMeter?</span>
+                        </div>
+                        <div class="qa-answer">Performance testing tool for load testing web applications, APIs, databases. Simulates multiple users and measures response times.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">What is TestNG?</span>
+                        </div>
+                        <div class="qa-answer">Testing framework for Java with annotations, parallel execution, test grouping, dependencies, data providers, and reporting.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What is JUnit?</span>
+                        </div>
+                        <div class="qa-answer">Unit testing framework for Java. Provides annotations (@Test, @Before, @After), assertions, and test runners.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">What is Cucumber?</span>
+                        </div>
+                        <div class="qa-answer">BDD tool using Gherkin syntax (Given-When-Then). Bridges communication between technical and non-technical team members.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">What is Maven?</span>
+                        </div>
+                        <div class="qa-answer">Build automation and dependency management tool. Uses pom.xml to manage project dependencies, plugins, and build lifecycle.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">What is Gradle?</span>
+                        </div>
+                        <div class="qa-answer">Build automation tool similar to Maven but uses Groovy/Kotlin DSL. Faster builds, better dependency management.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">What is Docker in test automation?</span>
+                        </div>
+                        <div class="qa-answer">Containerization platform for consistent test environments. Run tests in isolated containers, easy setup, cross-platform compatibility.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">What is BrowserStack/Sauce Labs?</span>
+                        </div>
+                        <div class="qa-answer">Cloud-based platforms for cross-browser testing. Access to multiple browser/OS combinations without maintaining infrastructure.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">What is Allure Report?</span>
+                        </div>
+                        <div class="qa-answer">Test reporting framework with rich visualizations, test history, attachments, categorization, and trend analysis.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">What is Extent Reports?</span>
+                        </div>
+                        <div class="qa-answer">HTML reporting library for test results with dashboard, charts, screenshots, and detailed test information.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">What is WebDriverManager?</span>
+                        </div>
+                        <div class="qa-answer">Library that automatically downloads and manages browser drivers. Eliminates manual driver management.</div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="category-header" id="frameworks">
+                    <span class="category-icon">🏗️</span>
+                    <h2 class="category-title">Framework Design & Architecture</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What are the components of a good automation framework?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test scripts<br>
+                            - Page Objects<br>
+                            - Test data files<br>
+                            - Configuration files<br>
+                            - Utility/Helper classes<br>
+                            - Reporting mechanism<br>
+                            - Logging<br>
+                            - Exception handling
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">What is a Singleton pattern in automation?</span>
+                        </div>
+                        <div class="qa-answer">Design pattern ensuring only one instance of a class exists (e.g., WebDriver instance). Useful for shared resources.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What is Factory pattern in automation?</span>
+                        </div>
+                        <div class="qa-answer">Design pattern for creating objects without specifying exact class. Used for browser initialization (ChromeDriver, FirefoxDriver).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">How do you handle test data?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Excel/CSV files<br>
+                            - JSON/XML files<br>
+                            - Property files<br>
+                            - Database<br>
+                            - Test data generators<br>
+                            - Environment-specific configs
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">How do you handle configuration management?</span>
+                        </div>
+                        <div class="qa-answer">Use properties/YAML files for environment URLs, credentials, timeouts. Separate configs for dev/staging/prod.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">What is dependency injection in testing?</span>
+                        </div>
+                        <div class="qa-answer">Providing dependencies (WebDriver, data) from outside rather than creating inside. Makes tests more flexible and testable.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">How do you implement logging?</span>
+                        </div>
+                        <div class="qa-answer">Use Log4j/SLF4J to log test execution steps, errors, debug info. Different log levels (INFO, DEBUG, ERROR).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">How do you handle screenshots in framework?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Capture on failure<br>
+                            - Store with test name + timestamp<br>
+                            - Attach to reports<br>
+                            - Create screenshot utility class<br>
+                            - Configure storage location
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">What is Base Test class?</span>
+                        </div>
+                        <div class="qa-answer">Parent class containing setup/teardown methods, common utilities. All test classes extend it for shared functionality.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">How do you organize test suites?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - By feature/module<br>
+                            - By priority (smoke, regression)<br>
+                            - By test type (API, UI)<br>
+                            - Use TestNG XML or JUnit suites<br>
+                            - Tag-based execution
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">How do you handle parallel execution?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - TestNG parallel execution<br>
+                            - ThreadLocal for WebDriver<br>
+                            - Ensure test independence<br>
+                            - Manage shared resources<br>
+                            - Configure thread count
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">What is ThreadLocal in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">Provides thread-local variables. Each thread has its own WebDriver instance for parallel execution without interference.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">How do you implement retry mechanism?</span>
+                        </div>
+                        <div class="qa-answer">Use TestNG IRetryAnalyzer or similar to retry failed tests automatically. Set max retry count to handle flaky tests.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">What is test independence?</span>
+                        </div>
+                        <div class="qa-answer">Each test should run independently without depending on other tests. No shared state, proper setup/cleanup.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">How do you version control automation framework?</span>
+                        </div>
+                        <div class="qa-answer">Use Git for source control. Follow branching strategy, code reviews, commit best practices, .gitignore for sensitive data.</div>
+                    </div>
+                </div>
+
+                <!-- CI/CD -->
+                <div class="category-header" id="cicd">
+                    <span class="category-icon">🔄</span>
+                    <h2 class="category-title">CI/CD Integration</h2>
+                    <span class="question-count">Q46-60</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What is CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>CI:</strong> Continuous Integration - automatically build/test on code commit<br>
+                            <strong>CD:</strong> Continuous Deployment - automatically deploy to production
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">What is Jenkins?</span>
+                        </div>
+                        <div class="qa-answer">Open-source CI/CD tool for automating builds, tests, and deployments. Supports plugins, pipelines, scheduled jobs.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you integrate Selenium with Jenkins?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Install Jenkins<br>
+                            2. Configure Maven/Gradle<br>
+                            3. Create Jenkins job<br>
+                            4. Add build triggers<br>
+                            5. Execute test suite<br>
+                            6. Publish test reports
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What is Jenkins Pipeline?</span>
+                        </div>
+                        <div class="qa-answer">Pipeline as code using Jenkinsfile. Defines stages (checkout, build, test, deploy) in declarative or scripted syntax.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">What is GitHub Actions?</span>
+                        </div>
+                        <div class="qa-answer">CI/CD platform integrated with GitHub. Define workflows in YAML, trigger on push/PR, matrix builds for multiple environments.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">What is GitLab CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">Built-in CI/CD in GitLab using .gitlab-ci.yml. Pipelines, stages, jobs, runners for automated testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">What are build triggers?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - SCM polling (check for changes)<br>
+                            - Webhook (on code push)<br>
+                            - Scheduled (cron jobs)<br>
+                            - Manual trigger<br>
+                            - Upstream/downstream jobs
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">How do you run tests in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Configure test environment<br>
+                            - Use headless browsers<br>
+                            - Run in Docker containers<br>
+                            - Execute test suite via Maven/Gradle<br>
+                            - Publish test reports<br>
+                            - Notify on failures
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">How do you handle test reports in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use Jenkins plugins (HTML Publisher, Allure)<br>
+                            - Archive test artifacts<br>
+                            - Email notifications<br>
+                            - Slack/Teams integration<br>
+                            - Dashboard visualization
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">What is Docker in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">Containers provide consistent test environments across CI/CD pipeline. Package tests with dependencies, easy scaling.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">What is Selenium Grid in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">Run tests in parallel across multiple machines/browsers in CI pipeline. Reduces execution time significantly.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How do you handle environment variables in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">Store secrets/configs as environment variables in CI tool. Access in tests without hardcoding sensitive data.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">What is test orchestration?</span>
+                        </div>
+                        <div class="qa-answer">Managing test execution order, dependencies, and distribution. Tools like Jenkins, CircleCI orchestrate complex test workflows.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">What is shift-left testing in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">Running tests early and frequently in development cycle. Catch bugs early when they're cheaper to fix.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How do you handle test failures in CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Fail build on critical test failures<br>
+                            - Retry flaky tests<br>
+                            - Send notifications<br>
+                            - Capture screenshots/logs<br>
+                            - Mark build as unstable vs failed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Best Practices -->
+                <div class="category-header" id="practices">
+                    <span class="category-icon">✨</span>
+                    <h2 class="category-title">Best Practices & Standards</h2>
+                    <span class="question-count">Q61-75</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">What are automation best practices?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Start with smoke tests<br>
+                            - Use POM pattern<br>
+                            - Implement proper waits<br>
+                            - Make tests independent<br>
+                            - Use meaningful names<br>
+                            - Keep tests simple<br>
+                            - Regular maintenance<br>
+                            - Version control
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">How do you name test cases?</span>
+                        </div>
+                        <div class="qa-answer">Use descriptive names: <code>test_loginWithValidCredentials_shouldSucceed()</code>. Clearly state what is tested and expected outcome.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">What is DRY principle in automation?</span>
+                        </div>
+                        <div class="qa-answer">Don't Repeat Yourself - avoid code duplication. Create reusable methods, utilities, and page objects.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">What is AAA pattern in testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Arrange:</strong> Setup test data<br>
+                            <strong>Act:</strong> Perform action<br>
+                            <strong>Assert:</strong> Verify result
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">How do you handle hard-coded values?</span>
+                        </div>
+                        <div class="qa-answer">Avoid hardcoding! Use configuration files, constants, enums, environment variables for flexibility.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">What is test isolation?</span>
+                        </div>
+                        <div class="qa-answer">Tests don't share state or depend on execution order. Each test has its own setup/teardown.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">How often should you run automated tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Smoke tests: After every deploy<br>
+                            - Regression: Daily/nightly builds<br>
+                            - Full suite: Weekly<br>
+                            - On-demand: Before releases
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How do you handle test data cleanup?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Clean up in @AfterMethod/@AfterClass<br>
+                            - Use test databases<br>
+                            - Reset state between tests<br>
+                            - API calls for cleanup<br>
+                            - Avoid affecting other tests
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">What is the ideal automation test?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Fast execution<br>
+                            - Reliable (not flaky)<br>
+                            - Independent<br>
+                            - Maintainable<br>
+                            - Clear purpose<br>
+                            - Good assertions<br>
+                            - Proper logging
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">How do you handle test documentation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - README with setup instructions<br>
+                            - Framework architecture docs<br>
+                            - Test case descriptions<br>
+                            - Code comments<br>
+                            - Run instructions<br>
+                            - Troubleshooting guide
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">What is code review in automation?</span>
+                        </div>
+                        <div class="qa-answer">Peer review of test code for quality, standards, best practices. Catch issues early, share knowledge.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">How do you handle authentication in tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Store credentials securely<br>
+                            - Use tokens/cookies<br>
+                            - API login for faster tests<br>
+                            - Reuse sessions<br>
+                            - Environment-based configs
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">What is negative testing in automation?</span>
+                        </div>
+                        <div class="qa-answer">Testing with invalid inputs to verify error handling. Ensure app doesn't crash, shows proper error messages.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you measure automation success?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test coverage %<br>
+                            - Execution time reduction<br>
+                            - Bug detection rate<br>
+                            - Test stability (pass rate)<br>
+                            - ROI<br>
+                            - Maintenance effort
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">What is continuous testing?</span>
+                        </div>
+                        <div class="qa-answer">Running automated tests continuously throughout the development cycle. Immediate feedback on code changes.</div>
+                    </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="category-header" id="advanced">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Advanced Topics</h2>
+                    <span class="question-count">Q76-80</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">What is AI/ML in test automation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Self-healing tests (auto-fix locators)<br>
+                            - Visual testing (image comparison)<br>
+                            - Test generation from requirements<br>
+                            - Predictive analytics for flaky tests<br>
+                            - Smart test selection
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">What is contract testing?</span>
+                        </div>
+                        <div class="qa-answer">Verifying that API provider and consumer agree on contract (structure, data types). Tools: Pact, Spring Cloud Contract.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">What is chaos engineering in testing?</span>
+                        </div>
+                        <div class="qa-answer">Intentionally introducing failures to test system resilience. Verify graceful degradation and recovery.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">What is test observability?</span>
+                        </div>
+                        <div class="qa-answer">Making test execution visible through detailed logging, metrics, traces. Understand why tests pass/fail.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">What is the future of test automation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - AI-powered testing<br>
+                            - Codeless automation<br>
+                            - Shift-left & shift-right<br>
+                            - Cloud-based testing<br>
+                            - Visual AI testing<br>
+                            - Self-healing tests<br>
+                            - Continuous testing in DevOps
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>80 QA Automation Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

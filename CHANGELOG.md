@@ -1,4 +1,14 @@
 ## 2025-12-01
+
+### 🎉 Complete Interview Preparation Site with 6 Detailed Pages (496 Total Questions)
+- **Playwright:** 101 questions - Browser automation mastery
+- **Git:** 70 questions - Version control expertise
+- **Manual Testing:** 90 questions - QA fundamentals
+- **Jira:** 85 questions - Project management & agile
+- **Selenium Java:** 85 questions - WebDriver & coding challenges
+- **QA Automation:** 80 questions - Frameworks, tools & CI/CD
+
+### Changes & Features
 - Reorganized `index.html` into clear sections with anchor navigation.
 - Applied a light color palette, updated typography (Inter), and subtle shadows.
 - Added sticky header, quick section chips, and smooth scrolling.
@@ -46,6 +56,16 @@
   - 85 comprehensive Q&A covering Jira project management
   - Organized into 6 categories: Basics, Projects, Workflows, Agile & Boards, JQL, Advanced
   - Blue/cyan color theme
+- Added **Selenium Java Interview Questions** page (`pages/selenium-interview.html`):
+  - 85 comprehensive Q&A covering Selenium WebDriver and Java coding
+  - Organized into 6 categories: Basics, Locators, Waits, Actions, Frameworks, Coding Challenges
+  - Green color theme
+  - Includes code examples and best practices
+- Added **QA Automation Interview Questions** page (`pages/qa-automation-interview.html`):
+  - 80 comprehensive Q&A covering automation frameworks and CI/CD
+  - Organized into 6 categories: Fundamentals, Tools, Frameworks, CI/CD, Best Practices, Advanced
+  - Amber/yellow color theme
+  - Covers modern automation concepts and tools
 - Created **common navigation system** (`js/navigation.js`):
   - Centralized navigation component shared across all pages
   - Dynamically injects header with active page highlighting
