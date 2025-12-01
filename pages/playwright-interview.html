@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="101 Playwright Interview Questions and Answers - Complete preparation guide for QA automation engineers">
+    <meta name="theme-color" content="#2563eb">
+    <title>Playwright Interview Questions - 101 Q&A | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* Page-specific styles */
+        .qa-grid {
+            display: grid;
+            gap: 16px;
+        }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text {
+            flex: 1;
+        }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid var(--primary);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .category-header {
+                scroll-margin-top: 130px;
+            }
+        }
+        .category-icon {
+            font-size: 1.5rem;
+        }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-600);
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--primary-600);
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #22c55e);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+        .toc-sidebar {
+            position: sticky;
+            top: 80px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 24px;
+        }
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        .toc-list a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        .toc-list a:hover {
+            color: var(--primary);
+        }
+        .question-count {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            .qa-question {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .qa-number {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    
+    <header class="site-header">
+        <div class="container inner">
+            <a href="../index.html" class="brand">Interview Prep Guide</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="../index.html">Cheat Sheet</a>
+                <a href="playwright-interview.html" class="active">Playwright</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>🎭 Playwright Interview Questions</h1>
+            <p class="subtitle">101 comprehensive questions covering browser automation, page interactions, testing, debugging, and advanced Playwright features.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#basics">🚀 Basics</a>
+                <a class="chip" href="#interactions">👆 Interactions</a>
+                <a class="chip" href="#waits">⏳ Waits</a>
+                <a class="chip" href="#browser">🌐 Browser</a>
+                <a class="chip" href="#network">📡 Network</a>
+                <a class="chip" href="#testing">🧪 Testing</a>
+                <a class="chip" href="#advanced">⚡ Advanced</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Basics Section -->
+                <div class="category-header" id="basics">
+                    <span class="category-icon">🚀</span>
+                    <h2 class="category-title">Basics & Setup</h2>
+                    <span class="question-count">Q1-9</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Playwright?</span>
+                        </div>
+                        <div class="qa-answer">Playwright is a <strong>Node.js library</strong> for automating web browsers. It enables reliable end-to-end testing for modern web apps.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">Which browsers does Playwright support?</span>
+                        </div>
+                        <div class="qa-answer"><strong>Chromium</strong>, <strong>Firefox</strong>, and <strong>WebKit</strong> (Safari's rendering engine).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">How do you install Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>npm install @playwright/test</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">How do you launch a browser in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const browser = await playwright.chromium.launch();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">How do you open a new page in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const page = await browser.newPage();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">How do you navigate to a URL in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.goto('https://example.com');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">How do you take a screenshot in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.screenshot({ path: 'screenshot.png' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">How do you set the viewport size in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setViewportSize({ width: 1280, height: 720 });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">How do you emulate a mobile device in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.emulate(devices['iPhone 11']);</code></div>
+                    </div>
+                </div>
+
+                <!-- Interactions Section -->
+                <div class="category-header" id="interactions">
+                    <span class="category-icon">👆</span>
+                    <h2 class="category-title">Page Interactions</h2>
+                    <span class="question-count">Q10-25</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">How do you click an element in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.click('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">How do you type into an input field in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.fill('selector', 'text');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">How do you get the text content of an element?</span>
+                        </div>
+                        <div class="qa-answer"><code>const text = await page.textContent('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">How do you handle file uploads in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setInputFiles('input[type="file"]', 'path/to/file');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">How do you handle alerts in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('dialog', dialog => dialog.accept());</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">How do you hover over an element in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.hover('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">How do you simulate a drag-and-drop action?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.dragAndDrop('source', 'target');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">How do you select an option from a dropdown?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.selectOption('selector', 'value');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">How do you get the value of an input field?</span>
+                        </div>
+                        <div class="qa-answer"><code>const value = await page.inputValue('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">How do you press a key in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.keyboard.press('Enter');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">How do you get the current URL in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const url = page.url();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">How do you run a script in the browser context?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.evaluate(() => { /* script */ });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">How do you perform mouse actions?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.mouse.click(x, y);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">How do you get the HTML of an element?</span>
+                        </div>
+                        <div class="qa-answer"><code>const html = await page.innerHTML('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">How do you focus an element in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.focus('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">How do you scroll an element into view?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.locator('selector').scrollIntoViewIfNeeded();</code></div>
+                    </div>
+                </div>
+
+                <!-- Waits & Selectors Section -->
+                <div class="category-header" id="waits">
+                    <span class="category-icon">⏳</span>
+                    <h2 class="category-title">Waits & Element State</h2>
+                    <span class="question-count">Q26-40</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">How do you wait for an element to be visible?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.waitForSelector('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">How do you check if an element is visible?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isVisible = await page.isVisible('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">How do you check if an element is enabled?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isEnabled = await page.isEnabled('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">How do you wait for navigation?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.waitForNavigation();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">How do you wait for a specific timeout?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.waitForTimeout(5000);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">How do you check if a checkbox is checked?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isChecked = await page.isChecked('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">How do you check if an element is disabled?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isDisabled = await page.isDisabled('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">How do you check if an element is editable?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isEditable = await page.isEditable('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">How do you set a default timeout for actions?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.setDefaultTimeout(10000);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">How do you handle timeouts for specific actions?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.click('selector', { timeout: 5000 });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">How do you wait for a network response?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.waitForResponse('**/api');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">How do you assert that an element has a specific attribute?</span>
+                        </div>
+                        <div class="qa-answer"><code>await expect(page.locator('selector')).toHaveAttribute('attr', 'value');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">How do you assert that an element has specific text?</span>
+                        </div>
+                        <div class="qa-answer"><code>await expect(page.locator('selector')).toHaveText('text');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">How do you get the bounding box of an element?</span>
+                        </div>
+                        <div class="qa-answer"><code>const box = await page.locator('selector').boundingBox();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">How do you handle iframes in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const frame = await page.frame({ name: 'frameName' });</code></div>
+                    </div>
+                </div>
+
+                <!-- Browser & Context Section -->
+                <div class="category-header" id="browser">
+                    <span class="category-icon">🌐</span>
+                    <h2 class="category-title">Browser & Context Management</h2>
+                    <span class="question-count">Q41-55</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">How do you set a browser context in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const context = await browser.newContext();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">How do you close the browser in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await browser.close();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">How do you run a headless browser?</span>
+                        </div>
+                        <div class="qa-answer"><code>const browser = await playwright.chromium.launch({ headless: true });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">How do you handle multiple pages or tabs?</span>
+                        </div>
+                        <div class="qa-answer"><code>const newPage = await context.newPage();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">How do you handle popups in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('popup', popup => { /* handle popup */ });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">How do you use a proxy server in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const browser = await playwright.chromium.launch({ proxy: { server: 'http://proxy.com' } });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">How do you change the user agent?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setUserAgent('custom-agent');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you handle cookies in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.context().addCookies([{ name: 'cookie', value: 'value', domain: 'example.com' }]);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">How do you clear cookies in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.context().clearCookies();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">How do you get cookies in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>const cookies = await context.cookies();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">How do you set local storage?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.evaluate(() => localStorage.setItem('key', 'value'));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">How do you get local storage?</span>
+                        </div>
+                        <div class="qa-answer"><code>const value = await page.evaluate(() => localStorage.getItem('key'));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">How do you set a geolocation in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.setGeolocation({ latitude: 59.95, longitude: 30.33 });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">How do you change the timezone in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.setDefaultTimezone('Europe/London');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">How do you handle authentication in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.authenticate({ username: 'user', password: 'pass' });</code></div>
+                    </div>
+                </div>
+
+                <!-- Network Section -->
+                <div class="category-header" id="network">
+                    <span class="category-icon">📡</span>
+                    <h2 class="category-title">Network & API</h2>
+                    <span class="question-count">Q56-75</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">How do you capture network requests?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('request', request => console.log(request.url()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How do you mock network responses?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.route('**/api', route => route.fulfill({ status: 200, body: 'mocked' }));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">How do you block certain URLs?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.route('**/*', route => route.abort());</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">How do you add HTTP headers to requests?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setExtraHTTPHeaders({ 'header': 'value' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How do you emulate offline mode?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.setOffline(true);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">How do you emulate a slow network?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.setNetworkConditions({ download: 100000, upload: 50000, latency: 200 });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">How do you capture network traffic?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('response', response => console.log(response.url()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">How do you capture network request bodies?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('request', request => request.postData());</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">How do you handle network failures?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('requestfailed', request => console.log(request.url()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">How do you handle redirects?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('response', response => response.url());</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">How do you check the status code of a network response?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('response', response => response.status());</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">How do you capture HTTP headers?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('request', request => console.log(request.headers()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How do you save the HAR file?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.routeFromHAR('example.har');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">How do you handle CSP (Content Security Policy)?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setExtraHTTPHeaders({ 'Content-Security-Policy': 'default-src "self"' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">How do you handle service workers?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.serviceWorkers();</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">How do you handle multiple downloads?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.waitForEvent('download');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">How do you capture a PDF of a page?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.pdf({ path: 'page.pdf' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">How do you add a script tag to a page?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.addScriptTag({ url: 'https://example.com/script.js' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you add a style tag to a page?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.addStyleTag({ content: 'body { background-color: red; }' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">How do you disable JavaScript in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.setJavaScriptEnabled(false);</code></div>
+                    </div>
+                </div>
+
+                <!-- Testing Section -->
+                <div class="category-header" id="testing">
+                    <span class="category-icon">🧪</span>
+                    <h2 class="category-title">Testing & Debugging</h2>
+                    <span class="question-count">Q76-90</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">How do you listen to console messages?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('console', msg => console.log(msg.text()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">How do you run tests in parallel?</span>
+                        </div>
+                        <div class="qa-answer">Use <code>test.parallel()</code> in the Playwright Test runner.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">How do you capture video of a test run?</span>
+                        </div>
+                        <div class="qa-answer"><code>await context.newPage({ recordVideo: { dir: 'videos/' } });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">How do you run a single test?</span>
+                        </div>
+                        <div class="qa-answer"><code>test.only('test name', async ({ page }) => { /* test code */ });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">How do you skip a test?</span>
+                        </div>
+                        <div class="qa-answer"><code>test.skip('test name', async ({ page }) => { /* test code */ });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">How do you mark a test as failing?</span>
+                        </div>
+                        <div class="qa-answer"><code>test.fail('test name', async ({ page }) => { /* test code */ });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">How do you take a screenshot on failure?</span>
+                        </div>
+                        <div class="qa-answer">Configure <code>screenshot: 'only-on-failure'</code> in the test config.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">How do you retry a failing test?</span>
+                        </div>
+                        <div class="qa-answer">Use <code>retries: 2</code> in the test config.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">How do you capture a trace of a test run?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.tracing.start({ screenshots: true, snapshots: true });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">How do you stop capturing a trace?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.tracing.stop({ path: 'trace.zip' });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">86</span>
+                            <span class="qa-question-text">How do you debug Playwright tests?</span>
+                        </div>
+                        <div class="qa-answer"><code>test('name', async ({ page }) => { await page.pause(); });</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">87</span>
+                            <span class="qa-question-text">How do you capture console logs?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('console', msg => console.log(msg.text()));</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">88</span>
+                            <span class="qa-question-text">How do you run Playwright tests headlessly?</span>
+                        </div>
+                        <div class="qa-answer">Launch the browser with <code>headless: true</code>.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">89</span>
+                            <span class="qa-question-text">How do you measure page load time?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.evaluate(() => performance.timing);</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">90</span>
+                            <span class="qa-question-text">How do you capture browser logs?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.on('console', msg => console.log(msg.text()));</code></div>
+                    </div>
+                </div>
+
+                <!-- Advanced Section -->
+                <div class="category-header" id="advanced">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Advanced Topics</h2>
+                    <span class="question-count">Q91-101</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">91</span>
+                            <span class="qa-question-text">How do you use Playwright with TypeScript?</span>
+                        </div>
+                        <div class="qa-answer">Install TypeScript and configure Playwright with TypeScript support.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">92</span>
+                            <span class="qa-question-text">How do you integrate Playwright with CI/CD pipelines?</span>
+                        </div>
+                        <div class="qa-answer">Use Playwright test runners and integrate with CI/CD tools like <strong>GitHub Actions</strong>, <strong>Jenkins</strong>, or <strong>CircleCI</strong>.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">93</span>
+                            <span class="qa-question-text">How do you record video of a test run?</span>
+                        </div>
+                        <div class="qa-answer">Configure <code>recordVideo</code> in the browser context options.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">94</span>
+                            <span class="qa-question-text">How do you blur an element in Playwright?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.blur('selector');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">95</span>
+                            <span class="qa-question-text">How do you handle form submission?</span>
+                        </div>
+                        <div class="qa-answer"><code>await page.click('form [type="submit"]');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">96</span>
+                            <span class="qa-question-text">How do you check if a checkbox is checked?</span>
+                        </div>
+                        <div class="qa-answer"><code>const isChecked = await page.isChecked('input[type="checkbox"]');</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">97</span>
+                            <span class="qa-question-text">What are Playwright's Actionability Checks?</span>
+                        </div>
+                        <div class="qa-answer">Playwright automatically checks if an element is <strong>Visible</strong>, <strong>Enabled</strong>, and <strong>Stable</strong> before performing any action. This prevents flaky tests.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">98</span>
+                            <span class="qa-question-text">What is the difference between page.click() and locator.click()?</span>
+                        </div>
+                        <div class="qa-answer"><code>page.click()</code> is deprecated. <code>locator.click()</code> is the modern approach that provides better auto-waiting and retry logic.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">99</span>
+                            <span class="qa-question-text">What are fixtures in Playwright?</span>
+                        </div>
+                        <div class="qa-answer">Fixtures are reusable pieces of test setup/teardown. Built-in fixtures include <code>page</code>, <code>context</code>, and <code>browser</code>.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">100</span>
+                            <span class="qa-question-text">How do you create a custom fixture in Playwright?</span>
+                        </div>
+                        <div class="qa-answer">Use <code>test.extend()</code> to define custom fixtures that can be used across tests.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">101</span>
+                            <span class="qa-question-text">What is Page Object Model (POM) in Playwright?</span>
+                        </div>
+                        <div class="qa-answer">POM is a design pattern where page elements and actions are encapsulated in classes, making tests more maintainable and reusable.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>101 Playwright Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
+

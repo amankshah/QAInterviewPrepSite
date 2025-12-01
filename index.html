@@ -567,6 +567,58 @@
                                     <td><strong><code>async</code>/<code>await</code></strong></td>
                                     <td>Syntax built on Promises that makes asynchronous code look synchronous. <strong><code>async</code></strong> defines a function; <strong><code>await</code></strong> pauses execution until the Promise resolves.</td>
                                 </tr>
+                                <tr>
+                                    <td><strong>Closure Use Case</strong></td>
+                                    <td>Common uses: <strong>Data privacy</strong> (private variables), <strong>Function factories</strong>, <strong>Event handlers</strong>, and <strong>Memoization</strong>. Example: <code>function counter() { let count = 0; return () => ++count; }</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>map()</code></strong></td>
+                                    <td>Creates a <strong>new array</strong> by applying a function to each element. Does NOT mutate the original. Example: <code>[1,2,3].map(x => x * 2)</code> returns <code>[2,4,6]</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>filter()</code></strong></td>
+                                    <td>Creates a <strong>new array</strong> with elements that pass a test (return true). Example: <code>[1,2,3,4].filter(x => x > 2)</code> returns <code>[3,4]</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>reduce()</code></strong></td>
+                                    <td>Reduces an array to a <strong>single value</strong> by applying a function. Takes an accumulator and current value. Example: <code>[1,2,3].reduce((acc, x) => acc + x, 0)</code> returns <code>6</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>forEach()</code> vs <code>map()</code></strong></td>
+                                    <td><code>forEach</code> executes a function for each element but returns <strong>undefined</strong>. <code>map</code> returns a <strong>new array</strong>. Use <code>map</code> when you need the transformed result.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>find()</code> / <code>findIndex()</code></strong></td>
+                                    <td><code>find()</code> returns the <strong>first element</strong> that matches. <code>findIndex()</code> returns the <strong>index</strong> of the first match, or -1 if not found.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>some()</code> / <code>every()</code></strong></td>
+                                    <td><code>some()</code> returns <code>true</code> if <strong>at least one</strong> element passes the test. <code>every()</code> returns <code>true</code> only if <strong>all</strong> elements pass.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Arrow Functions</strong></td>
+                                    <td>Shorter syntax: <code>const add = (a, b) => a + b;</code>. Key difference: Arrow functions do <strong>NOT have their own <code>this</code></strong>; they inherit from the enclosing scope.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Spread Operator (<code>...</code>)</strong></td>
+                                    <td>Expands iterables into individual elements. Use cases: <strong>Copy arrays</strong> <code>[...arr]</code>, <strong>Merge objects</strong> <code>{...obj1, ...obj2}</code>, <strong>Function args</strong> <code>func(...args)</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Destructuring</strong></td>
+                                    <td>Extract values from arrays/objects. Array: <code>const [a, b] = [1, 2];</code> Object: <code>const {name, age} = person;</code>. Great for cleaner code.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Higher-Order Function</strong></td>
+                                    <td>A function that <strong>takes a function as argument</strong> OR <strong>returns a function</strong>. Examples: <code>map</code>, <code>filter</code>, <code>reduce</code>, custom decorators.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Callback Function</strong></td>
+                                    <td>A function passed as an argument to another function, executed after some operation. Example: <code>setTimeout(() => console.log('Hi'), 1000);</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Method Chaining</strong></td>
+                                    <td>Calling multiple methods in sequence. Example: <code>arr.filter(x => x > 0).map(x => x * 2).reduce((a, b) => a + b, 0)</code></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
