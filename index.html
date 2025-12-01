@@ -1,1 +1,393 @@
-Hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA, Automation, Git, and Interview Preparation Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #004d40;
+            text-align: center;
+            border-bottom: 3px solid #004d40;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #00796b;
+            margin-top: 30px;
+            border-bottom: 2px solid #00796b;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #009688;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0f2f1;
+            color: #004d40;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .note {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>QA, Automation, Git, and Interview Preparation Guide</h1>
+
+    <div class="note">
+        This HTML document contains all the cheat sheets and interview questions compiled from your files. You can save this code as an `.html` file and open it in any browser.
+    </div>
+
+    <h2>1. Core QA Testing Terminology & Life Cycles</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Concept</th>
+                <th>Key Definition / Takeaway</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Software Testing</strong></td>
+                <td>Process of evaluating and verifying that software meets specified requirements and works as intended to deliver business value.</td>
+            </tr>
+            <tr>
+                <td><strong>Verification</strong></td>
+                <td>"Are we building the product right?" Ensures product conforms to specifications. It is a <strong>static process</strong> (e.g., reviews, inspections).</td>
+            </tr>
+            <tr>
+                <td><strong>Validation</strong></td>
+                <td>"Are we building the right product?" Ensures the product meets user/customer needs. It is a <strong>dynamic process</strong> (e.g., execution, UAT).</td>
+            </tr>
+            <tr>
+                <td><strong>SDLC (Software Development Life Cycle)</strong></td>
+                <td>The entire process: Planning, Design, Implementation, Testing, Deployment, Maintenance.</td>
+            </tr>
+            <tr>
+                <td><strong>STLC (Software Testing Life Cycle)</strong></td>
+                <td>The testing phase cycle: Requirements Analysis, Test Planning, Test Case Development, Environment Setup, Execution, Closure.</td>
+            </tr>
+            <tr>
+                <td><strong>Black Box Testing</strong></td>
+                <td>Testing the **functionality** without knowing the internal code structure (Behavioral Testing).</td>
+            </tr>
+            <tr>
+                <td><strong>White Box Testing</strong></td>
+                <td>Testing the **internal code structure** and logic (Structural Testing).</td>
+            </tr>
+            <tr>
+                <td><strong>Non-Functional Requirement</strong></td>
+                <td>Specifies *how* the system **SHOULD BE** (e.g., Performance, Security, Reliability, Usability).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2. Defect Management: Priority vs. Severity</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Definition</th>
+                <th>Perspective</th>
+                <th>Common High Levels</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Severity</strong></td>
+                <td>The seriousness or technical impact of the bug on the system's functionality.</td>
+                <td><strong>Application POV</strong></td>
+                <td><strong>Critical:</strong> App crash/data loss. <strong>High:</strong> Major function fails.</td>
+            </tr>
+            <tr>
+                <td><strong>Priority</strong></td>
+                <td>The order in which the bug should be fixed, based on business impact and urgency.</td>
+                <td><strong>User/Business POV</strong></td>
+                <td><strong>Immediate:</strong> Must be fixed in the next build. <strong>High:</strong> Should be fixed soon.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Example Scenarios</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Scenario</th>
+                <th>Severity</th>
+                <th>Priority</th>
+                <th>Reasoning</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Payment button is slightly misaligned (cosmetic).</td>
+                <td>Low</td>
+                <td>High</td>
+                <td>Low technical impact, but high business urgency (affects user checkout).</td>
+            </tr>
+            <tr>
+                <td>Application crashes on a hidden admin report page.</td>
+                <td>Critical</td>
+                <td>Low</td>
+                <td>High technical impact, but low user exposure/business urgency.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>3. Git & GitHub Essential Commands</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Command Category</th>
+                <th>Command</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Setup</strong></td>
+                <td><code>git init</code></td>
+                <td>Initializes a new local Git repository.</td>
+            </tr>
+            <tr>
+                <td><strong>Staging</strong></td>
+                <td><code>git add .</code></td>
+                <td>Stages all modified and new files for the next commit.</td>
+            </tr>
+            <tr>
+                <td><strong>Commit</strong></td>
+                <td><code>git commit -m "message"</code></td>
+                <td>Records the staged snapshot permanently in the history.</td>
+            </tr>
+            <tr>
+                <td><strong>Branching</strong></td>
+                <td><code>git checkout -b &lt;branch-name&gt;</code></td>
+                <td>Creates a new branch and switches to it.</td>
+            </tr>
+            <tr>
+                <td><strong>Synchronization</strong></td>
+                <td><code>git pull</code></td>
+                <td>Fetches and merges changes from the remote repository.</td>
+            </tr>
+            <tr>
+                <td><strong>Undoing (Safe)</strong></td>
+                <td><code>git revert &lt;commit-hash&gt;</code></td>
+                <td>Creates a **new commit** that reverses the changes of a prior commit. **Use for public branches.**</td>
+            </tr>
+            <tr>
+                <td><strong>Undoing (Destructive)</strong></td>
+                <td><code>git reset --hard HEAD~1</code></td>
+                <td>Discards the last commit AND any local changes. Rewrites history. **Use for local, un-pushed commits.**</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Playwright Core API & Automation</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Action / Feature</th>
+                <th>Playwright Command (JavaScript)</th>
+                <th>Key Detail / Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Navigation</strong></td>
+                <td><code>await page.goto('url');</code></td>
+                <td>Navigates to a URL. Waits for the page to load by default.</td>
+            </tr>
+            <tr>
+                <td><strong>Interaction</strong></td>
+                <td><code>await page.click('selector');</code></td>
+                <td>Clicks an element. Automatically performs **actionability checks**.</td>
+            </tr>
+            <tr>
+                <td><strong>Input</strong></td>
+                <td><code>await page.fill('selector', 'text');</code></td>
+                <td>Fills an input field with text.</td>
+            </tr>
+            <tr>
+                <td><strong>Wait (Explicit)</strong></td>
+                <td><code>await page.waitForSelector('selector');</code></td>
+                <td>Waits for an element to appear in the DOM.</td>
+            </tr>
+            <tr>
+                <td><strong>Debugging</strong></td>
+                <td><code>await page.pause();</code></td>
+                <td>Pauses the test execution and launches the Playwright Inspector.</td>
+            </tr>
+            <tr>
+                <td><strong>Actionability</strong></td>
+                <td>N/A (Automatic)</td>
+                <td>Playwright checks if the element is **Visible**, **Enabled**, and **Stable** before acting, ensuring reliability.</td>
+            </tr>
+            <tr>
+                <td><strong>Handling Popups</strong></td>
+                <td><code>page.on('popup', popup => { /* handle popup */ });</code></td>
+                <td>Used to handle new browser windows/tabs.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>5. XPath and CSS Selectors for Locating Elements</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Locator Type</th>
+                <th>Technique</th>
+                <th>Example Syntax</th>
+                <th>When to Use</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>CSS Selector</strong></td>
+                <td>ID</td>
+                <td><code>input#username</code> or <code>#usernameField</code></td>
+                <td>**Preferred for speed and stability.**</td>
+            </tr>
+            <tr>
+                <td><strong>CSS Selector</strong></td>
+                <td>Attribute Contains</td>
+                <td><code>input[name*='user']</code></td>
+                <td>Good for dynamic IDs (where the attribute value contains a substring).</td>
+            </tr>
+            <tr>
+                <td><strong>XPath</strong></td>
+                <td>By Visible Text</td>
+                <td><code>//button[text()='Submit']</code></td>
+                <td>Locating an element by its exact visible text.</td>
+            </tr>
+            <tr>
+                <td><strong>XPath</strong></td>
+                <td>Navigation</td>
+                <td><code>//div/..</code></td>
+                <td>**Necessary for navigating backward** to a parent element in the DOM.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>6. Jira Project Management & JQL</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Concept</th>
+                <th>Definition / Key Use</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Jira Software</strong></td>
+                <td>Project management tool mainly used for **issue tracking** and Agile development (Scrum/Kanban).</td>
+            </tr>
+            <tr>
+                <td><strong>Issue</strong></td>
+                <td>The fundamental work item (Bug, Task, Story, Epic, Requirement).</td>
+            </tr>
+            <tr>
+                <td><strong>Scrum Board</strong></td>
+                <td>Uses **Sprints** (time-boxed iterations) for planning and tracking work.</td>
+            </tr>
+            <tr>
+                <td><strong>Kanban Board</strong></td>
+                <td>Focuses on **continuous flow** and limiting work-in-progress (WIP).</td>
+            </tr>
+            <tr>
+                <td><strong>JQL (Jira Query Language)</strong></td>
+                <td>Used for advanced searching and filtering of issues.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>7. Essential JavaScript Interview Concepts 📜</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Concept</th>
+                <th>Simple Definition / Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Closure</strong></td>
+                <td>A function that retains access to its lexical scope (variables from its outer function), even after the outer function has finished execution.</td>
+            </tr>
+            <tr>
+                <td><strong>`var`, `let`, `const`</strong></td>
+                <td>**`var`** is function-scoped; **`let`** and **`const`** are **block-scoped**. `const` cannot be re-assigned.</td>
+            </tr>
+            <tr>
+                <td><strong>`==` vs. `===`</strong></td>
+                <td>**`==`** (Loose) checks value after performing **type coercion**. **`===`** (Strict) checks for both value AND **type**. **Always use `===`**.</td>
+            </tr>
+            <tr>
+                <td><strong>Hoisting</strong></td>
+                <td>The behavior where all **declarations** (of variables and functions) are moved to the top of their scope during compilation.</td>
+            </tr>
+            <tr>
+                <td><strong>Promise</strong></td>
+                <td>An object representing the eventual completion or failure of an **asynchronous** operation. States: **pending**, **fulfilled**, or **rejected**.</td>
+            </tr>
+            <tr>
+                <td><strong>`async`/`await`</strong></td>
+                <td>Syntax built on Promises that makes asynchronous code look synchronous. **`async`** defines a function; **`await`** pauses execution until the Promise resolves.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>8. Advanced/Tricky QA Interview Questions 🧠</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Recommended Answer Framework</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>How do you handle a bug a Developer claims is "Not a Bug"?</strong></td>
+                <td>1. **Re-verify** and replicate. 2. **Document** clearly (video/logs). 3. **Cite Requirement** or specific business logic being violated. 4. **Escalate** to PO/QA Lead for decision.</td>
+            </tr>
+            <tr>
+                <td><strong>Difference between Git Merge and Git Rebase?</strong></td>
+                <td>**Merge:** Preserves history, creates a merge commit. **Rebase:** Rewrites history for a clean, linear log. **Rule:** Rebase only on local branches; Merge on public/shared branches.</td>
+            </tr>
+            <tr>
+                <td><strong>Explain Playwright's Actionability Checks.</strong></td>
+                <td>Playwright automatically checks if an element is **Visible, Enabled, and Stable** before executing an action. This prevents common race conditions and flaky tests.</td>
+            </tr>
+            <tr>
+                <td><strong>How do you test Search Functionality?</strong></td>
+                <td>Test **Functional** (exact/partial match, negative testing), **Performance** (search speed), and **Usability** (autocomplete, relevance/ranking).</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
