@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="70+ Git Interview Questions and Answers - Complete preparation guide for version control">
+    <meta name="theme-color" content="#2563eb">
+    <title>Git Interview Questions - 70+ Q&A | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    <style>
+        /* Page-specific styles */
+        .qa-grid {
+            display: grid;
+            gap: 16px;
+        }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text {
+            flex: 1;
+        }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #f97316;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type {
+            margin-top: 0;
+        }
+        .category-icon {
+            font-size: 1.5rem;
+        }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #ea580c;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--primary-600);
+        }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f97316, #ea580c);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav {
+            margin-top: 0;
+        }
+        .question-count {
+            background: #f97316;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer {
+                margin-left: 0;
+                margin-top: 8px;
+            }
+            .qa-question {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .qa-number {
+                margin-right: 0;
+            }
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .category-header {
+                scroll-margin-top: 130px;
+            }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>🔀 Git Interview Questions</h1>
+            <p class="subtitle">70+ comprehensive questions covering Git basics, branching, merging, rebasing, conflict resolution, and advanced Git workflows.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#basics">🚀 Basics</a>
+                <a class="chip" href="#branching">🌿 Branching</a>
+                <a class="chip" href="#merge-rebase">🔄 Merge & Rebase</a>
+                <a class="chip" href="#remote">☁️ Remote</a>
+                <a class="chip" href="#conflicts">⚠️ Conflicts</a>
+                <a class="chip" href="#advanced">⚡ Advanced</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Basics Section -->
+                <div class="category-header" id="basics">
+                    <span class="category-icon">🚀</span>
+                    <h2 class="category-title">Git Basics</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Git?</span>
+                        </div>
+                        <div class="qa-answer">Git is a <strong>distributed version control system</strong> used to track changes in source code during software development. It allows multiple developers to work together on non-linear development.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What is the difference between Git and GitHub?</span>
+                        </div>
+                        <div class="qa-answer"><strong>Git</strong> is a version control system (software). <strong>GitHub</strong> is a cloud-based hosting service for Git repositories (platform).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">What is a Git repository?</span>
+                        </div>
+                        <div class="qa-answer">A Git repository is a storage location for your project that contains all files, history, and metadata. It can be local (on your machine) or remote (on a server like GitHub).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">How do you initialize a Git repository?</span>
+                        </div>
+                        <div class="qa-answer"><code>git init</code> - Creates a new Git repository in the current directory.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What is the staging area in Git?</span>
+                        </div>
+                        <div class="qa-answer">The staging area (or index) is an intermediate area where changes are collected before committing. Use <code>git add</code> to stage files.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">How do you check the status of your repository?</span>
+                        </div>
+                        <div class="qa-answer"><code>git status</code> - Shows the state of the working directory and staging area.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">How do you stage files in Git?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git add &lt;filename&gt;</code> - Stage a specific file<br>
+                            <code>git add .</code> - Stage all changes in the current directory
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">How do you commit changes in Git?</span>
+                        </div>
+                        <div class="qa-answer"><code>git commit -m "message"</code> - Records staged changes with a descriptive message.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">What is a commit in Git?</span>
+                        </div>
+                        <div class="qa-answer">A commit is a snapshot of your repository at a specific point in time. It includes a unique SHA hash, author info, timestamp, and commit message.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">How do you view commit history?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git log</code> - Shows commit history<br>
+                            <code>git log --oneline</code> - Compact view<br>
+                            <code>git log --graph</code> - Visual branch graph
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">How do you unstage a file?</span>
+                        </div>
+                        <div class="qa-answer"><code>git reset &lt;filename&gt;</code> or <code>git restore --staged &lt;filename&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">How do you discard changes in working directory?</span>
+                        </div>
+                        <div class="qa-answer"><code>git checkout -- &lt;filename&gt;</code> or <code>git restore &lt;filename&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">What is .gitignore?</span>
+                        </div>
+                        <div class="qa-answer">A <code>.gitignore</code> file specifies intentionally untracked files that Git should ignore (e.g., build files, dependencies, secrets).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">How do you clone a repository?</span>
+                        </div>
+                        <div class="qa-answer"><code>git clone &lt;repository-url&gt;</code> - Creates a local copy of a remote repository.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">What is HEAD in Git?</span>
+                        </div>
+                        <div class="qa-answer">HEAD is a pointer to the current branch reference, which points to the last commit in the current branch.</div>
+                    </div>
+                </div>
+
+                <!-- Branching Section -->
+                <div class="category-header" id="branching">
+                    <span class="category-icon">🌿</span>
+                    <h2 class="category-title">Branching & Branch Management</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">What is a branch in Git?</span>
+                        </div>
+                        <div class="qa-answer">A branch is an independent line of development. It's a pointer to a specific commit, allowing you to work on features without affecting the main codebase.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">How do you create a new branch?</span>
+                        </div>
+                        <div class="qa-answer"><code>git branch &lt;branch-name&gt;</code> - Creates a new branch<br><code>git checkout -b &lt;branch-name&gt;</code> - Creates and switches to the new branch</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">How do you switch between branches?</span>
+                        </div>
+                        <div class="qa-answer"><code>git checkout &lt;branch-name&gt;</code> or <code>git switch &lt;branch-name&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">How do you list all branches?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git branch</code> - List local branches<br>
+                            <code>git branch -a</code> - List all (local + remote) branches<br>
+                            <code>git branch -r</code> - List remote branches only
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">How do you delete a branch?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git branch -d &lt;branch-name&gt;</code> - Delete merged branch (safe)<br>
+                            <code>git branch -D &lt;branch-name&gt;</code> - Force delete (even if unmerged)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">How do you rename a branch?</span>
+                        </div>
+                        <div class="qa-answer"><code>git branch -m &lt;old-name&gt; &lt;new-name&gt;</code><br>Or if you're on the branch: <code>git branch -m &lt;new-name&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What is the default branch in Git?</span>
+                        </div>
+                        <div class="qa-answer">Traditionally <code>master</code>, but modern repositories use <code>main</code> as the default branch name.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">What is a detached HEAD state?</span>
+                        </div>
+                        <div class="qa-answer">When HEAD points directly to a commit instead of a branch. This happens when you checkout a specific commit. Any new commits won't belong to any branch.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">How do you see which branch you're currently on?</span>
+                        </div>
+                        <div class="qa-answer"><code>git branch</code> (current branch is marked with *) or <code>git status</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">What is a feature branch?</span>
+                        </div>
+                        <div class="qa-answer">A branch created for developing a specific feature. Once complete, it's merged back into the main branch and deleted.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">What is Git Flow?</span>
+                        </div>
+                        <div class="qa-answer">A branching model that uses multiple branch types: <strong>main</strong> (production), <strong>develop</strong> (integration), <strong>feature</strong>, <strong>release</strong>, and <strong>hotfix</strong> branches.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">How do you check the differences between branches?</span>
+                        </div>
+                        <div class="qa-answer"><code>git diff branch1..branch2</code> or <code>git diff branch1 branch2</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">What is an orphan branch?</span>
+                        </div>
+                        <div class="qa-answer">A branch with no commit history, created using <code>git checkout --orphan &lt;branch-name&gt;</code>. Often used for GitHub Pages.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">How do you compare your current branch with another?</span>
+                        </div>
+                        <div class="qa-answer"><code>git diff &lt;other-branch&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">What is branch pruning?</span>
+                        </div>
+                        <div class="qa-answer">Removing references to remote branches that have been deleted. Use <code>git fetch --prune</code> or <code>git remote prune origin</code>.</div>
+                    </div>
+                </div>
+
+                <!-- Merge & Rebase Section -->
+                <div class="category-header" id="merge-rebase">
+                    <span class="category-icon">🔄</span>
+                    <h2 class="category-title">Merge & Rebase</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What is git merge?</span>
+                        </div>
+                        <div class="qa-answer">Combines changes from one branch into another, creating a merge commit. Preserves complete history.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">How do you merge a branch?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Switch to target branch: <code>git checkout main</code><br>
+                            2. Merge: <code>git merge feature-branch</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What is a fast-forward merge?</span>
+                        </div>
+                        <div class="qa-answer">When the target branch hasn't diverged, Git simply moves the pointer forward. No merge commit is created. Use <code>--no-ff</code> to force a merge commit.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What is git rebase?</span>
+                        </div>
+                        <div class="qa-answer">Moves or combines commits to a new base commit, creating a linear history. Rewrites commit history.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">What's the difference between merge and rebase?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Merge:</strong> Preserves history, creates merge commits<br>
+                            <strong>Rebase:</strong> Rewrites history, creates linear timeline<br>
+                            <strong>Rule:</strong> Never rebase public/shared branches
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">How do you perform a rebase?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Switch to feature branch: <code>git checkout feature</code><br>
+                            2. Rebase onto main: <code>git rebase main</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">What is interactive rebase?</span>
+                        </div>
+                        <div class="qa-answer"><code>git rebase -i HEAD~n</code> - Allows you to edit, squash, reorder, or drop commits.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">How do you abort a merge?</span>
+                        </div>
+                        <div class="qa-answer"><code>git merge --abort</code> - Returns to state before merge started.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">How do you abort a rebase?</span>
+                        </div>
+                        <div class="qa-answer"><code>git rebase --abort</code> - Cancels the rebase operation.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">What is cherry-pick?</span>
+                        </div>
+                        <div class="qa-answer"><code>git cherry-pick &lt;commit-hash&gt;</code> - Applies a specific commit from one branch to another.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">What is squash in Git?</span>
+                        </div>
+                        <div class="qa-answer">Combining multiple commits into a single commit. Use <code>git merge --squash</code> or during interactive rebase.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">When should you use merge vs rebase?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Use Merge:</strong> For public/shared branches, preserving history<br>
+                            <strong>Use Rebase:</strong> For local/feature branches, clean linear history
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">What is a three-way merge?</span>
+                        </div>
+                        <div class="qa-answer">Git finds a common ancestor and merges changes from both branches, creating a merge commit.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">How do you continue a rebase after resolving conflicts?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Resolve conflicts in files<br>
+                            2. <code>git add &lt;resolved-files&gt;</code><br>
+                            3. <code>git rebase --continue</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">What is git revert vs git reset?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>revert:</strong> Creates new commit that undoes changes (safe for shared branches)<br>
+                            <strong>reset:</strong> Moves HEAD backward, rewriting history (use only on local branches)
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remote Section -->
+                <div class="category-header" id="remote">
+                    <span class="category-icon">☁️</span>
+                    <h2 class="category-title">Remote Repositories</h2>
+                    <span class="question-count">Q46-55</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What is a remote repository?</span>
+                        </div>
+                        <div class="qa-answer">A version of your repository hosted on a server (like GitHub, GitLab). It enables collaboration.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">How do you add a remote repository?</span>
+                        </div>
+                        <div class="qa-answer"><code>git remote add origin &lt;url&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you view remote repositories?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git remote</code> - List remotes<br>
+                            <code>git remote -v</code> - List with URLs
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What is git fetch?</span>
+                        </div>
+                        <div class="qa-answer">Downloads commits, files, and refs from a remote repository but doesn't merge them. Use <code>git fetch</code>.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">What is git pull?</span>
+                        </div>
+                        <div class="qa-answer"><code>git pull = git fetch + git merge</code>. Downloads and merges changes from remote.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">What is git push?</span>
+                        </div>
+                        <div class="qa-answer">Uploads local commits to a remote repository. <code>git push origin main</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">What is origin in Git?</span>
+                        </div>
+                        <div class="qa-answer">The default name Git gives to the remote repository you cloned from.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">How do you push a new branch to remote?</span>
+                        </div>
+                        <div class="qa-answer"><code>git push -u origin &lt;branch-name&gt;</code><br>The <code>-u</code> flag sets upstream tracking.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">How do you delete a remote branch?</span>
+                        </div>
+                        <div class="qa-answer"><code>git push origin --delete &lt;branch-name&gt;</code><br>or <code>git push origin :&lt;branch-name&gt;</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">What is the difference between fetch and pull?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>fetch:</strong> Downloads changes but doesn't merge<br>
+                            <strong>pull:</strong> Downloads and automatically merges changes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conflicts Section -->
+                <div class="category-header" id="conflicts">
+                    <span class="category-icon">⚠️</span>
+                    <h2 class="category-title">Conflict Resolution</h2>
+                    <span class="question-count">Q56-65</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">What is a merge conflict?</span>
+                        </div>
+                        <div class="qa-answer">Occurs when Git can't automatically resolve differences between two commits (usually when same lines are modified).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How do you resolve a merge conflict?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Open conflicted files<br>
+                            2. Look for conflict markers: <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code><br>
+                            3. Edit to resolve<br>
+                            4. <code>git add &lt;file&gt;</code><br>
+                            5. <code>git commit</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">What do the conflict markers mean?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>: Your current branch changes<br>
+                            <code>=======</code>: Separator<br>
+                            <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; branch-name</code>: Incoming branch changes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">How do you see which files have conflicts?</span>
+                        </div>
+                        <div class="qa-answer"><code>git status</code> - Shows "both modified" for conflicted files.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How do you abort a merge with conflicts?</span>
+                        </div>
+                        <div class="qa-answer"><code>git merge --abort</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">What tools can help resolve conflicts?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git mergetool</code> - Opens configured merge tool<br>
+                            IDEs like VS Code, IntelliJ have built-in conflict resolvers
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">How do you accept all changes from one branch?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>git checkout --ours &lt;file&gt;</code> - Keep your changes<br>
+                            <code>git checkout --theirs &lt;file&gt;</code> - Accept incoming changes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">What causes merge conflicts?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Same lines modified in both branches<br>
+                            - File deleted in one branch, modified in another<br>
+                            - Binary file changes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">How can you prevent merge conflicts?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Pull frequently from main branch<br>
+                            - Keep branches short-lived<br>
+                            - Communicate with team<br>
+                            - Use small, focused commits
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">What is git rerere?</span>
+                        </div>
+                        <div class="qa-answer">"Reuse Recorded Resolution" - Git remembers how you resolved conflicts and can automatically resolve similar conflicts in the future.</div>
+                    </div>
+                </div>
+
+                <!-- Advanced Section -->
+                <div class="category-header" id="advanced">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Advanced Topics</h2>
+                    <span class="question-count">Q66-70</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">What is git stash?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Temporarily saves uncommitted changes. Useful when you need to switch branches.<br>
+                            <code>git stash</code> - Save changes<br>
+                            <code>git stash pop</code> - Restore and remove<br>
+                            <code>git stash list</code> - View stashes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">What is git reflog?</span>
+                        </div>
+                        <div class="qa-answer">Records all updates to HEAD. Useful for recovering lost commits. <code>git reflog</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">What is git bisect?</span>
+                        </div>
+                        <div class="qa-answer">Binary search tool to find which commit introduced a bug. <code>git bisect start</code>, mark commits as good/bad.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">What is git tag?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Marks specific points in history (usually releases).<br>
+                            <code>git tag v1.0.0</code> - Lightweight tag<br>
+                            <code>git tag -a v1.0.0 -m "message"</code> - Annotated tag
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">What are Git hooks?</span>
+                        </div>
+                        <div class="qa-answer">Scripts that run automatically at certain Git events (pre-commit, post-commit, pre-push). Located in <code>.git/hooks/</code>.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>70 Git Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

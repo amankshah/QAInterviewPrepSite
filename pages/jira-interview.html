@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Jira Interview Questions and Answers - Complete preparation guide for project management and agile workflows">
+    <meta name="theme-color" content="#2563eb">
+    <title>Jira Interview Questions | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #0ea5e9;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0284c7;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #0ea5e9, #0284c7);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav { margin-top: 0; }
+        .question-count {
+            background: #0ea5e9;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .category-header { scroll-margin-top: 130px; }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>📋 Jira Interview Questions</h1>
+            <p class="subtitle">Comprehensive questions covering Jira basics, project management, workflows, agile methodologies, JQL, and best practices.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#basics">🎯 Basics</a>
+                <a class="chip" href="#projects">📁 Projects</a>
+                <a class="chip" href="#workflows">🔄 Workflows</a>
+                <a class="chip" href="#agile">🏃 Agile</a>
+                <a class="chip" href="#jql">🔍 JQL</a>
+                <a class="chip" href="#advanced">⚡ Advanced</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Basics -->
+                <div class="category-header" id="basics">
+                    <span class="category-icon">🎯</span>
+                    <h2 class="category-title">Jira Basics</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Jira?</span>
+                        </div>
+                        <div class="qa-answer">Jira is a project management and issue tracking tool developed by Atlassian. It's widely used for Agile development (Scrum/Kanban), bug tracking, and task management.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What are the main products in the Jira family?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Jira Software:</strong> For software development teams<br>
+                            <strong>Jira Service Management:</strong> For IT service management<br>
+                            <strong>Jira Work Management:</strong> For business teams<br>
+                            <strong>Jira Align:</strong> For enterprise agile planning
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">What is an Issue in Jira?</span>
+                        </div>
+                        <div class="qa-answer">An issue is the fundamental work item in Jira. It can be a bug, task, story, epic, sub-task, or custom issue type.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">What are the default issue types in Jira?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Epic:</strong> Large body of work<br>
+                            <strong>Story:</strong> User requirement<br>
+                            <strong>Task:</strong> Work item<br>
+                            <strong>Bug:</strong> Defect<br>
+                            <strong>Sub-task:</strong> Breakdown of a parent issue
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What is the difference between a Task and a Story?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Story:</strong> Describes a feature from user's perspective ("As a user...")<br>
+                            <strong>Task:</strong> Generic work item not necessarily user-facing
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">What is an Epic in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A large user story that can be broken down into smaller stories. Epics span multiple sprints and represent significant features or initiatives.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">What are Components in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Components are sub-sections of a project used to group issues by functionality, module, or team (e.g., UI, Backend, Database).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">What are Labels in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Labels are keywords or tags that can be added to issues for flexible categorization and filtering. Unlike components, labels can be created on-the-fly.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">What is Priority in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Priority indicates the importance/urgency of an issue. Default priorities: Highest, High, Medium, Low, Lowest.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">What is Status in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Status represents where an issue is in the workflow (e.g., To Do, In Progress, Done). Statuses are defined in workflows.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">What is Resolution in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Resolution indicates how an issue was closed: Fixed, Won't Fix, Duplicate, Cannot Reproduce, Done, etc.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What are Story Points?</span>
+                        </div>
+                        <div class="qa-answer">A relative measure of effort/complexity for user stories. Used in Agile estimation (often using Fibonacci: 1, 2, 3, 5, 8, 13...).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">What is a Filter in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A saved search query (usually JQL) that can be reused and shared with team members.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">What is a Dashboard in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A customizable page displaying gadgets (charts, filters, statistics) providing project insights at a glance.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">What are Jira Permissions?</span>
+                        </div>
+                        <div class="qa-answer">Permissions control what users can do in a project (create issues, edit issues, delete, admin, etc.). Managed through permission schemes.</div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="category-header" id="projects">
+                    <span class="category-icon">📁</span>
+                    <h2 class="category-title">Projects & Configuration</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">What is a Jira Project?</span>
+                        </div>
+                        <div class="qa-answer">A project is a collection of issues. It has a unique key (e.g., PROJ), workflows, permissions, and can be either team-managed or company-managed.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">What's the difference between Company-managed and Team-managed projects?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Company-managed:</strong> Shared configuration, more complex, requires admin rights<br>
+                            <strong>Team-managed:</strong> Simplified, independent configuration, team can self-manage
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What is a Project Key?</span>
+                        </div>
+                        <div class="qa-answer">A unique identifier (2-10 uppercase letters) used as a prefix for issue keys. Example: PROJ-123.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">What are Schemes in Jira?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Reusable configuration sets:
+                            - <strong>Workflow Scheme:</strong> Maps issue types to workflows<br>
+                            - <strong>Permission Scheme:</strong> Defines user permissions<br>
+                            - <strong>Notification Scheme:</strong> Defines email notifications<br>
+                            - <strong>Issue Type Scheme:</strong> Defines available issue types
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">What is a Custom Field?</span>
+                        </div>
+                        <div class="qa-answer">Additional fields created beyond default Jira fields (e.g., Test Environment, Customer Name). Can be text, dropdown, date, etc.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">What are Project Roles?</span>
+                        </div>
+                        <div class="qa-answer">Flexible way to group users within a project (Administrators, Developers, Users). Used in permission schemes.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What is an Issue Link?</span>
+                        </div>
+                        <div class="qa-answer">A relationship between two issues (Blocks, Duplicates, Relates to, Caused by). Helps track dependencies.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">What is a Version in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Represents a release of your product. Issues can be assigned to versions for release planning and tracking.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">What is the difference between Fix Version and Affects Version?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Affects Version:</strong> Version where bug was found<br>
+                            <strong>Fix Version:</strong> Version where fix will be released
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">What are Watchers in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Users who want to receive notifications about issue updates without being assigned to it.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">What is Time Tracking in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Feature to log work hours, track original estimates, remaining estimates, and time spent on issues.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">What are Sub-tasks?</span>
+                        </div>
+                        <div class="qa-answer">Smaller pieces of work that are part of a parent issue. Help break down complex tasks.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">What is Bulk Change in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Feature to edit, transition, or delete multiple issues at once using search results.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">What are Issue Collectors?</span>
+                        </div>
+                        <div class="qa-answer">Widget embedded in websites allowing users to create Jira issues directly from web pages.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">What is Jira Administration?</span>
+                        </div>
+                        <div class="qa-answer">System-level configuration including user management, global permissions, custom fields, schemes, and system settings. Requires Jira Administrator permission.</div>
+                    </div>
+                </div>
+
+                <!-- Workflows -->
+                <div class="category-header" id="workflows">
+                    <span class="category-icon">🔄</span>
+                    <h2 class="category-title">Workflows</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What is a Workflow in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A workflow defines the lifecycle of an issue through various statuses (To Do → In Progress → Done). It consists of statuses and transitions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">What are Workflow Statuses?</span>
+                        </div>
+                        <div class="qa-answer">The stages an issue passes through (Open, In Progress, Resolved, Closed). Statuses belong to categories: To Do, In Progress, Done.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What are Workflow Transitions?</span>
+                        </div>
+                        <div class="qa-answer">Links between statuses that define how an issue moves through the workflow (Start Progress, Resolve, Reopen).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What are Workflow Conditions?</span>
+                        </div>
+                        <div class="qa-answer">Rules that control WHO can execute a transition (e.g., only assignee can resolve, only developers can start progress).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">What are Workflow Validators?</span>
+                        </div>
+                        <div class="qa-answer">Check if the transition can proceed (e.g., all sub-tasks must be resolved, required fields must be filled).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">What are Workflow Post Functions?</span>
+                        </div>
+                        <div class="qa-answer">Actions that happen AFTER a transition (assign to current user, add comment, send notification, update field).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">What is a Global Transition?</span>
+                        </div>
+                        <div class="qa-answer">A transition available from ANY status in the workflow (e.g., Close issue from any state).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">Can you have different workflows for different issue types?</span>
+                        </div>
+                        <div class="qa-answer">Yes! Workflow schemes map issue types to specific workflows. Bugs might have a different workflow than Stories.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">What is the default Jira workflow?</span>
+                        </div>
+                        <div class="qa-answer">Simple workflow: Open → In Progress → Resolved → Closed (with Reopen option).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">What is workflow Draft mode?</span>
+                        </div>
+                        <div class="qa-answer">Allows editing active workflows without immediately affecting projects. Publish when ready.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">What happens to issues when you change a workflow?</span>
+                        </div>
+                        <div class="qa-answer">Issues in statuses that don't exist in new workflow need to be migrated. Jira provides a migration wizard.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">What is Transition Screen?</span>
+                        </div>
+                        <div class="qa-answer">A form shown during a transition where users can edit fields (e.g., add resolution when resolving).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">What are Workflow Properties?</span>
+                        </div>
+                        <div class="qa-answer">Key-value pairs that can be attached to workflows, statuses, or transitions for advanced configurations.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">Can workflows be shared across projects?</span>
+                        </div>
+                        <div class="qa-answer">Yes! Workflows can be reused in multiple projects through workflow schemes.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">What is a Looping Transition?</span>
+                        </div>
+                        <div class="qa-answer">A transition that returns an issue to the same status (e.g., Needs More Info → Open → Needs More Info).</div>
+                    </div>
+                </div>
+
+                <!-- Agile -->
+                <div class="category-header" id="agile">
+                    <span class="category-icon">🏃</span>
+                    <h2 class="category-title">Agile & Boards</h2>
+                    <span class="question-count">Q46-60</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What is a Scrum Board in Jira?</span>
+                        </div>
+                        <div class="qa-answer">An Agile board for teams using Scrum methodology with sprints, backlog, and burndown charts.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">What is a Kanban Board in Jira?</span>
+                        </div>
+                        <div class="qa-answer">An Agile board for continuous flow work without sprints. Focuses on WIP limits and cycle time.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">What's the difference between Scrum and Kanban boards?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Scrum:</strong> Time-boxed sprints, sprint planning, velocity<br>
+                            <strong>Kanban:</strong> Continuous flow, WIP limits, cycle time
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What is a Sprint in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A time-boxed iteration (usually 1-4 weeks) where a team commits to completing a set of issues.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">What is the Backlog in Jira?</span>
+                        </div>
+                        <div class="qa-answer">A prioritized list of issues waiting to be worked on. Product Owners manage the backlog priority.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">What is Sprint Planning?</span>
+                        </div>
+                        <div class="qa-answer">Meeting where team selects issues from backlog to work on in the upcoming sprint.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">What is a Burndown Chart?</span>
+                        </div>
+                        <div class="qa-answer">Graph showing remaining work (story points/hours) over sprint duration. Helps track if team is on track.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">What is Velocity in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Average story points completed per sprint. Used for capacity planning in future sprints.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">What is WIP (Work In Progress) Limit?</span>
+                        </div>
+                        <div class="qa-answer">Maximum number of issues allowed in a Kanban column. Prevents overloading and improves flow.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">What is a Release in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Collection of versions shipped together. Releases can span multiple sprints and projects.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">What is Cumulative Flow Diagram?</span>
+                        </div>
+                        <div class="qa-answer">Chart showing work distribution across workflow states over time. Available in Kanban boards.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">What is Cycle Time?</span>
+                        </div>
+                        <div class="qa-answer">Time an issue spends from "In Progress" to "Done". Key metric for Kanban teams.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">What are Quick Filters in Jira boards?</span>
+                        </div>
+                        <div class="qa-answer">One-click filters on boards to show specific issues (My Issues, Only Bugs, Current Sprint).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">What is Epic in Agile board?</span>
+                        </div>
+                        <div class="qa-answer">Large work items shown as swimlanes on boards. Track progress of multiple stories under one epic.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">What is Sprint Report?</span>
+                        </div>
+                        <div class="qa-answer">Report showing sprint completion status, velocity, issues completed/not completed, and scope changes.</div>
+                    </div>
+                </div>
+
+                <!-- JQL -->
+                <div class="category-header" id="jql">
+                    <span class="category-icon">🔍</span>
+                    <h2 class="category-title">JQL (Jira Query Language)</h2>
+                    <span class="question-count">Q61-75</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">What is JQL?</span>
+                        </div>
+                        <div class="qa-answer">Jira Query Language - a structured query language for searching issues. Similar to SQL but for Jira.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">What is the basic syntax of JQL?</span>
+                        </div>
+                        <div class="qa-answer"><code>field operator value</code><br>Example: <code>project = PROJ AND status = "In Progress"</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">What are common JQL operators?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>=</code> equals<br>
+                            <code>!=</code> not equals<br>
+                            <code>IN</code> matches any value<br>
+                            <code>NOT IN</code> doesn't match<br>
+                            <code>~</code> contains text<br>
+                            <code>IS EMPTY / IS NOT EMPTY</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">How do you find all issues assigned to you?</span>
+                        </div>
+                        <div class="qa-answer"><code>assignee = currentUser()</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">How do you find all open bugs?</span>
+                        </div>
+                        <div class="qa-answer"><code>type = Bug AND status != Done</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">How do you find issues created in the last week?</span>
+                        </div>
+                        <div class="qa-answer"><code>created >= -7d</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">How do you find issues updated today?</span>
+                        </div>
+                        <div class="qa-answer"><code>updated >= startOfDay()</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How do you find unassigned issues?</span>
+                        </div>
+                        <div class="qa-answer"><code>assignee IS EMPTY</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">How do you combine multiple conditions in JQL?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>AND</code> - both conditions must be true<br>
+                            <code>OR</code> - either condition true<br>
+                            Example: <code>priority = High AND (status = Open OR status = "In Progress")</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">How do you sort results in JQL?</span>
+                        </div>
+                        <div class="qa-answer"><code>ORDER BY field ASC/DESC</code><br>Example: <code>status = Open ORDER BY priority DESC, created ASC</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">What are JQL Functions?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Built-in functions for dynamic queries:<br>
+                            <code>currentUser()</code> - logged-in user<br>
+                            <code>now()</code> - current date/time<br>
+                            <code>startOfDay()</code> - beginning of today<br>
+                            <code>endOfWeek()</code> - end of current week
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">How do you search by text in description or comments?</span>
+                        </div>
+                        <div class="qa-answer"><code>text ~ "search term"</code> (searches summary, description, comments)</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">How do you find issues in current sprint?</span>
+                        </div>
+                        <div class="qa-answer"><code>sprint in openSprints()</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you find overdue issues?</span>
+                        </div>
+                        <div class="qa-answer"><code>duedate < now() AND status != Done</code></div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">Can you use JQL in automation rules?</span>
+                        </div>
+                        <div class="qa-answer">Yes! JQL is used in automation triggers and conditions to find matching issues.</div>
+                    </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="category-header" id="advanced">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Advanced Topics</h2>
+                    <span class="question-count">Q76-85</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">What is Jira Automation?</span>
+                        </div>
+                        <div class="qa-answer">No-code rules that automate tasks (auto-assign, send notifications, transition issues) based on triggers and conditions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">What are the components of an Automation Rule?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Trigger:</strong> When rule runs (issue created, field changed)<br>
+                            <strong>Condition:</strong> If criteria met (if priority = High)<br>
+                            <strong>Action:</strong> What to do (assign, comment, transition)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">What is Jira REST API?</span>
+                        </div>
+                        <div class="qa-answer">HTTP API for programmatic access to Jira (create issues, update fields, search). Used for integrations.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">What are Jira Apps/Plugins?</span>
+                        </div>
+                        <div class="qa-answer">Extensions from Atlassian Marketplace that add functionality (Tempo for time tracking, Zephyr for test management).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">What is Confluence and how does it integrate with Jira?</span>
+                        </div>
+                        <div class="qa-answer">Confluence is Atlassian's wiki tool. You can link Jira issues to Confluence pages and display Jira macros in Confluence.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">What is Bitbucket and how does it integrate with Jira?</span>
+                        </div>
+                        <div class="qa-answer">Bitbucket is Atlassian's Git repository tool. Commits/PRs can reference Jira issues, showing code changes in issues.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">What is Jira Service Management (formerly Service Desk)?</span>
+                        </div>
+                        <div class="qa-answer">ITSM tool for managing service requests, incidents, and customer support tickets with SLA tracking.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">What are SLAs in Jira?</span>
+                        </div>
+                        <div class="qa-answer">Service Level Agreements - commitments for response/resolution times. Tracked with SLA metrics and escalations.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">What is Portfolio for Jira (now Advanced Roadmaps)?</span>
+                        </div>
+                        <div class="qa-answer">Tool for portfolio planning, roadmapping, capacity planning, and dependency management across multiple teams.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">What are best practices for Jira performance?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Archive old projects<br>
+                            - Limit custom fields<br>
+                            - Optimize JQL queries<br>
+                            - Use dashboards wisely<br>
+                            - Regular cleanup of old issues<br>
+                            - Limit automation rules
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>85 Jira Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

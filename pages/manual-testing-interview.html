@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Manual Testing Interview Questions and Answers - Complete preparation guide for QA testers">
+    <meta name="theme-color" content="#2563eb">
+    <title>Manual Testing Interview Questions | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #8b5cf6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #7c3aed;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav { margin-top: 0; }
+        .question-count {
+            background: #8b5cf6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .category-header { scroll-margin-top: 130px; }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>🧪 Manual Testing Interview Questions</h1>
+            <p class="subtitle">Comprehensive questions covering testing fundamentals, SDLC, STLC, test cases, defect management, and various testing types.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#fundamentals">🎯 Fundamentals</a>
+                <a class="chip" href="#lifecycle">🔄 SDLC/STLC</a>
+                <a class="chip" href="#testcases">📝 Test Cases</a>
+                <a class="chip" href="#defects">🐛 Defects</a>
+                <a class="chip" href="#types">🎭 Testing Types</a>
+                <a class="chip" href="#advanced">⚡ Advanced</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Fundamentals -->
+                <div class="category-header" id="fundamentals">
+                    <span class="category-icon">🎯</span>
+                    <h2 class="category-title">Testing Fundamentals</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Software Testing?</span>
+                        </div>
+                        <div class="qa-answer">The process of evaluating and verifying that a software product meets specified requirements and works as intended to deliver business value.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What is Manual Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing software manually without using any automated tools. Testers execute test cases and observe system behavior.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">What is the difference between Verification and Validation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Verification:</strong> "Are we building the product right?" (Static process - reviews, inspections)<br>
+                            <strong>Validation:</strong> "Are we building the right product?" (Dynamic process - testing, UAT)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">What is Quality Assurance (QA)?</span>
+                        </div>
+                        <div class="qa-answer">Process-oriented approach to ensure quality is built into the development process. Focuses on preventing defects.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What is Quality Control (QC)?</span>
+                        </div>
+                        <div class="qa-answer">Product-oriented approach that identifies defects in the final product. Focuses on detecting defects through testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">What are the objectives of testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Find defects early<br>
+                            - Ensure product meets requirements<br>
+                            - Build confidence in quality<br>
+                            - Prevent defects from reaching production<br>
+                            - Reduce business risk
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">What are the 7 principles of software testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Testing shows presence of defects<br>
+                            2. Exhaustive testing is impossible<br>
+                            3. Early testing saves time and money<br>
+                            4. Defects cluster together<br>
+                            5. Pesticide paradox<br>
+                            6. Testing is context dependent<br>
+                            7. Absence of errors fallacy
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">What is Black Box Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing the functionality without knowing the internal code structure (Behavioral Testing).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">What is White Box Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing the internal code structure and logic (Structural Testing). Requires programming knowledge.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">What is Grey Box Testing?</span>
+                        </div>
+                        <div class="qa-answer">Combination of black box and white box testing. Partial knowledge of internal structure.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">What is a Test Plan?</span>
+                        </div>
+                        <div class="qa-answer">A document outlining the testing strategy, objectives, scope, resources, schedule, and deliverables for a testing project.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What is a Test Strategy?</span>
+                        </div>
+                        <div class="qa-answer">High-level document defining the testing approach for the organization or project. Defines types of testing, tools, and resources.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">What is Test Coverage?</span>
+                        </div>
+                        <div class="qa-answer">Measure of how much of the application has been tested. Can be measured by requirements coverage, code coverage, etc.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">What is Traceability Matrix?</span>
+                        </div>
+                        <div class="qa-answer">Document mapping requirements to test cases. Ensures all requirements are covered and helps track testing progress.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">What is Test Data?</span>
+                        </div>
+                        <div class="qa-answer">Input data used to execute test cases. Includes both valid and invalid data to test different scenarios.</div>
+                    </div>
+                </div>
+
+                <!-- SDLC/STLC -->
+                <div class="category-header" id="lifecycle">
+                    <span class="category-icon">🔄</span>
+                    <h2 class="category-title">SDLC & STLC</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">What is SDLC?</span>
+                        </div>
+                        <div class="qa-answer">Software Development Life Cycle - the complete process of software development: Planning, Design, Implementation, Testing, Deployment, Maintenance.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">What is STLC?</span>
+                        </div>
+                        <div class="qa-answer">Software Testing Life Cycle - phases of testing: Requirements Analysis, Test Planning, Test Case Development, Environment Setup, Test Execution, Test Closure.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What are the phases of STLC?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. <strong>Requirement Analysis:</strong> Understand requirements<br>
+                            2. <strong>Test Planning:</strong> Define strategy and resources<br>
+                            3. <strong>Test Case Development:</strong> Write test cases<br>
+                            4. <strong>Environment Setup:</strong> Prepare test environment<br>
+                            5. <strong>Test Execution:</strong> Run test cases<br>
+                            6. <strong>Test Closure:</strong> Complete metrics and reports
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">What is Waterfall Model?</span>
+                        </div>
+                        <div class="qa-answer">Sequential development model where each phase must be completed before the next begins. Testing happens after development.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">What is Agile Methodology?</span>
+                        </div>
+                        <div class="qa-answer">Iterative development approach with short sprints (1-4 weeks). Testing happens continuously throughout development.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">What is V-Model?</span>
+                        </div>
+                        <div class="qa-answer">Extension of waterfall where testing activities are planned parallel to development. Each development phase has a corresponding testing phase.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What is Sprint in Agile?</span>
+                        </div>
+                        <div class="qa-answer">A time-boxed iteration (usually 2 weeks) where a specific set of work is completed and made ready for review.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">What is Scrum?</span>
+                        </div>
+                        <div class="qa-answer">An Agile framework with defined roles (Scrum Master, Product Owner, Team), events (Sprint, Daily Standup, Retrospective), and artifacts (Product Backlog, Sprint Backlog).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">What is User Story?</span>
+                        </div>
+                        <div class="qa-answer">Short, simple description of a feature from user's perspective. Format: "As a [user], I want [goal] so that [benefit]".</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">What is Acceptance Criteria?</span>
+                        </div>
+                        <div class="qa-answer">Conditions that must be met for a user story to be considered complete and accepted by the Product Owner.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">What is Definition of Done (DoD)?</span>
+                        </div>
+                        <div class="qa-answer">Checklist of criteria that must be met for a work item to be considered complete (code review, unit tests, documentation, etc.).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">What is Entry Criteria?</span>
+                        </div>
+                        <div class="qa-answer">Prerequisites that must be met before testing can begin (test environment ready, test data available, build deployed, etc.).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">What is Exit Criteria?</span>
+                        </div>
+                        <div class="qa-answer">Conditions that must be met to complete testing (all test cases executed, 95% pass rate, no critical bugs, etc.).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">What is Regression Testing?</span>
+                        </div>
+                        <div class="qa-answer">Re-testing existing functionality after code changes to ensure nothing broke. Usually performed after bug fixes or new features.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">What is Retesting?</span>
+                        </div>
+                        <div class="qa-answer">Testing a specific defect fix to verify it's resolved. Different from regression testing which tests broader functionality.</div>
+                    </div>
+                </div>
+
+                <!-- Test Cases -->
+                <div class="category-header" id="testcases">
+                    <span class="category-icon">📝</span>
+                    <h2 class="category-title">Test Cases & Scenarios</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What is a Test Case?</span>
+                        </div>
+                        <div class="qa-answer">A set of conditions, inputs, and expected results to verify a specific functionality or requirement.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">What are the components of a Test Case?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test Case ID<br>
+                            - Test Description<br>
+                            - Pre-conditions<br>
+                            - Test Steps<br>
+                            - Test Data<br>
+                            - Expected Result<br>
+                            - Actual Result<br>
+                            - Status (Pass/Fail)<br>
+                            - Priority/Severity
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What is Test Scenario?</span>
+                        </div>
+                        <div class="qa-answer">High-level functionality to be tested. A scenario can have multiple test cases. Example: "Login Functionality".</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What is the difference between Test Case and Test Scenario?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Test Scenario:</strong> What to test (high-level)<br>
+                            <strong>Test Case:</strong> How to test (detailed steps)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">What is Positive Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing with valid inputs to verify system works as expected under normal conditions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">What is Negative Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing with invalid inputs to verify system handles errors gracefully and doesn't crash.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">What is Boundary Value Analysis?</span>
+                        </div>
+                        <div class="qa-answer">Testing at the boundaries of input ranges. For range 1-100, test: 0, 1, 100, 101.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">What is Equivalence Partitioning?</span>
+                        </div>
+                        <div class="qa-answer">Dividing input data into partitions that should be treated similarly. Test one value from each partition.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">What is Decision Table Testing?</span>
+                        </div>
+                        <div class="qa-answer">Test technique using tables to represent combinations of inputs and their corresponding outputs.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">What is State Transition Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing how system behaves when transitioning between different states. Example: Order states (Placed → Processing → Shipped → Delivered).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">What is Use Case Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing based on use cases that describe user interactions with the system to accomplish goals.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">What is Exploratory Testing?</span>
+                        </div>
+                        <div class="qa-answer">Simultaneous learning, test design, and execution. Testers explore the application without predefined test cases.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">What is Ad-hoc Testing?</span>
+                        </div>
+                        <div class="qa-answer">Informal testing without planning or documentation. Random testing to find defects.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">What is Monkey Testing?</span>
+                        </div>
+                        <div class="qa-answer">Random testing by providing random inputs to see if system crashes. No specific test cases.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">What makes a good Test Case?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Clear and concise<br>
+                            - Repeatable<br>
+                            - Independent<br>
+                            - Has clear expected results<br>
+                            - Covers one scenario<br>
+                            - Traceable to requirements
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Defects -->
+                <div class="category-header" id="defects">
+                    <span class="category-icon">🐛</span>
+                    <h2 class="category-title">Defect Management</h2>
+                    <span class="question-count">Q46-60</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What is a Defect/Bug?</span>
+                        </div>
+                        <div class="qa-answer">A flaw in the system that causes it to produce incorrect results or behave unexpectedly.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">What is Defect Life Cycle?</span>
+                        </div>
+                        <div class="qa-answer">
+                            New → Assigned → Open → Fixed → Retest → Verified → Closed<br>
+                            (Alternative paths: Rejected, Deferred, Reopened, Duplicate)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">What is Severity?</span>
+                        </div>
+                        <div class="qa-answer">The technical impact of the defect on the system. Set by QA. Levels: Critical, High, Medium, Low.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What is Priority?</span>
+                        </div>
+                        <div class="qa-answer">The business urgency of fixing the defect. Set by Product Owner. Levels: Immediate, High, Medium, Low.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">What's the difference between Severity and Priority?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Severity:</strong> Technical impact (Application POV)<br>
+                            <strong>Priority:</strong> Business impact (User/Business POV)<br>
+                            Example: Typo on payment page = Low Severity, High Priority
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">What is a Critical Bug?</span>
+                        </div>
+                        <div class="qa-answer">A defect that causes system crash, data loss, or makes the application completely unusable.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">What information should a Bug Report contain?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Bug ID<br>
+                            - Title/Summary<br>
+                            - Steps to reproduce<br>
+                            - Expected vs Actual result<br>
+                            - Severity & Priority<br>
+                            - Environment details<br>
+                            - Screenshots/Videos<br>
+                            - Logs
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">What is a Blocker Bug?</span>
+                        </div>
+                        <div class="qa-answer">A defect that blocks further testing or prevents key functionality from working.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">What is Bug Triage?</span>
+                        </div>
+                        <div class="qa-answer">Meeting to review, prioritize, and assign bugs. Determines which bugs to fix first.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">What is a Duplicate Bug?</span>
+                        </div>
+                        <div class="qa-answer">A bug that has already been reported. Marked as duplicate and linked to the original bug.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">What is a Deferred Bug?</span>
+                        </div>
+                        <div class="qa-answer">A bug postponed to a future release due to low priority or time constraints.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">What is Bug Leakage?</span>
+                        </div>
+                        <div class="qa-answer">Bugs found by end-users in production that should have been caught during testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">What is Bug Release?</span>
+                        </div>
+                        <div class="qa-answer">Intentionally shipping a product with known low-priority bugs due to time constraints or business decisions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">What is Root Cause Analysis?</span>
+                        </div>
+                        <div class="qa-answer">Investigating the underlying reason for a defect to prevent similar issues in the future.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How do you handle a developer saying "It's not a bug"?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Re-verify and replicate<br>
+                            2. Document clearly (video/logs)<br>
+                            3. Cite specific requirement<br>
+                            4. Escalate to PO/Lead if needed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testing Types -->
+                <div class="category-header" id="types">
+                    <span class="category-icon">🎭</span>
+                    <h2 class="category-title">Testing Types & Levels</h2>
+                    <span class="question-count">Q61-80</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">What is Unit Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing individual components/functions in isolation. Usually done by developers.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">What is Integration Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing interactions between integrated components/modules to ensure they work together.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">What is System Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing the complete, integrated system to verify it meets specified requirements.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">What is Acceptance Testing (UAT)?</span>
+                        </div>
+                        <div class="qa-answer">Testing by end-users to verify the system meets business requirements and is ready for production.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">What is Smoke Testing?</span>
+                        </div>
+                        <div class="qa-answer">Quick, shallow testing to verify basic functionality works. Determines if build is stable enough for detailed testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">What is Sanity Testing?</span>
+                        </div>
+                        <div class="qa-answer">Narrow, deep testing of specific functionality after a bug fix or minor change. Subset of regression testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">What is Functional Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing features and functions based on requirements. Verifies "what" the system does.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">What is Non-Functional Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing "how" the system performs (Performance, Security, Usability, Reliability, Scalability).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">What is Performance Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing system performance under load (response time, throughput, resource usage).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">What is Load Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing system behavior under expected user load to verify it handles the load gracefully.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">What is Stress Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing beyond normal capacity to find the breaking point and see how system recovers.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">What is Security Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing to find vulnerabilities and ensure data protection (SQL injection, XSS, authentication, authorization).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">What is Usability Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing user-friendliness, ease of use, and user experience.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">What is Compatibility Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing across different browsers, OS, devices, and screen resolutions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">What is Localization Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing application for a specific locale (language, currency, date format, cultural aspects).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">What is Globalization Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing that application works across multiple locales without code changes.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">What is Alpha Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing by internal team before release to external users. Done at developer's site.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">What is Beta Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing by a limited external audience in a real environment before full release.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">What is End-to-End Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing complete user workflows from start to finish to ensure all integrated components work together.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">What is Accessibility Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing for users with disabilities (screen readers, keyboard navigation, color contrast, WCAG compliance).</div>
+                    </div>
+                </div>
+
+                <!-- Advanced -->
+                <div class="category-header" id="advanced">
+                    <span class="category-icon">⚡</span>
+                    <h2 class="category-title">Advanced Topics</h2>
+                    <span class="question-count">Q81-90</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">What is Risk-Based Testing?</span>
+                        </div>
+                        <div class="qa-answer">Prioritizing testing based on risk assessment. High-risk areas get more testing attention.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">What is Test Automation?</span>
+                        </div>
+                        <div class="qa-answer">Using tools and scripts to execute tests automatically. Useful for regression, performance, and repetitive tests.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">When should you automate tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Repetitive test cases<br>
+                            - Regression testing<br>
+                            - Stable features<br>
+                            - Performance/Load testing<br>
+                            - Data-driven tests
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">What is Test Environment?</span>
+                        </div>
+                        <div class="qa-answer">Setup of hardware, software, network, and data where testing is performed. Should mimic production.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">What is a Test Oracle?</span>
+                        </div>
+                        <div class="qa-answer">Source of expected results to compare against actual results (requirements, specs, previous versions).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">86</span>
+                            <span class="qa-question-text">What is Test Metrics?</span>
+                        </div>
+                        <div class="qa-answer">Quantitative measures to track testing progress: Test cases executed, Pass/Fail rate, Defect density, Test coverage, etc.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">87</span>
+                            <span class="qa-question-text">What is Defect Density?</span>
+                        </div>
+                        <div class="qa-answer">Number of defects per unit size (LOC, module, functionality). Formula: Defects / Size.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">88</span>
+                            <span class="qa-question-text">What is Test Effectiveness?</span>
+                        </div>
+                        <div class="qa-answer">Measure of how well testing finds defects. Formula: Defects found in testing / Total defects.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">89</span>
+                            <span class="qa-question-text">What is Shift-Left Testing?</span>
+                        </div>
+                        <div class="qa-answer">Starting testing early in the SDLC (during requirements, design). Finds defects earlier when they're cheaper to fix.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">90</span>
+                            <span class="qa-question-text">What is Continuous Testing?</span>
+                        </div>
+                        <div class="qa-answer">Automated testing integrated into CI/CD pipeline. Tests run automatically with every code change.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>90 Manual Testing Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

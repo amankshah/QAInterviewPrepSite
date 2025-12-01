@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
     <style>
         /* Page-specific styles */
         .qa-grid {
@@ -205,16 +207,7 @@
 </head>
 <body>
     <div class="progress-bar" id="progress"></div>
-    
-    <header class="site-header">
-        <div class="container inner">
-            <a href="../index.html" class="brand">Interview Prep Guide</a>
-            <nav class="nav" aria-label="Primary">
-                <a href="../index.html">Cheat Sheet</a>
-                <a href="playwright-interview.html" class="active">Playwright</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Navigation inserted by navigation.js -->
 
     <section class="hero">
         <div class="container content">
@@ -1120,16 +1113,6 @@
             <p>101 Playwright Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
         </div>
     </footer>
-
-    <script>
-        // Progress bar
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('progress').style.width = scrolled + '%';
-        });
-    </script>
 </body>
 </html>
 

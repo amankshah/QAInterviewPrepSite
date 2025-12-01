@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Selenium Java Interview Questions and Coding Challenges - Complete preparation guide">
+    <meta name="theme-color" content="#2563eb">
+    <title>Selenium Java Interview Questions | Interview Prep Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #10b981;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 8px 0;
+        }
+        .qa-answer pre code {
+            background: transparent;
+            color: #e2e8f0;
+            padding: 0;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #059669;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #059669);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        .sticky-nav {
+            position: sticky;
+            top: var(--header-height);
+            z-index: 40;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 12px 0;
+            margin: 0 -24px 24px -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sticky-nav .quick-nav { margin-top: 0; }
+        .question-count {
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -16px 20px -16px;
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+            .category-header { scroll-margin-top: 130px; }
+        }
+        @media (max-width: 480px) {
+            .sticky-nav {
+                top: 64px;
+                margin: 0 -12px 16px -12px;
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>🤖 Selenium Java Interview Questions</h1>
+            <p class="subtitle">Comprehensive questions covering Selenium WebDriver, Java coding challenges, locators, waits, frameworks, and best practices.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#basics">🚀 Basics</a>
+                <a class="chip" href="#locators">🎯 Locators</a>
+                <a class="chip" href="#waits">⏳ Waits</a>
+                <a class="chip" href="#actions">👆 Actions</a>
+                <a class="chip" href="#frameworks">🏗️ Frameworks</a>
+                <a class="chip" href="#coding">💻 Coding</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Basics -->
+                <div class="category-header" id="basics">
+                    <span class="category-icon">🚀</span>
+                    <h2 class="category-title">Selenium Basics</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What is Selenium?</span>
+                        </div>
+                        <div class="qa-answer">Selenium is an open-source automation testing framework for web applications. It supports multiple browsers, programming languages, and operating systems.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What are the components of Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Selenium WebDriver:</strong> Browser automation API<br>
+                            <strong>Selenium IDE:</strong> Record and playback tool<br>
+                            <strong>Selenium Grid:</strong> Parallel test execution on multiple machines
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">What is WebDriver in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">WebDriver is an interface that allows you to control web browsers programmatically. Each browser has its own driver (ChromeDriver, GeckoDriver, EdgeDriver).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">How do you set up Selenium WebDriver in Java?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Add dependency in pom.xml
+&lt;dependency&gt;
+    &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+    &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+    &lt;version&gt;4.x.x&lt;/version&gt;
+&lt;/dependency&gt;
+
+// Setup driver
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What browsers does Selenium support?</span>
+                        </div>
+                        <div class="qa-answer">Chrome, Firefox, Safari, Edge, Opera, and Internet Explorer. Each requires its specific driver.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">What is the difference between Selenium 3 and Selenium 4?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Selenium 4:</strong>
+                            - W3C WebDriver standard compliance<br>
+                            - Relative locators<br>
+                            - Better Chrome DevTools support<br>
+                            - Enhanced Selenium Grid<br>
+                            - No need for separate driver executables (WebDriverManager)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">How do you launch a browser in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+driver.navigate().to("https://example.com");</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">What's the difference between get() and navigate().to()?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>get()</code>: Waits for page to load completely<br>
+                            <code>navigate().to()</code>: Part of navigation interface, allows back(), forward(), refresh()
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">How do you close browser in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>driver.close();</code> - Closes current window<br>
+                            <code>driver.quit();</code> - Closes all windows and ends session
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">How do you get current URL and title?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>String url = driver.getCurrentUrl();
+String title = driver.getTitle();
+String pageSource = driver.getPageSource();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">How do you maximize browser window?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.manage().window().maximize();
+driver.manage().window().fullscreen();
+driver.manage().window().setSize(new Dimension(1920, 1080));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What is WebDriverManager?</span>
+                        </div>
+                        <div class="qa-answer">A library that automatically downloads and manages browser drivers. No need to manually download executables.
+<pre><code>WebDriverManager.chromedriver().setup();
+WebDriver driver = new ChromeDriver();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">How do you take screenshots in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>TakesScreenshot ts = (TakesScreenshot) driver;
+File source = ts.getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(source, new File("./screenshot.png"));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">How do you handle alerts in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Alert alert = driver.switchTo().alert();
+alert.accept();    // Click OK
+alert.dismiss();   // Click Cancel
+String text = alert.getText();
+alert.sendKeys("text"); // For prompt</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">What are limitations of Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Cannot automate desktop applications<br>
+                            - Cannot read/write to Excel directly<br>
+                            - No built-in reporting<br>
+                            - Image comparison not supported<br>
+                            - Captcha cannot be automated
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Locators -->
+                <div class="category-header" id="locators">
+                    <span class="category-icon">🎯</span>
+                    <h2 class="category-title">Locators & Element Identification</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">What are the locator strategies in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. <code>id</code> - Most preferred<br>
+                            2. <code>name</code><br>
+                            3. <code>className</code><br>
+                            4. <code>tagName</code><br>
+                            5. <code>linkText</code><br>
+                            6. <code>partialLinkText</code><br>
+                            7. <code>cssSelector</code><br>
+                            8. <code>xpath</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">How do you find elements in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Single element
+WebElement element = driver.findElement(By.id("username"));
+
+// Multiple elements
+List&lt;WebElement&gt; links = driver.findElements(By.tagName("a"));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What's the difference between findElement() and findElements()?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>findElement()</code>: Returns first matching element, throws exception if not found<br>
+                            <code>findElements()</code>: Returns list of all matching elements, returns empty list if none found
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">How do you locate by ID?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.findElement(By.id("username")).sendKeys("admin");</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">How do you write CSS Selectors?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// ID: #username
+driver.findElement(By.cssSelector("#username"));
+
+// Class: .btn-primary
+driver.findElement(By.cssSelector(".btn-primary"));
+
+// Attribute: input[name='email']
+driver.findElement(By.cssSelector("input[name='email']"));
+
+// Contains: input[id*='user']
+driver.findElement(By.cssSelector("input[id*='user']"));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">How do you write XPath?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Absolute: /html/body/div/input
+// Relative: //input[@id='username']
+
+// Text: //button[text()='Submit']
+// Contains: //input[contains(@name,'user')]
+// Starts-with: //input[starts-with(@id,'user')]
+
+// Parent: //div[@id='parent']//input
+// Following-sibling: //label[@id='user']//following-sibling::input</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What are Relative Locators in Selenium 4?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Above
+driver.findElement(RelativeLocator.with(By.tagName("input"))
+    .above(passwordField));
+
+// Below
+driver.findElement(RelativeLocator.with(By.tagName("button"))
+    .below(emailField));
+
+// toLeftOf, toRightOf, near</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">CSS Selector vs XPath - which is better?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>CSS:</strong> Faster, more readable, doesn't navigate backward<br>
+                            <strong>XPath:</strong> More powerful, can navigate backward, can use text
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">How do you handle dynamic elements?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use contains(), starts-with() in XPath<br>
+                            - Use partial attribute values<br>
+                            - Locate by text<br>
+                            - Use indexes carefully<br>
+                            - Wait for element visibility
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">How do you locate elements in a table?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Specific cell
+//table[@id='data']//tr[2]//td[3]
+
+// All rows
+List&lt;WebElement&gt; rows = driver.findElements(
+    By.xpath("//table[@id='data']//tr"));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">How do you get element text and attributes?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>String text = element.getText();
+String value = element.getAttribute("value");
+String cssValue = element.getCssValue("color");
+boolean displayed = element.isDisplayed();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">How do you check if element is present?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>public boolean isElementPresent(By locator) {
+    try {
+        driver.findElement(locator);
+        return true;
+    } catch (NoSuchElementException e) {
+        return false;
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">How do you locate hidden elements?</span>
+                        </div>
+                        <div class="qa-answer">Hidden elements can be located but cannot be interacted with directly. Use JavaScriptExecutor to interact.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">What is StaleElementReferenceException?</span>
+                        </div>
+                        <div class="qa-answer">Thrown when element is no longer in DOM (page refreshed, DOM changed). Solution: Re-locate the element.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">How do you handle NoSuchElementException?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use correct locator<br>
+                            - Add explicit wait<br>
+                            - Check if element is in iframe<br>
+                            - Verify element is present in DOM
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waits -->
+                <div class="category-header" id="waits">
+                    <span class="category-icon">⏳</span>
+                    <h2 class="category-title">Waits & Synchronization</h2>
+                    <span class="question-count">Q31-40</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What are the types of waits in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. <strong>Implicit Wait:</strong> Global wait for all elements<br>
+                            2. <strong>Explicit Wait:</strong> Wait for specific condition<br>
+                            3. <strong>Fluent Wait:</strong> Wait with polling interval
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">How do you implement Implicit Wait?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));</code></pre>
+Applied globally to all findElement() calls.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">How do you implement Explicit Wait?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement element = wait.until(
+    ExpectedConditions.visibilityOfElementLocated(By.id("username"))
+);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What are common ExpectedConditions?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>visibilityOfElementLocated()</code><br>
+                            <code>elementToBeClickable()</code><br>
+                            <code>presenceOfElementLocated()</code><br>
+                            <code>invisibilityOfElement()</code><br>
+                            <code>alertIsPresent()</code><br>
+                            <code>textToBePresentInElement()</code><br>
+                            <code>titleContains()</code>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">How do you implement Fluent Wait?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Wait&lt;WebDriver&gt; wait = new FluentWait&lt;&gt;(driver)
+    .withTimeout(Duration.ofSeconds(30))
+    .pollingEvery(Duration.ofSeconds(2))
+    .ignoring(NoSuchElementException.class);
+
+WebElement element = wait.until(driver -> {
+    return driver.findElement(By.id("dynamic"));
+});</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">Implicit vs Explicit Wait?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Implicit:</strong> Global, applied to all elements, less flexible<br>
+                            <strong>Explicit:</strong> Specific condition, more control, recommended
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">How do you wait for page load?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+
+// Or wait for document ready state
+new WebDriverWait(driver, Duration.ofSeconds(10))
+    .until(driver -> ((JavascriptExecutor) driver)
+    .executeScript("return document.readyState").equals("complete"));</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">How do you wait for an element to be clickable?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement button = wait.until(
+    ExpectedConditions.elementToBeClickable(By.id("submit"))
+);
+button.click();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">Should you use Thread.sleep()?</span>
+                        </div>
+                        <div class="qa-answer">NO! <code>Thread.sleep()</code> is a hard wait that blocks execution. Always use WebDriver waits for better reliability and performance.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">How do you handle TimeoutException?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>try {
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("element")));
+} catch (TimeoutException e) {
+    System.out.println("Element not found within timeout");
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="category-header" id="actions">
+                    <span class="category-icon">👆</span>
+                    <h2 class="category-title">Actions & Interactions</h2>
+                    <span class="question-count">Q41-60</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">How do you click an element?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.findElement(By.id("button")).click();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">How do you enter text?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>element.sendKeys("text");
+element.clear(); // Clear existing text
+element.sendKeys(Keys.ENTER); // Press Enter</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">How do you select from dropdown?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Select dropdown = new Select(driver.findElement(By.id("country")));
+dropdown.selectByVisibleText("India");
+dropdown.selectByValue("in");
+dropdown.selectByIndex(1);
+
+// Get selected option
+WebElement selected = dropdown.getFirstSelectedOption();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">How do you handle checkboxes and radio buttons?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebElement checkbox = driver.findElement(By.id("agree"));
+if (!checkbox.isSelected()) {
+    checkbox.click();
+}
+
+boolean isSelected = checkbox.isSelected();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">What is Actions class?</span>
+                        </div>
+                        <div class="qa-answer">Actions class is used for complex user interactions like mouse hover, drag-drop, right-click, double-click, keyboard actions.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">How do you perform mouse hover?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Actions actions = new Actions(driver);
+WebElement menu = driver.findElement(By.id("menu"));
+actions.moveToElement(menu).perform();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">How do you perform drag and drop?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Actions actions = new Actions(driver);
+WebElement source = driver.findElement(By.id("source"));
+WebElement target = driver.findElement(By.id("target"));
+actions.dragAndDrop(source, target).perform();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you perform right-click?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Actions actions = new Actions(driver);
+WebElement element = driver.findElement(By.id("item"));
+actions.contextClick(element).perform();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">How do you perform double-click?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Actions actions = new Actions(driver);
+WebElement element = driver.findElement(By.id("item"));
+actions.doubleClick(element).perform();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">How do you handle iframes?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Switch to iframe
+driver.switchTo().frame("frameName");
+driver.switchTo().frame(0); // By index
+driver.switchTo().frame(webElement); // By element
+
+// Switch back
+driver.switchTo().defaultContent();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">How do you handle multiple windows?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>String mainWindow = driver.getWindowHandle();
+Set&lt;String&gt; allWindows = driver.getWindowHandles();
+
+for (String window : allWindows) {
+    driver.switchTo().window(window);
+    if (driver.getTitle().equals("Expected Title")) {
+        break;
+    }
+}
+
+// Switch back
+driver.switchTo().window(mainWindow);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">How do you scroll in Selenium?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>JavascriptExecutor js = (JavascriptExecutor) driver;
+
+// Scroll to bottom
+js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+
+// Scroll to element
+js.executeScript("arguments[0].scrollIntoView();", element);
+
+// Scroll by pixels
+js.executeScript("window.scrollBy(0, 500)");</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">What is JavaScriptExecutor?</span>
+                        </div>
+                        <div class="qa-answer">Interface to execute JavaScript code in browser context. Useful for hidden elements, scrolling, clicking, etc.
+<pre><code>JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0].click();", element);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">How do you handle file upload?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebElement fileInput = driver.findElement(By.id("file"));
+fileInput.sendKeys("/path/to/file.txt");</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">How do you handle file download?</span>
+                        </div>
+                        <div class="qa-answer">Set download directory in browser preferences:
+<pre><code>ChromeOptions options = new ChromeOptions();
+Map&lt;String, Object&gt; prefs = new HashMap&lt;&gt;();
+prefs.put("download.default_directory", "/path/to/download");
+options.setExperimentalOption("prefs", prefs);
+WebDriver driver = new ChromeDriver(options);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">How do you handle cookies?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Get all cookies
+Set&lt;Cookie&gt; cookies = driver.manage().getCookies();
+
+// Add cookie
+Cookie cookie = new Cookie("name", "value");
+driver.manage().addCookie(cookie);
+
+// Delete cookie
+driver.manage().deleteCookieNamed("name");
+driver.manage().deleteAllCookies();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How do you navigate browser history?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>driver.navigate().back();
+driver.navigate().forward();
+driver.navigate().refresh();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">How do you click on hidden elements?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>JavascriptExecutor js = (JavascriptExecutor) driver;
+WebElement element = driver.findElement(By.id("hidden"));
+js.executeScript("arguments[0].click();", element);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">How do you handle ElementClickInterceptedException?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Wait for element to be clickable<br>
+                            - Scroll element into view<br>
+                            - Use JavaScript click<br>
+                            - Close overlays/popups
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How do you press keyboard combinations?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>Actions actions = new Actions(driver);
+// Ctrl+A (Select All)
+actions.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+
+// Copy-Paste
+actions.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
+actions.keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="category-header" id="frameworks">
+                    <span class="category-icon">🏗️</span>
+                    <h2 class="category-title">Frameworks & Best Practices</h2>
+                    <span class="question-count">Q61-75</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">What is TestNG?</span>
+                        </div>
+                        <div class="qa-answer">Testing framework inspired by JUnit that provides annotations, parallel execution, test prioritization, grouping, and reporting.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">What are TestNG annotations?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <code>@Test</code> - Test method<br>
+                            <code>@BeforeMethod / @AfterMethod</code><br>
+                            <code>@BeforeClass / @AfterClass</code><br>
+                            <code>@BeforeSuite / @AfterSuite</code><br>
+                            <code>@DataProvider</code> - Data-driven testing<br>
+                            <code>@Parameters</code> - Parameterization
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">What is Page Object Model (POM)?</span>
+                        </div>
+                        <div class="qa-answer">Design pattern where each page is represented as a class. Page elements and actions are encapsulated, making tests more maintainable.
+<pre><code>public class LoginPage {
+    WebDriver driver;
+    
+    @FindBy(id="username")
+    WebElement usernameField;
+    
+    @FindBy(id="password")
+    WebElement passwordField;
+    
+    @FindBy(id="submit")
+    WebElement loginButton;
+    
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+    
+    public void login(String user, String pass) {
+        usernameField.sendKeys(user);
+        passwordField.sendKeys(pass);
+        loginButton.click();
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">What is PageFactory?</span>
+                        </div>
+                        <div class="qa-answer">Class that supports POM by initializing WebElements using @FindBy annotations.
+<pre><code>PageFactory.initElements(driver, this);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">What is Data-Driven Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing where test data is separated from test scripts. Data is read from external sources (Excel, CSV, DB, JSON).
+<pre><code>@DataProvider(name = "loginData")
+public Object[][] getData() {
+    return new Object[][] {
+        {"user1", "pass1"},
+        {"user2", "pass2"}
+    };
+}
+
+@Test(dataProvider = "loginData")
+public void loginTest(String username, String password) {
+    // Test code
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">How do you read data from Excel?</span>
+                        </div>
+                        <div class="qa-answer">Use Apache POI library:
+<pre><code>FileInputStream file = new FileInputStream("data.xlsx");
+XSSFWorkbook workbook = new XSSFWorkbook(file);
+XSSFSheet sheet = workbook.getSheetAt(0);
+XSSFRow row = sheet.getRow(0);
+XSSFCell cell = row.getCell(0);
+String data = cell.getStringCellValue();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">What is Selenium Grid?</span>
+                        </div>
+                        <div class="qa-answer">Tool for parallel test execution across multiple machines, browsers, and OS. Has Hub (central point) and Nodes (execution machines).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How do you run tests in parallel?</span>
+                        </div>
+                        <div class="qa-answer">In testng.xml:
+<pre><code>&lt;suite name="Suite" parallel="tests" thread-count="3"&gt;
+    &lt;test name="Test1"&gt;
+        &lt;classes&gt;
+            &lt;class name="TestClass1"/&gt;
+        &lt;/classes&gt;
+    &lt;/test&gt;
+&lt;/suite&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">What is Extent Reports?</span>
+                        </div>
+                        <div class="qa-answer">Popular HTML reporting library for test results with rich UI, charts, and screenshots.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">What is Maven?</span>
+                        </div>
+                        <div class="qa-answer">Build automation and dependency management tool. Uses pom.xml to manage project dependencies and build lifecycle.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">What is Jenkins?</span>
+                        </div>
+                        <div class="qa-answer">CI/CD tool for automating builds and tests. Selenium tests can be integrated with Jenkins for scheduled/triggered execution.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">What is Cucumber?</span>
+                        </div>
+                        <div class="qa-answer">BDD (Behavior Driven Development) tool that uses Gherkin syntax for writing test scenarios in plain English (Given-When-Then).</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">What are Selenium best practices?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use Page Object Model<br>
+                            - Use explicit waits over implicit<br>
+                            - Avoid Thread.sleep()<br>
+                            - Use unique and stable locators<br>
+                            - Take screenshots on failure<br>
+                            - Use data-driven approach<br>
+                            - Implement proper exception handling<br>
+                            - Use TestNG/JUnit for test management
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you run tests in headless mode?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");
+options.addArguments("--window-size=1920,1080");
+WebDriver driver = new ChromeDriver(options);</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">How do you handle SSL certificates?</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>ChromeOptions options = new ChromeOptions();
+options.setAcceptInsecureCerts(true);
+WebDriver driver = new ChromeDriver(options);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coding -->
+                <div class="category-header" id="coding">
+                    <span class="category-icon">💻</span>
+                    <h2 class="category-title">Coding Challenges</h2>
+                    <span class="question-count">Q76-85</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">Write code to handle dynamic dropdowns</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebElement dropdown = driver.findElement(By.id("dynamic-dropdown"));
+dropdown.click();
+
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+List&lt;WebElement&gt; options = wait.until(
+    ExpectedConditions.visibilityOfAllElementsLocatedBy(
+        By.xpath("//ul[@id='options']//li")
+    )
+);
+
+for (WebElement option : options) {
+    if (option.getText().equals("Desired Option")) {
+        option.click();
+        break;
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">Write code to handle broken links</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>List&lt;WebElement&gt; links = driver.findElements(By.tagName("a"));
+
+for (WebElement link : links) {
+    String url = link.getAttribute("href");
+    if (url != null && !url.isEmpty()) {
+        try {
+            HttpURLConnection connection = (HttpURLConnection) 
+                new URL(url).openConnection();
+            connection.setRequestMethod("HEAD");
+            connection.connect();
+            int responseCode = connection.getResponseCode();
+            
+            if (responseCode >= 400) {
+                System.out.println("Broken: " + url);
+            }
+        } catch (Exception e) {
+            System.out.println("Error checking: " + url);
+        }
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">Write code to capture all links on a page</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>List&lt;WebElement&gt; links = driver.findElements(By.tagName("a"));
+System.out.println("Total links: " + links.size());
+
+for (WebElement link : links) {
+    String url = link.getAttribute("href");
+    String text = link.getText();
+    System.out.println(text + " -> " + url);
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">Write code to count rows and columns in a table</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebElement table = driver.findElement(By.id("dataTable"));
+List&lt;WebElement&gt; rows = table.findElements(By.tagName("tr"));
+List&lt;WebElement&gt; columns = rows.get(0).findElements(By.tagName("th"));
+
+System.out.println("Rows: " + rows.size());
+System.out.println("Columns: " + columns.size());</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">Write code to print all table data</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>List&lt;WebElement&gt; rows = driver.findElements(
+    By.xpath("//table[@id='data']//tr")
+);
+
+for (WebElement row : rows) {
+    List&lt;WebElement&gt; cells = row.findElements(By.tagName("td"));
+    for (WebElement cell : cells) {
+        System.out.print(cell.getText() + "\t");
+    }
+    System.out.println();
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">Write code for auto-suggest dropdown</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>WebElement searchBox = driver.findElement(By.id("search"));
+searchBox.sendKeys("Selenium");
+
+Thread.sleep(2000); // Wait for suggestions
+
+List&lt;WebElement&gt; suggestions = driver.findElements(
+    By.xpath("//ul[@class='suggestions']//li")
+);
+
+for (WebElement suggestion : suggestions) {
+    if (suggestion.getText().contains("Selenium WebDriver")) {
+        suggestion.click();
+        break;
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">Write code to handle calendar/date picker</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>// Open calendar
+driver.findElement(By.id("datepicker")).click();
+
+// Select month/year if needed
+Select monthDropdown = new Select(
+    driver.findElement(By.className("ui-datepicker-month"))
+);
+monthDropdown.selectByVisibleText("December");
+
+// Select day
+driver.findElement(By.xpath("//a[text()='25']")).click();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">Write code to capture screenshots on test failure</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>public void captureScreenshot(String testName) {
+    TakesScreenshot ts = (TakesScreenshot) driver;
+    File source = ts.getScreenshotAs(OutputType.FILE);
+    String destination = "./screenshots/" + testName + "_" + 
+        System.currentTimeMillis() + ".png";
+    try {
+        FileUtils.copyFile(source, new File(destination));
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+@AfterMethod
+public void tearDown(ITestResult result) {
+    if (result.getStatus() == ITestResult.FAILURE) {
+        captureScreenshot(result.getName());
+    }
+}</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">Write code to handle duplicate elements</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>List&lt;WebElement&gt; buttons = driver.findElements(
+    By.xpath("//button[@class='submit']")
+);
+
+// Click specific button by index
+buttons.get(0).click();
+
+// Or use more specific locator
+driver.findElement(By.xpath(
+    "//div[@id='form1']//button[@class='submit']"
+)).click();</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">Write code for synchronization utility</span>
+                        </div>
+                        <div class="qa-answer">
+<pre><code>public class WaitHelper {
+    WebDriver driver;
+    WebDriverWait wait;
+    
+    public WaitHelper(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+    
+    public WebElement waitForElement(By locator) {
+        return wait.until(
+            ExpectedConditions.visibilityOfElementLocated(locator)
+        );
+    }
+    
+    public void waitForElementToBeClickable(By locator) {
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    
+    public void waitForPageLoad() {
+        wait.until(driver -> ((JavascriptExecutor) driver)
+            .executeScript("return document.readyState").equals("complete"));
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>85 Selenium Java Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

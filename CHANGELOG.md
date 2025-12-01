@@ -4,4 +4,63 @@
 - Added sticky header, quick section chips, and smooth scrolling.
 - Wrapped tables in responsive cards with horizontal scroll on small screens.
 - Minor mobile tweaks for spacing and font sizes.
+- Added 13 new JavaScript interview questions covering:
+  - Closure use cases (data privacy, factories, memoization)
+  - `map()`, `filter()`, `reduce()` array methods
+  - `forEach()` vs `map()` comparison
+  - `find()` / `findIndex()` methods
+  - `some()` / `every()` methods
+  - Arrow functions and `this` binding
+  - Spread operator usage
+  - Destructuring syntax
+  - Higher-order functions
+  - Callback functions
+  - Method chaining
+- Moved CSS to separate file: `css/styles.css`
+- Enhanced mobile compatibility:
+  - Added responsive breakpoints (768px, 480px, 360px)
+  - Flexible header that stacks on mobile
+  - Touch-friendly tap targets (44px minimum)
+  - Landscape orientation fixes
+  - Print styles for better printing
+  - Fluid typography with `clamp()`
+  - Improved table scrolling on small screens
+- Created `pages/` folder for detailed interview preparation sheets
+- Added **Playwright Interview Questions** page (`pages/playwright-interview.html`):
+  - 101 comprehensive Q&A covering all Playwright topics
+  - Organized into 7 categories: Basics, Interactions, Waits, Browser, Network, Testing, Advanced
+  - Reading progress bar at top
+  - Sticky category navigation with icons (sticks below header)
+  - Mobile-responsive card layout
+  - Smooth scroll navigation with proper scroll-margin offsets
+  - Fixed duplicate navigation and header overlap issues
+- Added **Git Interview Questions** page (`pages/git-interview.html`):
+  - 70 comprehensive Q&A covering Git fundamentals and workflows
+  - Organized into 6 categories: Basics, Branching, Merge & Rebase, Remote, Conflicts, Advanced
+  - Orange/warm color theme
+- Added **Manual Testing Interview Questions** page (`pages/manual-testing-interview.html`):
+  - 90 comprehensive Q&A covering testing fundamentals
+  - Organized into 6 categories: Fundamentals, SDLC/STLC, Test Cases, Defects, Testing Types, Advanced
+  - Purple color theme
+- Added **Jira Interview Questions** page (`pages/jira-interview.html`):
+  - 85 comprehensive Q&A covering Jira project management
+  - Organized into 6 categories: Basics, Projects, Workflows, Agile & Boards, JQL, Advanced
+  - Blue/cyan color theme
+- Created **common navigation system** (`js/navigation.js`):
+  - Centralized navigation component shared across all pages
+  - Dynamically injects header with active page highlighting
+  - Single source of truth for menu updates
+  - Includes common progress bar functionality
+- Created **Table of Contents system** (`js/toc.js`):
+  - Auto-generated left sidebar TOC for web view (hidden on mobile/tablet)
+  - Sidebar takes 30% width, content centered in remaining 70%
+  - Shows all categories and individual questions
+  - Click to jump to any question instantly
+  - Active highlighting follows scroll position
+  - Smooth scroll with proper offset
+  - Questions truncated to 50 chars for readability
+  - Responsive layout: sidebar hides <1024px
+- Added reusable CSS for TOC, images, and diagrams
+- Updated main page navigation with "📚 Detailed Prep" section
+- Added detailed prep cards linking to individual topic pages
 
