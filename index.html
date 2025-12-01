@@ -4,390 +4,615 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA, Automation, Git, and Interview Preparation Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --primary: #3b82f6;
+            --primary-600: #2563eb;
+            --accent: #22c55e;
+            --border: #e2e8f0;
+            --shadow: 0 8px 28px rgba(2, 6, 23, 0.06);
+            --header-height: 64px;
+            --radius: 14px;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            font-family: "Inter", Arial, sans-serif;
             line-height: 1.6;
-            margin: 20px;
-            color: #333;
-            background-color: #f4f4f9;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(1.2) blur(8px);
+            border-bottom: 1px solid var(--border);
+            height: var(--header-height);
+        }
+        .site-header .inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand {
+            font-weight: 700;
+            color: var(--primary-600);
+            letter-spacing: 0.3px;
+        }
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            padding: 8px 12px;
+            border-radius: 999px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .nav a:hover {
+            background-color: #eef2ff;
+            color: var(--primary-600);
+        }
+        .hero {
+            background: radial-gradient(1200px 400px at 50% -100px, #e0f2fe 0%, rgba(224, 242, 254, 0.4) 35%, transparent 70%), linear-gradient(180deg, #ffffff, #f8fafc);
+            border-bottom: 1px solid var(--border);
+        }
+        .hero .content {
+            padding: 48px 0 24px 0;
+            text-align: center;
         }
         h1 {
-            color: #004d40;
-            text-align: center;
-            border-bottom: 3px solid #004d40;
-            padding-bottom: 10px;
+            margin: 0 0 8px 0;
+            font-size: 32px;
+            line-height: 1.2;
+            color: var(--primary-600);
         }
-        h2 {
-            color: #00796b;
-            margin-top: 30px;
-            border-bottom: 2px solid #00796b;
-            padding-bottom: 5px;
+        .subtitle {
+            color: var(--muted);
+            margin: 0 auto 18px auto;
+            max-width: 780px;
+        }
+        .quick-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .chip {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #0f172a;
+            text-decoration: none;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        .chip:hover {
+            background: #e2e8f0;
+            color: var(--primary-600);
+        }
+        main section {
+            scroll-margin-top: calc(var(--header-height) + 16px);
+        }
+        .section {
+            padding: 28px 0;
+        }
+        .section h2 {
+            margin: 0 0 14px 0;
+            font-size: 22px;
+            color: #0f172a;
         }
         h3 {
-            color: #009688;
-            margin-top: 20px;
+            color: var(--primary-600);
+            margin-top: 18px;
+        }
+        .content-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 16px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            margin: 8px 0 0 0;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
+            border: 1px solid var(--border);
+            padding: 10px 12px;
             text-align: left;
         }
         th {
-            background-color: #e0f2f1;
-            color: #004d40;
+            background-color: #eef2ff;
+            color: #1e293b;
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
+        tr:nth-child(even) td {
+            background-color: #fafafa;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 6px;
         }
         .note {
-            background-color: #fff3e0;
-            border-left: 5px solid #ff9800;
-            padding: 15px;
-            margin-top: 20px;
-            font-style: italic;
+            background-color: #fffdf5;
+            border: 1px dashed #f59e0b;
+            border-left: 5px solid #f59e0b;
+            padding: 14px;
+            margin-top: 12px;
+            color: #7c2d12;
+            border-radius: 10px;
+        }
+        footer {
+            margin-top: 24px;
+            padding: 20px 0 32px 0;
+            color: var(--muted);
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            h1 { font-size: 26px; }
+            .nav { gap: 8px; }
+            .container { padding: 16px; }
         }
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <div class="container inner">
+            <div class="brand">Interview Prep Guide</div>
+            <nav class="nav" aria-label="Primary">
+                <a href="#core-qa">Core QA</a>
+                <a href="#defect-management">Defects</a>
+                <a href="#git-commands">Git</a>
+                <a href="#playwright">Playwright</a>
+                <a href="#selectors">Selectors</a>
+                <a href="#jira">Jira</a>
+                <a href="#javascript">JavaScript</a>
+                <a href="#interview-questions">Q&amp;A</a>
+            </nav>
+        </div>
+    </header>
 
-    <h1>QA, Automation, Git, and Interview Preparation Guide</h1>
+    <section id="overview" class="hero">
+        <div class="container content">
+            <h1>QA, Automation, Git, and Interview Preparation Guide</h1>
+            <p class="subtitle">Clean, sectioned layout with light colors. Use the quick links to jump to any topic.</p>
+            <div class="note">
+                This HTML document contains all the cheat sheets and interview questions compiled from your files.
+            </div>
+            <div class="quick-nav">
+                <a class="chip" href="#core-qa">Core QA</a>
+                <a class="chip" href="#defect-management">Defects</a>
+                <a class="chip" href="#git-commands">Git</a>
+                <a class="chip" href="#playwright">Playwright</a>
+                <a class="chip" href="#selectors">Selectors</a>
+                <a class="chip" href="#jira">Jira</a>
+                <a class="chip" href="#javascript">JavaScript</a>
+                <a class="chip" href="#interview-questions">Q&amp;A</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="note">
-        This HTML document contains all the cheat sheets and interview questions compiled from your files. You can save this code as an `.html` file and open it in any browser.
-    </div>
+    <main>
+        <section id="core-qa" class="section">
+            <div class="container">
+                <h2>1. Core QA Testing Terminology &amp; Life Cycles</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Key Definition / Takeaway</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Software Testing</strong></td>
+                                    <td>Process of evaluating and verifying that software meets specified requirements and works as intended to deliver business value.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Verification</strong></td>
+                                    <td>"Are we building the product right?" Ensures product conforms to specifications. It is a <strong>static process</strong> (e.g., reviews, inspections).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Validation</strong></td>
+                                    <td>"Are we building the right product?" Ensures the product meets user/customer needs. It is a <strong>dynamic process</strong> (e.g., execution, UAT).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>SDLC (Software Development Life Cycle)</strong></td>
+                                    <td>The entire process: Planning, Design, Implementation, Testing, Deployment, Maintenance.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>STLC (Software Testing Life Cycle)</strong></td>
+                                    <td>The testing phase cycle: Requirements Analysis, Test Planning, Test Case Development, Environment Setup, Execution, Closure.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Black Box Testing</strong></td>
+                                    <td>Testing the <strong>functionality</strong> without knowing the internal code structure (Behavioral Testing).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>White Box Testing</strong></td>
+                                    <td>Testing the <strong>internal code structure</strong> and logic (Structural Testing).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Non-Functional Requirement</strong></td>
+                                    <td>Specifies <em>how</em> the system <strong>SHOULD BE</strong> (e.g., Performance, Security, Reliability, Usability).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>1. Core QA Testing Terminology & Life Cycles</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Concept</th>
-                <th>Key Definition / Takeaway</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Software Testing</strong></td>
-                <td>Process of evaluating and verifying that software meets specified requirements and works as intended to deliver business value.</td>
-            </tr>
-            <tr>
-                <td><strong>Verification</strong></td>
-                <td>"Are we building the product right?" Ensures product conforms to specifications. It is a <strong>static process</strong> (e.g., reviews, inspections).</td>
-            </tr>
-            <tr>
-                <td><strong>Validation</strong></td>
-                <td>"Are we building the right product?" Ensures the product meets user/customer needs. It is a <strong>dynamic process</strong> (e.g., execution, UAT).</td>
-            </tr>
-            <tr>
-                <td><strong>SDLC (Software Development Life Cycle)</strong></td>
-                <td>The entire process: Planning, Design, Implementation, Testing, Deployment, Maintenance.</td>
-            </tr>
-            <tr>
-                <td><strong>STLC (Software Testing Life Cycle)</strong></td>
-                <td>The testing phase cycle: Requirements Analysis, Test Planning, Test Case Development, Environment Setup, Execution, Closure.</td>
-            </tr>
-            <tr>
-                <td><strong>Black Box Testing</strong></td>
-                <td>Testing the **functionality** without knowing the internal code structure (Behavioral Testing).</td>
-            </tr>
-            <tr>
-                <td><strong>White Box Testing</strong></td>
-                <td>Testing the **internal code structure** and logic (Structural Testing).</td>
-            </tr>
-            <tr>
-                <td><strong>Non-Functional Requirement</strong></td>
-                <td>Specifies *how* the system **SHOULD BE** (e.g., Performance, Security, Reliability, Usability).</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="defect-management" class="section">
+            <div class="container">
+                <h2>2. Defect Management: Priority vs. Severity</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Definition</th>
+                                    <th>Perspective</th>
+                                    <th>Common High Levels</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Severity</strong></td>
+                                    <td>The seriousness or technical impact of the bug on the system's functionality.</td>
+                                    <td><strong>Application POV</strong></td>
+                                    <td><strong>Critical:</strong> App crash/data loss. <strong>High:</strong> Major function fails.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Priority</strong></td>
+                                    <td>The order in which the bug should be fixed, based on business impact and urgency.</td>
+                                    <td><strong>User/Business POV</strong></td>
+                                    <td><strong>Immediate:</strong> Must be fixed in the next build. <strong>High:</strong> Should be fixed soon.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>Example Scenarios</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Severity</th>
+                                    <th>Priority</th>
+                                    <th>Reasoning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Payment button is slightly misaligned (cosmetic).</td>
+                                    <td>Low</td>
+                                    <td>High</td>
+                                    <td>Low technical impact, but high business urgency (affects user checkout).</td>
+                                </tr>
+                                <tr>
+                                    <td>Application crashes on a hidden admin report page.</td>
+                                    <td>Critical</td>
+                                    <td>Low</td>
+                                    <td>High technical impact, but low user exposure/business urgency.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>2. Defect Management: Priority vs. Severity</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Attribute</th>
-                <th>Definition</th>
-                <th>Perspective</th>
-                <th>Common High Levels</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Severity</strong></td>
-                <td>The seriousness or technical impact of the bug on the system's functionality.</td>
-                <td><strong>Application POV</strong></td>
-                <td><strong>Critical:</strong> App crash/data loss. <strong>High:</strong> Major function fails.</td>
-            </tr>
-            <tr>
-                <td><strong>Priority</strong></td>
-                <td>The order in which the bug should be fixed, based on business impact and urgency.</td>
-                <td><strong>User/Business POV</strong></td>
-                <td><strong>Immediate:</strong> Must be fixed in the next build. <strong>High:</strong> Should be fixed soon.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="git-commands" class="section">
+            <div class="container">
+                <h2>3. Git &amp; GitHub Essential Commands</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Command Category</th>
+                                    <th>Command</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Setup</strong></td>
+                                    <td><code>git init</code></td>
+                                    <td>Initializes a new local Git repository.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Staging</strong></td>
+                                    <td><code>git add .</code></td>
+                                    <td>Stages all modified and new files for the next commit.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Commit</strong></td>
+                                    <td><code>git commit -m "message"</code></td>
+                                    <td>Records the staged snapshot permanently in the history.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Branching</strong></td>
+                                    <td><code>git checkout -b &lt;branch-name&gt;</code></td>
+                                    <td>Creates a new branch and switches to it.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Synchronization</strong></td>
+                                    <td><code>git pull</code></td>
+                                    <td>Fetches and merges changes from the remote repository.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Undoing (Safe)</strong></td>
+                                    <td><code>git revert &lt;commit-hash&gt;</code></td>
+                                    <td>Creates a <strong>new commit</strong> that reverses the changes of a prior commit. <strong>Use for public branches.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Undoing (Destructive)</strong></td>
+                                    <td><code>git reset --hard HEAD~1</code></td>
+                                    <td>Discards the last commit AND any local changes. Rewrites history. <strong>Use for local, un-pushed commits.</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h3>Example Scenarios</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Scenario</th>
-                <th>Severity</th>
-                <th>Priority</th>
-                <th>Reasoning</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Payment button is slightly misaligned (cosmetic).</td>
-                <td>Low</td>
-                <td>High</td>
-                <td>Low technical impact, but high business urgency (affects user checkout).</td>
-            </tr>
-            <tr>
-                <td>Application crashes on a hidden admin report page.</td>
-                <td>Critical</td>
-                <td>Low</td>
-                <td>High technical impact, but low user exposure/business urgency.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="playwright" class="section">
+            <div class="container">
+                <h2>4. Playwright Core API &amp; Automation</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Action / Feature</th>
+                                    <th>Playwright Command (JavaScript)</th>
+                                    <th>Key Detail / Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Navigation</strong></td>
+                                    <td><code>await page.goto('url');</code></td>
+                                    <td>Navigates to a URL. Waits for the page to load by default.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Interaction</strong></td>
+                                    <td><code>await page.click('selector');</code></td>
+                                    <td>Clicks an element. Automatically performs <strong>actionability checks</strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Input</strong></td>
+                                    <td><code>await page.fill('selector', 'text');</code></td>
+                                    <td>Fills an input field with text.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wait (Explicit)</strong></td>
+                                    <td><code>await page.waitForSelector('selector');</code></td>
+                                    <td>Waits for an element to appear in the DOM.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Debugging</strong></td>
+                                    <td><code>await page.pause();</code></td>
+                                    <td>Pauses the test execution and launches the Playwright Inspector.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Actionability</strong></td>
+                                    <td>N/A (Automatic)</td>
+                                    <td>Playwright checks if the element is <strong>Visible</strong>, <strong>Enabled</strong>, and <strong>Stable</strong> before acting, ensuring reliability.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Handling Popups</strong></td>
+                                    <td><code>page.on('popup', popup =&gt; { /* handle popup */ });</code></td>
+                                    <td>Used to handle new browser windows/tabs.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>3. Git & GitHub Essential Commands</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Command Category</th>
-                <th>Command</th>
-                <th>Purpose</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Setup</strong></td>
-                <td><code>git init</code></td>
-                <td>Initializes a new local Git repository.</td>
-            </tr>
-            <tr>
-                <td><strong>Staging</strong></td>
-                <td><code>git add .</code></td>
-                <td>Stages all modified and new files for the next commit.</td>
-            </tr>
-            <tr>
-                <td><strong>Commit</strong></td>
-                <td><code>git commit -m "message"</code></td>
-                <td>Records the staged snapshot permanently in the history.</td>
-            </tr>
-            <tr>
-                <td><strong>Branching</strong></td>
-                <td><code>git checkout -b &lt;branch-name&gt;</code></td>
-                <td>Creates a new branch and switches to it.</td>
-            </tr>
-            <tr>
-                <td><strong>Synchronization</strong></td>
-                <td><code>git pull</code></td>
-                <td>Fetches and merges changes from the remote repository.</td>
-            </tr>
-            <tr>
-                <td><strong>Undoing (Safe)</strong></td>
-                <td><code>git revert &lt;commit-hash&gt;</code></td>
-                <td>Creates a **new commit** that reverses the changes of a prior commit. **Use for public branches.**</td>
-            </tr>
-            <tr>
-                <td><strong>Undoing (Destructive)</strong></td>
-                <td><code>git reset --hard HEAD~1</code></td>
-                <td>Discards the last commit AND any local changes. Rewrites history. **Use for local, un-pushed commits.**</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="selectors" class="section">
+            <div class="container">
+                <h2>5. XPath and CSS Selectors for Locating Elements</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Locator Type</th>
+                                    <th>Technique</th>
+                                    <th>Example Syntax</th>
+                                    <th>When to Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CSS Selector</strong></td>
+                                    <td>ID</td>
+                                    <td><code>input#username</code> or <code>#usernameField</code></td>
+                                    <td><strong>Preferred for speed and stability.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>CSS Selector</strong></td>
+                                    <td>Attribute Contains</td>
+                                    <td><code>input[name*='user']</code></td>
+                                    <td>Good for dynamic IDs (where the attribute value contains a substring).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>XPath</strong></td>
+                                    <td>By Visible Text</td>
+                                    <td><code>//button[text()='Submit']</code></td>
+                                    <td>Locating an element by its exact visible text.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>XPath</strong></td>
+                                    <td>Navigation</td>
+                                    <td><code>//div/..</code></td>
+                                    <td><strong>Necessary for navigating backward</strong> to a parent element in the DOM.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>4. Playwright Core API & Automation</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Action / Feature</th>
-                <th>Playwright Command (JavaScript)</th>
-                <th>Key Detail / Purpose</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Navigation</strong></td>
-                <td><code>await page.goto('url');</code></td>
-                <td>Navigates to a URL. Waits for the page to load by default.</td>
-            </tr>
-            <tr>
-                <td><strong>Interaction</strong></td>
-                <td><code>await page.click('selector');</code></td>
-                <td>Clicks an element. Automatically performs **actionability checks**.</td>
-            </tr>
-            <tr>
-                <td><strong>Input</strong></td>
-                <td><code>await page.fill('selector', 'text');</code></td>
-                <td>Fills an input field with text.</td>
-            </tr>
-            <tr>
-                <td><strong>Wait (Explicit)</strong></td>
-                <td><code>await page.waitForSelector('selector');</code></td>
-                <td>Waits for an element to appear in the DOM.</td>
-            </tr>
-            <tr>
-                <td><strong>Debugging</strong></td>
-                <td><code>await page.pause();</code></td>
-                <td>Pauses the test execution and launches the Playwright Inspector.</td>
-            </tr>
-            <tr>
-                <td><strong>Actionability</strong></td>
-                <td>N/A (Automatic)</td>
-                <td>Playwright checks if the element is **Visible**, **Enabled**, and **Stable** before acting, ensuring reliability.</td>
-            </tr>
-            <tr>
-                <td><strong>Handling Popups</strong></td>
-                <td><code>page.on('popup', popup => { /* handle popup */ });</code></td>
-                <td>Used to handle new browser windows/tabs.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="jira" class="section">
+            <div class="container">
+                <h2>6. Jira Project Management &amp; JQL</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Definition / Key Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Jira Software</strong></td>
+                                    <td>Project management tool mainly used for <strong>issue tracking</strong> and Agile development (Scrum/Kanban).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Issue</strong></td>
+                                    <td>The fundamental work item (Bug, Task, Story, Epic, Requirement).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scrum Board</strong></td>
+                                    <td>Uses <strong>Sprints</strong> (time-boxed iterations) for planning and tracking work.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kanban Board</strong></td>
+                                    <td>Focuses on <strong>continuous flow</strong> and limiting work-in-progress (WIP).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>JQL (Jira Query Language)</strong></td>
+                                    <td>Used for advanced searching and filtering of issues.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>5. XPath and CSS Selectors for Locating Elements</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Locator Type</th>
-                <th>Technique</th>
-                <th>Example Syntax</th>
-                <th>When to Use</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>CSS Selector</strong></td>
-                <td>ID</td>
-                <td><code>input#username</code> or <code>#usernameField</code></td>
-                <td>**Preferred for speed and stability.**</td>
-            </tr>
-            <tr>
-                <td><strong>CSS Selector</strong></td>
-                <td>Attribute Contains</td>
-                <td><code>input[name*='user']</code></td>
-                <td>Good for dynamic IDs (where the attribute value contains a substring).</td>
-            </tr>
-            <tr>
-                <td><strong>XPath</strong></td>
-                <td>By Visible Text</td>
-                <td><code>//button[text()='Submit']</code></td>
-                <td>Locating an element by its exact visible text.</td>
-            </tr>
-            <tr>
-                <td><strong>XPath</strong></td>
-                <td>Navigation</td>
-                <td><code>//div/..</code></td>
-                <td>**Necessary for navigating backward** to a parent element in the DOM.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="javascript" class="section">
+            <div class="container">
+                <h2>7. Essential JavaScript Interview Concepts 📜</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Simple Definition / Answer</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Closure</strong></td>
+                                    <td>A function that retains access to its lexical scope (variables from its outer function), even after the outer function has finished execution.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>var</code>, <code>let</code>, <code>const</code></strong></td>
+                                    <td><strong><code>var</code></strong> is function-scoped; <strong><code>let</code></strong> and <strong><code>const</code></strong> are <strong>block-scoped</strong>. <code>const</code> cannot be re-assigned.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>==</code> vs. <code>===</code></strong></td>
+                                    <td><strong><code>==</code></strong> (Loose) checks value after performing <strong>type coercion</strong>. <strong><code>===</code></strong> (Strict) checks for both value AND <strong>type</strong>. <strong>Always use <code>===</code></strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hoisting</strong></td>
+                                    <td>The behavior where all <strong>declarations</strong> (of variables and functions) are moved to the top of their scope during compilation.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Promise</strong></td>
+                                    <td>An object representing the eventual completion or failure of an <strong>asynchronous</strong> operation. States: <strong>pending</strong>, <strong>fulfilled</strong>, or <strong>rejected</strong>.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><code>async</code>/<code>await</code></strong></td>
+                                    <td>Syntax built on Promises that makes asynchronous code look synchronous. <strong><code>async</code></strong> defines a function; <strong><code>await</code></strong> pauses execution until the Promise resolves.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>6. Jira Project Management & JQL</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Concept</th>
-                <th>Definition / Key Use</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Jira Software</strong></td>
-                <td>Project management tool mainly used for **issue tracking** and Agile development (Scrum/Kanban).</td>
-            </tr>
-            <tr>
-                <td><strong>Issue</strong></td>
-                <td>The fundamental work item (Bug, Task, Story, Epic, Requirement).</td>
-            </tr>
-            <tr>
-                <td><strong>Scrum Board</strong></td>
-                <td>Uses **Sprints** (time-boxed iterations) for planning and tracking work.</td>
-            </tr>
-            <tr>
-                <td><strong>Kanban Board</strong></td>
-                <td>Focuses on **continuous flow** and limiting work-in-progress (WIP).</td>
-            </tr>
-            <tr>
-                <td><strong>JQL (Jira Query Language)</strong></td>
-                <td>Used for advanced searching and filtering of issues.</td>
-            </tr>
-        </tbody>
-    </table>
+        <section id="interview-questions" class="section">
+            <div class="container">
+                <h2>8. Advanced/Tricky QA Interview Questions 🧠</h2>
+                <div class="content-card">
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Recommended Answer Framework</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>How do you handle a bug a Developer claims is "Not a Bug"?</strong></td>
+                                    <td>1. <strong>Re-verify</strong> and replicate. 2. <strong>Document</strong> clearly (video/logs). 3. <strong>Cite Requirement</strong> or specific business logic being violated. 4. <strong>Escalate</strong> to PO/QA Lead for decision.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Difference between Git Merge and Git Rebase?</strong></td>
+                                    <td><strong>Merge:</strong> Preserves history, creates a merge commit. <strong>Rebase:</strong> Rewrites history for a clean, linear log. <strong>Rule:</strong> Rebase only on local branches; Merge on public/shared branches.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Explain Playwright's Actionability Checks.</strong></td>
+                                    <td>Playwright automatically checks if an element is <strong>Visible, Enabled, and Stable</strong> before executing an action. This prevents common race conditions and flaky tests.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>How do you test Search Functionality?</strong></td>
+                                    <td>Test <strong>Functional</strong> (exact/partial match, negative testing), <strong>Performance</strong> (search speed), and <strong>Usability</strong> (autocomplete, relevance/ranking).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <h2>7. Essential JavaScript Interview Concepts 📜</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Concept</th>
-                <th>Simple Definition / Answer</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Closure</strong></td>
-                <td>A function that retains access to its lexical scope (variables from its outer function), even after the outer function has finished execution.</td>
-            </tr>
-            <tr>
-                <td><strong>`var`, `let`, `const`</strong></td>
-                <td>**`var`** is function-scoped; **`let`** and **`const`** are **block-scoped**. `const` cannot be re-assigned.</td>
-            </tr>
-            <tr>
-                <td><strong>`==` vs. `===`</strong></td>
-                <td>**`==`** (Loose) checks value after performing **type coercion**. **`===`** (Strict) checks for both value AND **type**. **Always use `===`**.</td>
-            </tr>
-            <tr>
-                <td><strong>Hoisting</strong></td>
-                <td>The behavior where all **declarations** (of variables and functions) are moved to the top of their scope during compilation.</td>
-            </tr>
-            <tr>
-                <td><strong>Promise</strong></td>
-                <td>An object representing the eventual completion or failure of an **asynchronous** operation. States: **pending**, **fulfilled**, or **rejected**.</td>
-            </tr>
-            <tr>
-                <td><strong>`async`/`await`</strong></td>
-                <td>Syntax built on Promises that makes asynchronous code look synchronous. **`async`** defines a function; **`await`** pauses execution until the Promise resolves.</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>8. Advanced/Tricky QA Interview Questions 🧠</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Question</th>
-                <th>Recommended Answer Framework</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>How do you handle a bug a Developer claims is "Not a Bug"?</strong></td>
-                <td>1. **Re-verify** and replicate. 2. **Document** clearly (video/logs). 3. **Cite Requirement** or specific business logic being violated. 4. **Escalate** to PO/QA Lead for decision.</td>
-            </tr>
-            <tr>
-                <td><strong>Difference between Git Merge and Git Rebase?</strong></td>
-                <td>**Merge:** Preserves history, creates a merge commit. **Rebase:** Rewrites history for a clean, linear log. **Rule:** Rebase only on local branches; Merge on public/shared branches.</td>
-            </tr>
-            <tr>
-                <td><strong>Explain Playwright's Actionability Checks.</strong></td>
-                <td>Playwright automatically checks if an element is **Visible, Enabled, and Stable** before executing an action. This prevents common race conditions and flaky tests.</td>
-            </tr>
-            <tr>
-                <td><strong>How do you test Search Functionality?</strong></td>
-                <td>Test **Functional** (exact/partial match, negative testing), **Performance** (search speed), and **Usability** (autocomplete, relevance/ranking).</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <footer>
+        <div class="container">Made better with a light, readable theme.</div>
+    </footer>
 </body>
 </html>
