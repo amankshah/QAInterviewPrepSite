@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
+    <title>85 End-to-End QA Interview Questions 2025 | Complete Prep Guide</title>
+    <meta name="title" content="85 End-to-End QA Interview Questions 2025 | Complete Prep Guide">
+    <meta name="description" content="Complete QA interview prep with 85 questions covering E2E testing, API testing, database testing, real-world scenarios, and behavioral questions. From testing levels to HR prep.">
+    <meta name="keywords" content="E2E testing interview, end-to-end testing questions, API testing interview, database testing, QA behavioral questions, test scenarios, QA interview prep complete">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://qa-interview-prep.com/pages/end-to-end-qa-interview.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://qa-interview-prep.com/pages/end-to-end-qa-interview.html">
+    <meta property="og:title" content="85 End-to-End QA Interview Questions 2025">
+    <meta property="og:description" content="Complete QA interview prep with 85 questions covering E2E testing, API testing, and behavioral questions.">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="85 End-to-End QA Interview Questions 2025">
+    <meta name="twitter:description" content="Complete QA interview prep with 85 questions covering E2E testing, API testing, and behavioral questions.">
+    
+    <meta name="theme-color" content="#db2777">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "85 End-to-End QA Interview Questions and Answers",
+        "description": "Complete E2E QA interview preparation guide covering testing levels, API, database, and behavioral questions",
+        "author": {"@type": "Organization", "name": "Interview Prep Guide"},
+        "datePublished": "2025-12-02",
+        "dateModified": "2025-12-02"
+    }
+    </script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #ec4899, #db2777);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #ec4899;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #fdf2f8, #fce7f3);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #db2777;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ec4899, #db2777);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        /* Sticky nav styles now in main CSS */
+        .question-count {
+            background: #ec4899;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .category-header { scroll-margin-top: 130px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>🎯 End-to-End QA Interview Preparation</h1>
+            <p class="subtitle">Comprehensive notes covering the complete QA interview spectrum - from basics to advanced scenarios, real-world problems, and behavioral questions.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#testing-levels">📊 Testing Levels</a>
+                <a class="chip" href="#e2e-testing">🔗 E2E Testing</a>
+                <a class="chip" href="#api-testing">🌐 API Testing</a>
+                <a class="chip" href="#database">💾 Database</a>
+                <a class="chip" href="#scenarios">🎭 Scenarios</a>
+                <a class="chip" href="#behavioral">💬 Behavioral</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Testing Levels -->
+                <div class="category-header" id="testing-levels">
+                    <span class="category-icon">📊</span>
+                    <h2 class="category-title">Testing Levels & Strategy</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">What are the different levels of testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. <strong>Unit Testing:</strong> Individual components<br>
+                            2. <strong>Integration Testing:</strong> Module interactions<br>
+                            3. <strong>System Testing:</strong> Complete system<br>
+                            4. <strong>Acceptance Testing:</strong> User validation
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">What is the Test Pyramid and why is it important?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Bottom (Most):</strong> Unit Tests - Fast, cheap, numerous<br>
+                            <strong>Middle:</strong> Integration/API Tests - Moderate<br>
+                            <strong>Top (Least):</strong> UI/E2E Tests - Slow, expensive, few<br>
+                            <em>Importance:</em> Faster feedback, lower costs, better coverage
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">How do you create a Test Strategy?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Understand requirements and risks<br>
+                            2. Define scope and objectives<br>
+                            3. Identify test types needed<br>
+                            4. Select tools and frameworks<br>
+                            5. Plan resources and timeline<br>
+                            6. Define entry/exit criteria<br>
+                            7. Establish metrics and reporting
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">What is Risk-Based Testing?</span>
+                        </div>
+                        <div class="qa-answer">Prioritizing testing based on risk assessment. High-risk areas (critical features, complex logic, frequently used) get more testing attention and resources.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">What is Shift-Left Testing?</span>
+                        </div>
+                        <div class="qa-answer">Moving testing activities earlier in the SDLC. Testing starts during requirements and design phases, not just after development. Catches defects when they're cheaper to fix.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">What is Shift-Right Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing in production environments. Includes monitoring, A/B testing, canary releases, and gathering real user feedback. Complements traditional testing.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">How do you decide what to automate vs manual test?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Automate:</strong> Regression, smoke tests, data-driven, repetitive, stable features<br>
+                            <strong>Manual:</strong> Exploratory, usability, one-time tests, new features, complex scenarios
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">What is Test Coverage and how do you measure it?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Types:</strong><br>
+                            - Requirements coverage: Tests per requirement<br>
+                            - Code coverage: Lines/branches executed<br>
+                            - Risk coverage: Critical areas tested<br>
+                            <em>Tools:</em> JaCoCo, Istanbul, SonarQube
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">What metrics do you track for QA?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test execution rate<br>
+                            - Pass/Fail ratio<br>
+                            - Defect density<br>
+                            - Defect leakage<br>
+                            - Test coverage<br>
+                            - Automation percentage<br>
+                            - Mean time to detect/fix
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">What is Continuous Testing?</span>
+                        </div>
+                        <div class="qa-answer">Running automated tests continuously as part of CI/CD pipeline. Every code commit triggers tests, providing immediate feedback on quality.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">How do you handle testing in Agile/Scrum?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test planning in sprint planning<br>
+                            - Write tests alongside development<br>
+                            - Daily testing activities<br>
+                            - Automate within sprint<br>
+                            - Demo tested features<br>
+                            - Retrospective on quality
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What is Definition of Done for QA?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - All test cases executed<br>
+                            - No critical/high bugs open<br>
+                            - Code reviewed<br>
+                            - Automation tests added<br>
+                            - Documentation updated<br>
+                            - Performance acceptable
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">How do you estimate testing effort?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Analyze requirements complexity<br>
+                            - Historical data from similar projects<br>
+                            - Test case count estimation<br>
+                            - Factor in automation time<br>
+                            - Include regression effort<br>
+                            - Add buffer for unknowns
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">What is Exploratory Testing?</span>
+                        </div>
+                        <div class="qa-answer">Simultaneous learning, test design, and execution. Tester explores application without predefined scripts, using domain knowledge and creativity to find bugs.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">How do you handle test documentation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test plan (strategy, scope)<br>
+                            - Test cases (steps, data, expected)<br>
+                            - Traceability matrix<br>
+                            - Bug reports<br>
+                            - Test summary reports<br>
+                            - Keep it lean but sufficient
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E2E Testing -->
+                <div class="category-header" id="e2e-testing">
+                    <span class="category-icon">🔗</span>
+                    <h2 class="category-title">End-to-End Testing</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">What is End-to-End Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing complete user workflows from start to finish, verifying all integrated components work together correctly. Simulates real user scenarios.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">What should E2E tests cover?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Critical user journeys<br>
+                            - Business-critical flows<br>
+                            - Integration points<br>
+                            - Data flow across systems<br>
+                            - Happy paths and key error scenarios
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What are challenges in E2E testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Slow execution time<br>
+                            - Flaky tests<br>
+                            - Environment complexity<br>
+                            - Test data management<br>
+                            - Debugging failures<br>
+                            - Maintenance overhead
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">How do you make E2E tests reliable?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Proper wait strategies<br>
+                            - Stable locators<br>
+                            - Test isolation<br>
+                            - Retry mechanisms<br>
+                            - Clean test data<br>
+                            - Consistent environments
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">How do you handle test data in E2E tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Create fresh data before tests<br>
+                            - Use API to seed data<br>
+                            - Database snapshots<br>
+                            - Cleanup after tests<br>
+                            - Avoid shared test data<br>
+                            - Use data factories
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">How do you test login/authentication E2E?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Valid credentials login<br>
+                            - Invalid credentials (error messages)<br>
+                            - Session management<br>
+                            - Remember me functionality<br>
+                            - Password reset flow<br>
+                            - Multi-factor authentication<br>
+                            - Logout functionality
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">How do you test e-commerce checkout flow?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Add products to cart<br>
+                            2. View/edit cart<br>
+                            3. Apply promo codes<br>
+                            4. Enter shipping details<br>
+                            5. Select payment method<br>
+                            6. Complete payment<br>
+                            7. Order confirmation<br>
+                            8. Email notification
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">How do you test search functionality?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Exact match search<br>
+                            - Partial match<br>
+                            - No results handling<br>
+                            - Special characters<br>
+                            - Filters and sorting<br>
+                            - Pagination<br>
+                            - Auto-suggestions<br>
+                            - Search performance
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">How do you test file upload functionality?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Valid file types<br>
+                            - Invalid file types (rejection)<br>
+                            - File size limits<br>
+                            - Multiple file upload<br>
+                            - Upload progress<br>
+                            - Cancel upload<br>
+                            - File preview
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">How do you test form validation?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Required fields<br>
+                            - Field format validation (email, phone)<br>
+                            - Min/max length<br>
+                            - Error message display<br>
+                            - Client-side vs server-side<br>
+                            - Tab order/navigation
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">How do you test pagination?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - First/last page navigation<br>
+                            - Next/previous buttons<br>
+                            - Page number links<br>
+                            - Items per page<br>
+                            - Total count accuracy<br>
+                            - Empty page handling<br>
+                            - URL parameters
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">How do you test email functionality?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Email delivery<br>
+                            - Subject and content<br>
+                            - Links in email work<br>
+                            - Attachments<br>
+                            - Spam filtering<br>
+                            - Use tools like Mailinator, Mailtrap
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">How do you test notifications/alerts?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Trigger conditions<br>
+                            - Display timing<br>
+                            - Content accuracy<br>
+                            - Dismiss functionality<br>
+                            - Multiple notifications<br>
+                            - Push notifications<br>
+                            - Notification preferences
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">How do you test user roles and permissions?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Different role access levels<br>
+                            - Feature visibility per role<br>
+                            - Action restrictions<br>
+                            - Role switching<br>
+                            - Unauthorized access attempts<br>
+                            - Admin vs regular user
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">How do you handle third-party integrations in E2E?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Mock external services when possible<br>
+                            - Use sandbox/test environments<br>
+                            - Test happy path with real integration<br>
+                            - Test error handling with mocks<br>
+                            - Contract testing
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Testing -->
+                <div class="category-header" id="api-testing">
+                    <span class="category-icon">🌐</span>
+                    <h2 class="category-title">API Testing</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">What is API Testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing application programming interfaces directly. Validates functionality, reliability, performance, and security of APIs without UI.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">What are HTTP methods and when to use them?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>GET:</strong> Retrieve data<br>
+                            <strong>POST:</strong> Create new resource<br>
+                            <strong>PUT:</strong> Update entire resource<br>
+                            <strong>PATCH:</strong> Partial update<br>
+                            <strong>DELETE:</strong> Remove resource
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What HTTP status codes should you verify?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>2xx Success:</strong> 200 OK, 201 Created, 204 No Content<br>
+                            <strong>4xx Client Error:</strong> 400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found<br>
+                            <strong>5xx Server Error:</strong> 500 Internal Server Error
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What do you validate in API response?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Status code<br>
+                            - Response body (JSON structure)<br>
+                            - Response headers<br>
+                            - Response time<br>
+                            - Data types<br>
+                            - Required fields<br>
+                            - Error messages
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">What is REST API?</span>
+                        </div>
+                        <div class="qa-answer">Representational State Transfer - architectural style using HTTP methods, stateless communication, resource-based URLs, and JSON/XML data format.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">What is GraphQL and how is it different from REST?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>GraphQL:</strong> Query language where client specifies exact data needed. Single endpoint, no over/under fetching.<br>
+                            <strong>REST:</strong> Multiple endpoints, fixed data structure per endpoint.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">How do you test API authentication?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Valid token access<br>
+                            - Invalid/expired token rejection<br>
+                            - Missing token handling<br>
+                            - Token refresh flow<br>
+                            - OAuth flows<br>
+                            - API key validation
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">What are common API security tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - SQL injection<br>
+                            - Authentication bypass<br>
+                            - Authorization checks<br>
+                            - Rate limiting<br>
+                            - Input validation<br>
+                            - Sensitive data exposure<br>
+                            - CORS configuration
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">How do you test API with different data?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Valid data (happy path)<br>
+                            - Invalid data types<br>
+                            - Boundary values<br>
+                            - Empty/null values<br>
+                            - Special characters<br>
+                            - Large payloads<br>
+                            - Missing required fields
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">What tools do you use for API testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Manual:</strong> Postman, Insomnia, cURL<br>
+                            <strong>Automation:</strong> RestAssured, Karate, pytest, SuperTest<br>
+                            <strong>Performance:</strong> JMeter, Gatling, k6
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">What is JSON Schema validation?</span>
+                        </div>
+                        <div class="qa-answer">Validating JSON response structure against a schema definition. Ensures correct data types, required fields, and format compliance.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">How do you handle API dependencies in testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Create dependent data via API<br>
+                            - Use setup/teardown<br>
+                            - Mock dependencies<br>
+                            - Use test containers<br>
+                            - Chain API calls properly
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">What is Contract Testing?</span>
+                        </div>
+                        <div class="qa-answer">Verifying API provider and consumer agree on contract (request/response format). Tools: Pact, Spring Cloud Contract. Catches breaking changes early.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">How do you test API performance?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Response time under load<br>
+                            - Throughput (requests/second)<br>
+                            - Concurrent user handling<br>
+                            - Resource utilization<br>
+                            - Error rate under stress
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">How do you document API tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Clear test case names<br>
+                            - Request/response examples<br>
+                            - Expected outcomes<br>
+                            - Test data requirements<br>
+                            - Setup/prerequisites<br>
+                            - Postman collections
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Testing -->
+                <div class="category-header" id="database">
+                    <span class="category-icon">💾</span>
+                    <h2 class="category-title">Database Testing</h2>
+                    <span class="question-count">Q46-55</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What is Database Testing?</span>
+                        </div>
+                        <div class="qa-answer">Validating data integrity, schema, stored procedures, triggers, and data manipulation operations in the database.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">What do you test in database testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Data integrity<br>
+                            - Data accuracy<br>
+                            - CRUD operations<br>
+                            - Schema validation<br>
+                            - Stored procedures<br>
+                            - Triggers<br>
+                            - Data migration
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you verify data after UI actions?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Perform action via UI/API<br>
+                            2. Query database directly<br>
+                            3. Compare expected vs actual values<br>
+                            4. Verify all affected tables<br>
+                            5. Check timestamps, foreign keys
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What SQL queries are important for testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - SELECT (verify data)<br>
+                            - INSERT (test creation)<br>
+                            - UPDATE (test modifications)<br>
+                            - DELETE (test removal)<br>
+                            - JOIN (verify relationships)<br>
+                            - COUNT/SUM (verify aggregations)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">How do you test data integrity?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Primary key uniqueness<br>
+                            - Foreign key relationships<br>
+                            - NOT NULL constraints<br>
+                            - Default values<br>
+                            - Check constraints<br>
+                            - Referential integrity
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">How do you test stored procedures?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Execute with valid inputs<br>
+                            - Execute with invalid inputs<br>
+                            - Verify output/return values<br>
+                            - Check affected data<br>
+                            - Test error handling<br>
+                            - Performance testing
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">How do you test database triggers?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Verify trigger fires on event<br>
+                            - Check triggered actions executed<br>
+                            - Test before/after triggers<br>
+                            - Validate data changes<br>
+                            - Test with cascade operations
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">What is data migration testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Source vs target data comparison<br>
+                            - Record count verification<br>
+                            - Data transformation accuracy<br>
+                            - No data loss<br>
+                            - Rollback capability<br>
+                            - Performance during migration
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">What tools do you use for database testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - SQL clients (DBeaver, DataGrip)<br>
+                            - DBUnit<br>
+                            - TestContainers<br>
+                            - Liquibase/Flyway<br>
+                            - Custom queries in test scripts
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">How do you handle test database setup?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Separate test database<br>
+                            - Reset before test suite<br>
+                            - Seed with test data<br>
+                            - Use transactions for rollback<br>
+                            - Docker containers for isolation
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Test Scenarios -->
+                <div class="category-header" id="scenarios">
+                    <span class="category-icon">🎭</span>
+                    <h2 class="category-title">Real-World Test Scenarios</h2>
+                    <span class="question-count">Q56-70</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">How would you test a payment gateway integration?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use sandbox/test mode<br>
+                            - Test card numbers (valid, invalid, declined)<br>
+                            - Amount limits<br>
+                            - Currency handling<br>
+                            - Refund flow<br>
+                            - Error handling<br>
+                            - Timeout scenarios<br>
+                            - Security (data masking)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How would you test a shopping cart?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Add single/multiple items<br>
+                            - Update quantity<br>
+                            - Remove items<br>
+                            - Price calculations<br>
+                            - Tax calculations<br>
+                            - Discount codes<br>
+                            - Cart persistence<br>
+                            - Stock availability
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">How would you test a booking system?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Date/time selection<br>
+                            - Availability check<br>
+                            - Double booking prevention<br>
+                            - Cancellation/rescheduling<br>
+                            - Confirmation notifications<br>
+                            - Calendar sync<br>
+                            - Time zone handling
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">How would you test a social media feed?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Post creation/editing/deletion<br>
+                            - Feed loading (infinite scroll)<br>
+                            - Like/comment/share<br>
+                            - Media upload<br>
+                            - Tagging users<br>
+                            - Privacy settings<br>
+                            - Real-time updates
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">How would you test a messaging/chat feature?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Send/receive messages<br>
+                            - Real-time delivery<br>
+                            - Read receipts<br>
+                            - Media sharing<br>
+                            - Group chats<br>
+                            - Message history<br>
+                            - Offline handling<br>
+                            - Push notifications
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">How would you test a reporting dashboard?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Data accuracy<br>
+                            - Chart rendering<br>
+                            - Filter functionality<br>
+                            - Date range selection<br>
+                            - Export features<br>
+                            - Real-time updates<br>
+                            - Large data handling
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">How would you test user registration?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Form validations<br>
+                            - Duplicate email/username<br>
+                            - Password requirements<br>
+                            - Email verification<br>
+                            - Terms acceptance<br>
+                            - CAPTCHA<br>
+                            - Social login<br>
+                            - Welcome email
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">How would you test password reset flow?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Request reset (valid/invalid email)<br>
+                            - Email delivery<br>
+                            - Reset link validity/expiry<br>
+                            - Link security (token)<br>
+                            - New password requirements<br>
+                            - Success confirmation<br>
+                            - Old password invalidation
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">How would you test multi-language support?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Language switching<br>
+                            - All text translated<br>
+                            - Date/number formats<br>
+                            - Currency display<br>
+                            - RTL language support<br>
+                            - Character encoding<br>
+                            - Fallback handling
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">How would you test mobile responsiveness?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Different screen sizes<br>
+                            - Portrait/landscape<br>
+                            - Touch interactions<br>
+                            - Mobile navigation<br>
+                            - Image scaling<br>
+                            - Text readability<br>
+                            - Button/link sizes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">How would you test offline functionality?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - App behavior when offline<br>
+                            - Offline data storage<br>
+                            - Sync when back online<br>
+                            - Conflict resolution<br>
+                            - User notifications<br>
+                            - Cached content display
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">How would you test data export/import?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Export formats (CSV, Excel, PDF)<br>
+                            - Data completeness<br>
+                            - Import validation<br>
+                            - Large file handling<br>
+                            - Error reporting<br>
+                            - Duplicate handling<br>
+                            - Template downloads
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How would you test a subscription system?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Plan selection<br>
+                            - Upgrade/downgrade<br>
+                            - Billing cycle<br>
+                            - Payment failure handling<br>
+                            - Cancellation<br>
+                            - Trial periods<br>
+                            - Proration
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">How would you test concurrent user scenarios?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Same resource access<br>
+                            - Data conflicts<br>
+                            - Lock mechanisms<br>
+                            - Race conditions<br>
+                            - Session handling<br>
+                            - Real-time updates
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">How would you test SSO (Single Sign-On)?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Login through SSO provider<br>
+                            - User provisioning<br>
+                            - Session management<br>
+                            - Logout from all apps<br>
+                            - Multiple provider support<br>
+                            - Fallback authentication
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavioral -->
+                <div class="category-header" id="behavioral">
+                    <span class="category-icon">💬</span>
+                    <h2 class="category-title">Behavioral & Situational Questions</h2>
+                    <span class="question-count">Q71-85</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">How do you handle tight deadlines with incomplete testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Prioritize critical test cases<br>
+                            - Risk-based testing approach<br>
+                            - Communicate status clearly<br>
+                            - Document untested areas<br>
+                            - Propose post-release testing<br>
+                            - Negotiate scope if possible
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">How do you handle disagreements with developers about bugs?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Provide clear reproduction steps<br>
+                            - Share evidence (screenshots, logs)<br>
+                            - Reference requirements<br>
+                            - Stay professional<br>
+                            - Involve team lead if needed<br>
+                            - Focus on user impact
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">Describe a critical bug you found and how you handled it.</span>
+                        </div>
+                        <div class="qa-answer">
+                            <em>Structure your answer:</em><br>
+                            1. Context/situation<br>
+                            2. How you discovered it<br>
+                            3. Impact assessment<br>
+                            4. Communication steps<br>
+                            5. Resolution and outcome<br>
+                            6. Lessons learned
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you prioritize test cases with limited time?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Business-critical features first<br>
+                            - High-risk areas<br>
+                            - Most frequently used features<br>
+                            - Customer-facing functionality<br>
+                            - New/changed features<br>
+                            - Integration points
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">How do you stay updated with QA trends?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Tech blogs and newsletters<br>
+                            - Online courses<br>
+                            - QA communities<br>
+                            - Conferences/webinars<br>
+                            - Practice with new tools<br>
+                            - Side projects
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">How do you handle testing with unclear requirements?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Ask clarifying questions<br>
+                            - Document assumptions<br>
+                            - Create test scenarios for review<br>
+                            - Use exploratory testing<br>
+                            - Test common user expectations<br>
+                            - Get sign-off on test approach
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">Tell me about a time you improved the testing process.</span>
+                        </div>
+                        <div class="qa-answer">
+                            <em>Use STAR method:</em><br>
+                            <strong>S:</strong> Situation - What was the problem?<br>
+                            <strong>T:</strong> Task - What needed improvement?<br>
+                            <strong>A:</strong> Action - What did you do?<br>
+                            <strong>R:</strong> Result - What was the impact?
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">How do you handle production issues?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Stay calm<br>
+                            - Reproduce if possible<br>
+                            - Gather information (logs, errors)<br>
+                            - Communicate to stakeholders<br>
+                            - Help with root cause analysis<br>
+                            - Add test coverage to prevent recurrence
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">How do you ensure quality when working remotely?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Clear communication channels<br>
+                            - Regular sync meetings<br>
+                            - Detailed documentation<br>
+                            - Screen sharing for demos<br>
+                            - Proper tool access<br>
+                            - Proactive status updates
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">How do you mentor junior QA team members?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Pair testing sessions<br>
+                            - Code reviews for test scripts<br>
+                            - Share knowledge resources<br>
+                            - Give constructive feedback<br>
+                            - Assign progressively challenging tasks<br>
+                            - Create safe learning environment
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">What's your approach to learning a new application?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Review documentation<br>
+                            - Talk to developers/PO<br>
+                            - Explore as end-user<br>
+                            - Understand architecture<br>
+                            - Identify integrations<br>
+                            - Note questions for team
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">How do you handle testing a feature you don't agree with?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Share feedback professionally<br>
+                            - Document concerns with evidence<br>
+                            - Respect final decisions<br>
+                            - Test thoroughly regardless<br>
+                            - Focus on quality not preferences
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">What's your biggest testing failure and what did you learn?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Be honest about the mistake<br>
+                            - Explain the context<br>
+                            - Focus on lessons learned<br>
+                            - Describe process improvements<br>
+                            - Show growth from experience
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">How do you balance thoroughness with speed?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Smart test prioritization<br>
+                            - Risk-based approach<br>
+                            - Automation for regression<br>
+                            - Efficient test design<br>
+                            - Reusable test data<br>
+                            - Know when "good enough"
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">Where do you see yourself in 5 years as a QA?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <em>Options to consider:</em><br>
+                            - Senior QA/Lead role<br>
+                            - QA Manager<br>
+                            - SDET/Automation architect<br>
+                            - Performance engineering<br>
+                            - Security testing specialist<br>
+                            - DevOps/Platform engineering
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>85 End-to-End QA Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

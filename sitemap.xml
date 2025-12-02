@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Homepage / Cheat Sheet -->
+    <url>
+        <loc>https://qa-interview-prep.com/</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Playwright Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/playwright-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Git Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/git-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Manual Testing Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/manual-testing-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Jira Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/jira-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Selenium Java Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/selenium-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- QA Automation Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/qa-automation-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- E2E QA Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/end-to-end-qa-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- General Interview Questions -->
+    <url>
+        <loc>https://qa-interview-prep.com/pages/general-interview.html</loc>
+        <lastmod>2025-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>
+

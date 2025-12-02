@@ -92,6 +92,9 @@
             });
         });
 
+        // Add class to body to indicate sidebar is present
+        document.body.classList.add('has-toc-sidebar');
+        
         // Make main content aware of sidebar
         if (window.innerWidth > 1024) {
             const containers = document.querySelectorAll('main .container, .hero .container');

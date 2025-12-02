@@ -1,0 +1,1485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- Primary Meta Tags -->
+    <title>90 General QA Interview Questions 2025 | HR & Technical Guide</title>
+    <meta name="title" content="90 General QA Interview Questions 2025 | HR & Technical Guide">
+    <meta name="description" content="Prepare for any QA interview with 90 general questions covering problem-solving puzzles, technical concepts, soft skills, and HR behavioral questions. Test a pen, elevator, ATM and more!">
+    <meta name="keywords" content="QA HR interview questions, test a pen interview question, QA behavioral questions, soft skills interview, problem solving interview, tell me about yourself QA, QA strengths weaknesses">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://qa-interview-prep.com/pages/general-interview.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://qa-interview-prep.com/pages/general-interview.html">
+    <meta property="og:title" content="90 General QA Interview Questions 2025">
+    <meta property="og:description" content="Prepare for any QA interview with 90 questions covering problem-solving, technical concepts, and HR behavioral questions.">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="90 General QA Interview Questions 2025">
+    <meta name="twitter:description" content="Prepare for any QA interview with 90 questions covering problem-solving, technical concepts, and HR behavioral questions.">
+    
+    <meta name="theme-color" content="#4f46e5">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/toc.js" defer></script>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "90 General QA Interview Questions and Answers",
+        "description": "Complete general interview preparation guide covering HR questions, behavioral questions, and problem-solving",
+        "author": {"@type": "Organization", "name": "Interview Prep Guide"},
+        "datePublished": "2025-12-02",
+        "dateModified": "2025-12-02"
+    }
+    </script>
+    <style>
+        .qa-grid { display: grid; gap: 16px; }
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        .qa-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            color: white;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        .qa-question {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .qa-question-text { flex: 1; }
+        .qa-answer {
+            background: #f8fafc;
+            border-left: 3px solid #6366f1;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-left: 44px;
+        }
+        .qa-answer code {
+            background: #e2e8f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: "Fira Code", monospace;
+            font-size: 0.85em;
+            color: #1e293b;
+        }
+        .qa-answer ul, .qa-answer ol {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+        .category-header {
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 32px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            scroll-margin-top: 140px;
+        }
+        .category-header:first-of-type { margin-top: 0; }
+        .category-icon { font-size: 1.5rem; }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin: 0;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 16px;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover { color: var(--primary-600); }
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #4f46e5);
+            z-index: 100;
+            transition: width 0.1s ease;
+        }
+        /* Sticky nav styles now in main CSS */
+        .question-count {
+            background: #6366f1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .qa-answer { margin-left: 0; margin-top: 8px; }
+            .qa-question { flex-direction: column; gap: 8px; }
+            .qa-number { margin-right: 0; }
+            .category-header { scroll-margin-top: 130px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+    <!-- Navigation inserted by navigation.js -->
+
+    <section class="hero">
+        <div class="container content">
+            <a href="../index.html" class="back-link">← Back to Cheat Sheet</a>
+            <h1>💼 General Interview Questions</h1>
+            <p class="subtitle">Comprehensive collection of technical and HR interview questions commonly asked in QA interviews - from problem-solving to soft skills assessment.</p>
+        </div>
+    </section>
+
+    <div class="sticky-nav">
+        <div class="container">
+            <div class="quick-nav">
+                <a class="chip" href="#problem-solving">🧩 Problem Solving</a>
+                <a class="chip" href="#technical-concepts">⚙️ Technical</a>
+                <a class="chip" href="#process-methodology">📋 Process</a>
+                <a class="chip" href="#tools-technologies">🛠️ Tools</a>
+                <a class="chip" href="#soft-skills">🤝 Soft Skills</a>
+                <a class="chip" href="#hr-questions">💬 HR Questions</a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="section">
+                <!-- Problem Solving -->
+                <div class="category-header" id="problem-solving">
+                    <span class="category-icon">🧩</span>
+                    <h2 class="category-title">Problem Solving & Logical Thinking</h2>
+                    <span class="question-count">Q1-15</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">1</span>
+                            <span class="qa-question-text">How would you test a pen?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Functional:</strong> Writing on different surfaces, ink flow, click mechanism<br>
+                            <strong>Non-functional:</strong> Durability, ink longevity, temperature resistance<br>
+                            <strong>Usability:</strong> Grip comfort, weight, design<br>
+                            <strong>Boundary:</strong> How long it writes, pressure limits<br>
+                            <strong>Compatibility:</strong> Different paper types, angles
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">2</span>
+                            <span class="qa-question-text">How would you test an elevator?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Buttons functionality (floor, open/close, alarm)<br>
+                            - Weight limits<br>
+                            - Power failure handling<br>
+                            - Emergency features<br>
+                            - Speed and accuracy<br>
+                            - Multiple call requests<br>
+                            - Door sensors<br>
+                            - Display accuracy
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">3</span>
+                            <span class="qa-question-text">How would you test an ATM machine?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Valid/invalid card handling<br>
+                            - PIN validation (correct, incorrect, blocked)<br>
+                            - Withdrawal limits<br>
+                            - Balance inquiry accuracy<br>
+                            - Receipt printing<br>
+                            - Cash dispensing<br>
+                            - Timeout handling<br>
+                            - Card retention scenarios
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">4</span>
+                            <span class="qa-question-text">How would you test a coffee machine?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Different beverage options<br>
+                            - Water level/temperature<br>
+                            - Payment acceptance<br>
+                            - Cup detection<br>
+                            - Refund functionality<br>
+                            - Multiple orders<br>
+                            - Cleaning cycle<br>
+                            - Error handling (out of ingredients)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">5</span>
+                            <span class="qa-question-text">How many test cases would you write for a login page?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Positive:</strong> Valid credentials, remember me, auto-login<br>
+                            <strong>Negative:</strong> Invalid username, invalid password, both invalid, empty fields<br>
+                            <strong>Security:</strong> SQL injection, XSS, brute force<br>
+                            <strong>UI/UX:</strong> Tab order, field masks, error messages<br>
+                            <strong>Performance:</strong> Response time<br>
+                            <em>Typically 30-50 test cases</em>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">6</span>
+                            <span class="qa-question-text">How would you test Google Search?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Search functionality (text, images, videos)<br>
+                            - Auto-suggestions<br>
+                            - Spelling corrections<br>
+                            - Filters and sorting<br>
+                            - Pagination<br>
+                            - Voice search<br>
+                            - Advanced search operators<br>
+                            - Localization<br>
+                            - Performance under load
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">7</span>
+                            <span class="qa-question-text">How do you approach testing when you have limited information?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Explore the application as end-user<br>
+                            2. Document questions<br>
+                            3. Create assumption-based test cases<br>
+                            4. Use exploratory testing<br>
+                            5. Test common user flows<br>
+                            6. Get clarification before final sign-off
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">8</span>
+                            <span class="qa-question-text">Given a text field that accepts 1-100, what test cases would you write?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Valid:</strong> 1, 50, 100<br>
+                            <strong>Boundary:</strong> 0, 1, 100, 101<br>
+                            <strong>Invalid:</strong> -1, 101, abc, special chars<br>
+                            <strong>Edge:</strong> Empty, spaces, decimal, very large number<br>
+                            <strong>Format:</strong> Leading zeros (01, 001)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">9</span>
+                            <span class="qa-question-text">How would you test a date picker?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Date selection (click, type)<br>
+                            - Format display<br>
+                            - Navigation (month, year)<br>
+                            - Min/max date restrictions<br>
+                            - Leap years<br>
+                            - Time zones<br>
+                            - Disabled dates<br>
+                            - Keyboard navigation<br>
+                            - Mobile touch
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">10</span>
+                            <span class="qa-question-text">How do you identify test scenarios from requirements?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Read requirements thoroughly<br>
+                            2. Identify actors/users<br>
+                            3. List all actions/functions<br>
+                            4. Map inputs and expected outputs<br>
+                            5. Consider edge cases<br>
+                            6. Include error scenarios<br>
+                            7. Check integration points
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">11</span>
+                            <span class="qa-question-text">How would you prioritize 100 test cases when you can only run 20?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Business-critical flows first<br>
+                            - High-risk areas<br>
+                            - Frequently used features<br>
+                            - Recently changed code<br>
+                            - Customer-facing features<br>
+                            - Integration points<br>
+                            - Historical bug areas
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">12</span>
+                            <span class="qa-question-text">What's your approach to finding the root cause of a bug?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Reproduce consistently<br>
+                            2. Isolate variables<br>
+                            3. Check logs/console<br>
+                            4. Compare with working scenario<br>
+                            5. Test related functionality<br>
+                            6. Check recent changes<br>
+                            7. Collaborate with developers
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">13</span>
+                            <span class="qa-question-text">How do you decide when a feature is ready for release?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - All test cases executed<br>
+                            - No critical/high bugs<br>
+                            - Exit criteria met<br>
+                            - Regression passed<br>
+                            - Performance acceptable<br>
+                            - Stakeholder sign-off<br>
+                            - Known issues documented
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">14</span>
+                            <span class="qa-question-text">A bug cannot be reproduced - what do you do?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Document exact steps from reporter<br>
+                            - Try different environments<br>
+                            - Check browser/device variations<br>
+                            - Review logs at time of occurrence<br>
+                            - Mark as intermittent with details<br>
+                            - Set up monitoring/alerts<br>
+                            - Keep the bug open with notes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">15</span>
+                            <span class="qa-question-text">How would you test a website that's completely new to you?</span>
+                        </div>
+                        <div class="qa-answer">
+                            1. Understand purpose and users<br>
+                            2. Explore main navigation<br>
+                            3. Test primary user journeys<br>
+                            4. Check forms and inputs<br>
+                            5. Test across browsers/devices<br>
+                            6. Look at error handling<br>
+                            7. Check performance<br>
+                            8. Review accessibility
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Concepts -->
+                <div class="category-header" id="technical-concepts">
+                    <span class="category-icon">⚙️</span>
+                    <h2 class="category-title">Technical Concepts</h2>
+                    <span class="question-count">Q16-30</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">16</span>
+                            <span class="qa-question-text">Explain the difference between verification and validation.</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Verification:</strong> "Are we building the product right?" - Reviews, walkthroughs, inspections (static testing)<br>
+                            <strong>Validation:</strong> "Are we building the right product?" - Testing the actual product (dynamic testing)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">17</span>
+                            <span class="qa-question-text">What is the difference between a bug, defect, and error?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Error:</strong> Human mistake in code or understanding<br>
+                            <strong>Defect:</strong> Variance from requirement (bug in code)<br>
+                            <strong>Bug:</strong> Informal term for defect, often found in testing<br>
+                            <strong>Failure:</strong> Defect manifesting during execution
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">18</span>
+                            <span class="qa-question-text">What is boundary value analysis?</span>
+                        </div>
+                        <div class="qa-answer">Testing technique focusing on values at boundaries. For range 1-100: test 0, 1, 2, 99, 100, 101. Bugs often occur at boundary edges.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">19</span>
+                            <span class="qa-question-text">What is equivalence partitioning?</span>
+                        </div>
+                        <div class="qa-answer">Dividing input data into valid/invalid partitions where all values in a partition behave similarly. For age 1-100: partitions are &lt;1, 1-100, &gt;100. Test one value from each partition.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">20</span>
+                            <span class="qa-question-text">What is regression testing?</span>
+                        </div>
+                        <div class="qa-answer">Re-running existing tests after code changes to ensure nothing is broken. Focuses on affected areas plus critical paths. Prime candidate for automation.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">21</span>
+                            <span class="qa-question-text">What is smoke testing vs sanity testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Smoke:</strong> Broad, shallow testing of critical features. "Does the build work at all?" Done after new build.<br>
+                            <strong>Sanity:</strong> Narrow, deep testing of specific functionality. "Is this fix working?" Done after minor changes.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">22</span>
+                            <span class="qa-question-text">What is alpha testing vs beta testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Alpha:</strong> Internal testing by organization's team in dev environment<br>
+                            <strong>Beta:</strong> External testing by real users in production-like environment before release
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">23</span>
+                            <span class="qa-question-text">What is load testing vs stress testing vs performance testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Performance:</strong> Umbrella term for speed/responsiveness tests<br>
+                            <strong>Load:</strong> Testing under expected load conditions<br>
+                            <strong>Stress:</strong> Testing beyond normal capacity to find breaking point
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">24</span>
+                            <span class="qa-question-text">What is a test case vs test scenario?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Test Scenario:</strong> High-level description (what to test)<br>
+                            Example: "Test user login"<br>
+                            <strong>Test Case:</strong> Detailed steps, data, expected result (how to test)<br>
+                            Example: Steps to login with valid credentials
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">25</span>
+                            <span class="qa-question-text">What is decision table testing?</span>
+                        </div>
+                        <div class="qa-answer">Technique using tables to represent combinations of inputs and expected outputs. Useful when multiple conditions affect behavior. Ensures all combinations are tested.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">26</span>
+                            <span class="qa-question-text">What is state transition testing?</span>
+                        </div>
+                        <div class="qa-answer">Testing valid/invalid state changes in a system. Example: Order states (Created → Paid → Shipped → Delivered). Tests transitions between states and invalid transition attempts.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">27</span>
+                            <span class="qa-question-text">What is test coverage? What types exist?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Measure of how much code/requirements are tested:<br>
+                            - <strong>Code coverage:</strong> Lines, branches, conditions<br>
+                            - <strong>Requirement coverage:</strong> Tests per requirement<br>
+                            - <strong>Risk coverage:</strong> Coverage of risky areas
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">28</span>
+                            <span class="qa-question-text">What is a traceability matrix?</span>
+                        </div>
+                        <div class="qa-answer">Document mapping requirements to test cases. Shows coverage, identifies gaps, tracks changes. Bidirectional: requirement → test cases, test case → requirements.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">29</span>
+                            <span class="qa-question-text">What is mutation testing?</span>
+                        </div>
+                        <div class="qa-answer">Technique to evaluate test quality by introducing small code changes (mutants). Good tests should fail when mutants are introduced. Measures test effectiveness.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">30</span>
+                            <span class="qa-question-text">What is pair testing?</span>
+                        </div>
+                        <div class="qa-answer">Two testers work together on same testing tasks. One drives, one observes. Combines different perspectives, catches more bugs, knowledge sharing.</div>
+                    </div>
+                </div>
+
+                <!-- Process & Methodology -->
+                <div class="category-header" id="process-methodology">
+                    <span class="category-icon">📋</span>
+                    <h2 class="category-title">Process & Methodology</h2>
+                    <span class="question-count">Q31-45</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">31</span>
+                            <span class="qa-question-text">Describe your typical day as a QA engineer.</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Check build status and test results<br>
+                            - Daily standup meeting<br>
+                            - Execute test cases or automation<br>
+                            - Review requirements/user stories<br>
+                            - Log and triage bugs<br>
+                            - Collaborate with developers<br>
+                            - Update test documentation<br>
+                            - Prepare for next sprint
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">32</span>
+                            <span class="qa-question-text">How do you write a good bug report?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Essential elements:</strong><br>
+                            - Clear, descriptive title<br>
+                            - Environment details<br>
+                            - Steps to reproduce<br>
+                            - Expected vs actual results<br>
+                            - Severity/priority<br>
+                            - Screenshots/videos<br>
+                            - Logs if applicable
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">33</span>
+                            <span class="qa-question-text">What's the difference between Agile and Waterfall for testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Waterfall:</strong> Sequential, testing after development, big-bang integration<br>
+                            <strong>Agile:</strong> Iterative, testing throughout, continuous integration, collaboration-focused
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">34</span>
+                            <span class="qa-question-text">What is TDD (Test-Driven Development)?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Development approach: Write test first → Run (fails) → Write code → Run (passes) → Refactor. Tests drive the design. Results in better test coverage.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">35</span>
+                            <span class="qa-question-text">What is BDD (Behavior-Driven Development)?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Extension of TDD focusing on behavior. Uses plain English (Gherkin): Given-When-Then. Bridges communication between business and technical teams. Tools: Cucumber, SpecFlow.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">36</span>
+                            <span class="qa-question-text">What are entry and exit criteria for testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Entry:</strong> Conditions to start testing<br>
+                            - Requirements approved<br>
+                            - Test environment ready<br>
+                            - Build deployed<br>
+                            <strong>Exit:</strong> Conditions to end testing<br>
+                            - Test cases executed<br>
+                            - Bugs fixed/documented<br>
+                            - Coverage achieved
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">37</span>
+                            <span class="qa-question-text">What is CI/CD and how does testing fit in?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>CI (Continuous Integration):</strong> Frequent code merges, automated builds and tests<br>
+                            <strong>CD (Continuous Delivery/Deployment):</strong> Automated release pipeline<br>
+                            <strong>Testing:</strong> Unit, integration, smoke tests run automatically in pipeline
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">38</span>
+                            <span class="qa-question-text">What is a test plan and what does it contain?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Document outlining test approach:<br>
+                            - Scope and objectives<br>
+                            - Test strategy<br>
+                            - Test environment<br>
+                            - Resources and schedule<br>
+                            - Entry/exit criteria<br>
+                            - Deliverables<br>
+                            - Risks and mitigations
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">39</span>
+                            <span class="qa-question-text">How do you handle testing in a sprint?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Review stories during planning<br>
+                            - Write test cases early<br>
+                            - Test features as completed<br>
+                            - Automation alongside manual<br>
+                            - Daily collaboration with devs<br>
+                            - Bug fixing within sprint<br>
+                            - Demo tested features
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">40</span>
+                            <span class="qa-question-text">What is shift-left testing?</span>
+                        </div>
+                        <div class="qa-answer">Moving testing earlier in SDLC. Review requirements, participate in design, write tests before code. Catches defects early when they're cheaper to fix.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">41</span>
+                            <span class="qa-question-text">How do you measure testing effectiveness?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Defect detection rate<br>
+                            - Defect leakage to production<br>
+                            - Test coverage percentage<br>
+                            - Automation rate<br>
+                            - Test execution time<br>
+                            - Cost of quality metrics
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">42</span>
+                            <span class="qa-question-text">What is risk-based testing?</span>
+                        </div>
+                        <div class="qa-answer">Prioritizing testing based on risk analysis. Identify risks (impact × probability), test high-risk areas first. Ensures critical areas get adequate attention.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">43</span>
+                            <span class="qa-question-text">What is defect density and how is it calculated?</span>
+                        </div>
+                        <div class="qa-answer">Number of defects per unit size of code.<br><code>Defect Density = Defects / Lines of Code (or Function Points)</code><br>Lower is better. Used to compare quality across modules.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">44</span>
+                            <span class="qa-question-text">What is test closure activities?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Test completion report<br>
+                            - Archive test artifacts<br>
+                            - Lessons learned meeting<br>
+                            - Release notes contribution<br>
+                            - Update test documentation<br>
+                            - Handover to operations
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">45</span>
+                            <span class="qa-question-text">What is the role of QA in Scrum ceremonies?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>Planning:</strong> Estimate testing, identify risks<br>
+                            <strong>Daily:</strong> Progress, blockers<br>
+                            <strong>Review:</strong> Demo tested features<br>
+                            <strong>Retro:</strong> Process improvements<br>
+                            <strong>Refinement:</strong> Clarify requirements
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="category-header" id="tools-technologies">
+                    <span class="category-icon">🛠️</span>
+                    <h2 class="category-title">Tools & Technologies</h2>
+                    <span class="question-count">Q46-60</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">46</span>
+                            <span class="qa-question-text">What automation tools have you worked with?</span>
+                        </div>
+                        <div class="qa-answer">
+                            <strong>UI:</strong> Selenium, Playwright, Cypress, WebDriverIO<br>
+                            <strong>API:</strong> Postman, RestAssured, Karate<br>
+                            <strong>Mobile:</strong> Appium, XCUITest, Espresso<br>
+                            <strong>Performance:</strong> JMeter, Gatling, k6
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">47</span>
+                            <span class="qa-question-text">What test management tools do you know?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - TestRail<br>
+                            - Zephyr<br>
+                            - qTest<br>
+                            - Azure DevOps Test Plans<br>
+                            - Xray for Jira<br>
+                            - PractiTest
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">48</span>
+                            <span class="qa-question-text">How do you choose between different automation tools?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Application type (web, mobile, desktop)<br>
+                            - Team skills<br>
+                            - Language preferences<br>
+                            - Browser/platform support<br>
+                            - Community and documentation<br>
+                            - Integration capabilities<br>
+                            - Cost/licensing
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">49</span>
+                            <span class="qa-question-text">What is Page Object Model?</span>
+                        </div>
+                        <div class="qa-answer">Design pattern for test automation. Each page/component has its own class containing locators and methods. Benefits: reusability, maintainability, cleaner test code.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">50</span>
+                            <span class="qa-question-text">What is data-driven testing?</span>
+                        </div>
+                        <div class="qa-answer">Running same test with multiple data sets from external sources (Excel, CSV, database). Separates test logic from data. Good for testing many input combinations.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">51</span>
+                            <span class="qa-question-text">What is keyword-driven testing?</span>
+                        </div>
+                        <div class="qa-answer">Framework where test actions are defined as keywords. Non-technical users can create tests using keywords. Example keywords: Click, Type, VerifyText. Enables collaboration.</div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">52</span>
+                            <span class="qa-question-text">How do you handle test data?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Separate data files (JSON, Excel)<br>
+                            - Database seeding<br>
+                            - API calls for setup<br>
+                            - Faker libraries for generation<br>
+                            - Environment-specific configs<br>
+                            - Data cleanup strategies
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">53</span>
+                            <span class="qa-question-text">How do you debug failing tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Review error messages/screenshots<br>
+                            - Check test logs<br>
+                            - Run locally with debug mode<br>
+                            - Verify locators still valid<br>
+                            - Check test data<br>
+                            - Review recent code changes<br>
+                            - Check environment status
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">54</span>
+                            <span class="qa-question-text">What is flaky test and how do you handle it?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Test that sometimes passes, sometimes fails. Causes: timing issues, shared state, environment. Solutions: proper waits, test isolation, stable locators, retry mechanisms, investigation and fix.
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">55</span>
+                            <span class="qa-question-text">How do you structure your automation framework?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Page objects/components<br>
+                            - Test data management<br>
+                            - Configuration files<br>
+                            - Utility/helper functions<br>
+                            - Test suites organization<br>
+                            - Reporting setup<br>
+                            - CI/CD integration
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">56</span>
+                            <span class="qa-question-text">What CI/CD tools have you used?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Jenkins<br>
+                            - GitHub Actions<br>
+                            - GitLab CI<br>
+                            - Azure DevOps<br>
+                            - CircleCI<br>
+                            - TeamCity
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">57</span>
+                            <span class="qa-question-text">How do you integrate tests with CI/CD?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Configure test job in pipeline<br>
+                            - Set up test environment<br>
+                            - Run tests on trigger (push, PR)<br>
+                            - Generate reports/artifacts<br>
+                            - Fail pipeline on test failures<br>
+                            - Notifications for results
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">58</span>
+                            <span class="qa-question-text">What is Docker and how is it useful for testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Containerization platform. Benefits for testing:<br>
+                            - Consistent environments<br>
+                            - Easy setup/teardown<br>
+                            - Isolation<br>
+                            - Scalable test execution<br>
+                            - Run dependencies (DB, services)
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">59</span>
+                            <span class="qa-question-text">How do you handle cross-browser testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Define browser matrix<br>
+                            - Selenium Grid<br>
+                            - Cloud platforms (BrowserStack, Sauce Labs)<br>
+                            - Parallel execution<br>
+                            - Focus on major browsers<br>
+                            - Screenshot comparison
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">60</span>
+                            <span class="qa-question-text">What version control practices do you follow for tests?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Tests in same repo as code<br>
+                            - Branch per feature<br>
+                            - Code reviews for tests<br>
+                            - Meaningful commit messages<br>
+                            - No hardcoded values<br>
+                            - Keep tests updated with code
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="category-header" id="soft-skills">
+                    <span class="category-icon">🤝</span>
+                    <h2 class="category-title">Soft Skills & Collaboration</h2>
+                    <span class="question-count">Q61-75</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">61</span>
+                            <span class="qa-question-text">How do you communicate with developers about bugs?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Be professional and objective<br>
+                            - Provide clear evidence<br>
+                            - Focus on the issue, not person<br>
+                            - Discuss privately first if sensitive<br>
+                            - Collaborate on solutions<br>
+                            - Follow up constructively
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">62</span>
+                            <span class="qa-question-text">How do you handle criticism of your testing work?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Listen without defensiveness<br>
+                            - Ask for specific examples<br>
+                            - Acknowledge valid points<br>
+                            - Explain reasoning if needed<br>
+                            - Take constructive feedback<br>
+                            - Improve based on feedback
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">63</span>
+                            <span class="qa-question-text">How do you handle disagreements with product owners?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Understand their perspective<br>
+                            - Present data and evidence<br>
+                            - Explain testing rationale<br>
+                            - Find common ground<br>
+                            - Document decisions<br>
+                            - Escalate if necessary
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">64</span>
+                            <span class="qa-question-text">How do you prioritize when multiple teams need your help?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Assess urgency and impact<br>
+                            - Communicate availability<br>
+                            - Set expectations<br>
+                            - Escalate conflicts to manager<br>
+                            - Document commitments<br>
+                            - Time-box assistance
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">65</span>
+                            <span class="qa-question-text">How do you explain technical issues to non-technical stakeholders?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Use simple language<br>
+                            - Focus on business impact<br>
+                            - Use analogies<br>
+                            - Visual aids help<br>
+                            - Avoid jargon<br>
+                            - Check understanding
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">66</span>
+                            <span class="qa-question-text">How do you stay motivated during repetitive testing?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Focus on quality impact<br>
+                            - Identify automation opportunities<br>
+                            - Set personal goals<br>
+                            - Take breaks<br>
+                            - Vary testing approaches<br>
+                            - Learn new skills alongside
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">67</span>
+                            <span class="qa-question-text">How do you handle pressure before a release?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Stay calm and focused<br>
+                            - Prioritize critical tests<br>
+                            - Communicate clearly<br>
+                            - Ask for help if needed<br>
+                            - Document status regularly<br>
+                            - Avoid shortcuts on quality
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">68</span>
+                            <span class="qa-question-text">How do you give feedback to team members?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Be specific and timely<br>
+                            - Focus on behavior, not person<br>
+                            - Balance positive and constructive<br>
+                            - Give privately if negative<br>
+                            - Suggest improvements<br>
+                            - Follow up on progress
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">69</span>
+                            <span class="qa-question-text">How do you work with offshore/remote teams?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Clear documentation<br>
+                            - Overlap meeting times<br>
+                            - Use collaboration tools<br>
+                            - Asynchronous communication<br>
+                            - Cultural awareness<br>
+                            - Regular sync-ups
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">70</span>
+                            <span class="qa-question-text">How do you contribute to team retrospectives?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Prepare specific examples<br>
+                            - Share both positives and issues<br>
+                            - Suggest actionable improvements<br>
+                            - Listen to others<br>
+                            - Volunteer for action items<br>
+                            - Follow through on commitments
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">71</span>
+                            <span class="qa-question-text">How do you advocate for quality in your organization?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Share metrics and data<br>
+                            - Highlight quality wins<br>
+                            - Show cost of poor quality<br>
+                            - Propose improvements<br>
+                            - Educate team on practices<br>
+                            - Lead by example
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">72</span>
+                            <span class="qa-question-text">How do you handle being the only QA on a team?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Prioritize ruthlessly<br>
+                            - Automate high-value tests<br>
+                            - Enable developer testing<br>
+                            - Risk-based approach<br>
+                            - Clear communication<br>
+                            - Document processes
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">73</span>
+                            <span class="qa-question-text">How do you build relationships with developers?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Collaborate, don't just report<br>
+                            - Help investigate issues<br>
+                            - Share testing knowledge<br>
+                            - Acknowledge good work<br>
+                            - Be approachable<br>
+                            - Support, don't blame
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">74</span>
+                            <span class="qa-question-text">How do you handle a situation where a bug is marked "won't fix"?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Understand the reasoning<br>
+                            - Document impact<br>
+                            - Escalate if severe<br>
+                            - Accept if justified<br>
+                            - Update test cases accordingly<br>
+                            - Monitor for recurrence
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">75</span>
+                            <span class="qa-question-text">What makes a good QA team culture?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Open communication<br>
+                            - Knowledge sharing<br>
+                            - Continuous learning<br>
+                            - Collaboration over blame<br>
+                            - Quality ownership by all<br>
+                            - Supportive environment
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HR Questions -->
+                <div class="category-header" id="hr-questions">
+                    <span class="category-icon">💬</span>
+                    <h2 class="category-title">HR & Behavioral Questions</h2>
+                    <span class="question-count">Q76-90</span>
+                </div>
+
+                <div class="qa-grid">
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">76</span>
+                            <span class="qa-question-text">Tell me about yourself.</span>
+                        </div>
+                        <div class="qa-answer">
+                            <em>Structure (2-3 minutes):</em><br>
+                            1. Current role and experience<br>
+                            2. Key achievements<br>
+                            3. Skills relevant to this role<br>
+                            4. Why interested in this opportunity
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">77</span>
+                            <span class="qa-question-text">Why do you want to work here?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Research the company and mention:<br>
+                            - Specific things that excite you<br>
+                            - How your skills align<br>
+                            - Culture fit<br>
+                            - Growth opportunities<br>
+                            - Company products/mission
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">78</span>
+                            <span class="qa-question-text">What are your strengths as a QA?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Pick 2-3 with examples:<br>
+                            - Attention to detail<br>
+                            - Technical skills<br>
+                            - Communication<br>
+                            - Problem-solving<br>
+                            - Automation expertise<br>
+                            - Domain knowledge
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">79</span>
+                            <span class="qa-question-text">What are your weaknesses?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Be honest but strategic:<br>
+                            - Choose genuine weakness<br>
+                            - Show self-awareness<br>
+                            - Explain steps to improve<br>
+                            - Don't use clichés ("perfectionist")<br>
+                            Example: "I sometimes dive too deep into edge cases. I'm learning to balance thoroughness with timelines."
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">80</span>
+                            <span class="qa-question-text">Why are you leaving your current job?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Stay positive:<br>
+                            - Seeking new challenges<br>
+                            - Growth opportunities<br>
+                            - New technologies<br>
+                            - Career progression<br>
+                            <em>Never badmouth previous employer</em>
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">81</span>
+                            <span class="qa-question-text">Where do you see yourself in 5 years?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Show ambition aligned with company:<br>
+                            - Senior QA/Lead role<br>
+                            - Automation architect<br>
+                            - Technical specialist<br>
+                            - People management<br>
+                            - Contributing to quality strategy
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">82</span>
+                            <span class="qa-question-text">Tell me about a challenging project you worked on.</span>
+                        </div>
+                        <div class="qa-answer">
+                            <em>Use STAR method:</em><br>
+                            <strong>Situation:</strong> Context<br>
+                            <strong>Task:</strong> Your responsibility<br>
+                            <strong>Action:</strong> What you did<br>
+                            <strong>Result:</strong> Outcome and learnings
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">83</span>
+                            <span class="qa-question-text">Describe a conflict with a colleague and how you resolved it.</span>
+                        </div>
+                        <div class="qa-answer">
+                            Show emotional intelligence:<br>
+                            - Specific situation<br>
+                            - Your perspective and theirs<br>
+                            - Steps to resolve<br>
+                            - Positive outcome<br>
+                            - What you learned
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">84</span>
+                            <span class="qa-question-text">How do you handle multiple deadlines?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Assess priorities<br>
+                            - Break down tasks<br>
+                            - Communicate with stakeholders<br>
+                            - Time management techniques<br>
+                            - Ask for help when needed<br>
+                            - Stay organized
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">85</span>
+                            <span class="qa-question-text">Tell me about a time you failed.</span>
+                        </div>
+                        <div class="qa-answer">
+                            Show growth:<br>
+                            - Real failure (not humble brag)<br>
+                            - Take responsibility<br>
+                            - What you learned<br>
+                            - How you've improved<br>
+                            - No blame on others
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">86</span>
+                            <span class="qa-question-text">How do you stay current with technology?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Online courses (Udemy, Coursera)<br>
+                            - Tech blogs and newsletters<br>
+                            - Conferences and meetups<br>
+                            - Side projects<br>
+                            - Certifications<br>
+                            - Podcasts
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">87</span>
+                            <span class="qa-question-text">What motivates you at work?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Be genuine:<br>
+                            - Solving problems<br>
+                            - Learning new things<br>
+                            - Team collaboration<br>
+                            - Delivering quality<br>
+                            - Making impact<br>
+                            - Recognition
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">88</span>
+                            <span class="qa-question-text">How do you handle feedback that you disagree with?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Listen fully first<br>
+                            - Ask clarifying questions<br>
+                            - Consider their perspective<br>
+                            - Share your view respectfully<br>
+                            - Find common ground<br>
+                            - Accept final decision
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">89</span>
+                            <span class="qa-question-text">What questions do you have for us?</span>
+                        </div>
+                        <div class="qa-answer">
+                            Always have questions:<br>
+                            - Team structure and dynamics<br>
+                            - Tech stack and tools<br>
+                            - Development process<br>
+                            - Growth opportunities<br>
+                            - Current challenges<br>
+                            - What success looks like
+                        </div>
+                    </div>
+
+                    <div class="qa-card">
+                        <div class="qa-question">
+                            <span class="qa-number">90</span>
+                            <span class="qa-question-text">What are your salary expectations?</span>
+                        </div>
+                        <div class="qa-answer">
+                            - Research market rates<br>
+                            - Know your worth<br>
+                            - Give range, not exact number<br>
+                            - Consider total compensation<br>
+                            - Be open to negotiation<br>
+                            - Ask about their budget first
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>90 General Interview Questions • <a href="../index.html">Back to Cheat Sheet</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+
